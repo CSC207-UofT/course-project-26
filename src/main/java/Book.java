@@ -19,7 +19,7 @@ public class Book {
     /**
      * Construct a Book with the following instance attributes:
      *
-     * @param isSold    Whether the Book is sold or not. Default value is false TODO: I'm not sure why isSold parameter is red,
+     * @param isSold    Whether the Book is sold or not. Default value is false TODO: I'm not sure why isSold parameter is red in IntelliJ
      * @param price     Selling price of the Book in Canadian Dollars
      * @param name      The name of the Book
      * @param author    The author of the Book
@@ -31,7 +31,7 @@ public class Book {
      *                  "Online code"
      * @param language  The language of the Book
      * @param weight    The weight of the Book in kilograms. Default value is N/A
-     * @param size      The dimensions of the Book. Default value is N/A. TODO: Figure out how to store dimensions
+     * @param size      The dimensions of the Book. Default value is N/A. TODO: Decide how to store dimensions
      */
 
     public Book(double price,
@@ -60,7 +60,7 @@ public class Book {
         this.size = size;
 
     }
-    // TODO: Use overloading to create another constructor with fewer parameters
+    // TODO: Use overloading to create another constructor with fewer parameters (incase some of the info isn't known about the book when it's initialized)
 
     public boolean isSold() {
         return this.isSold;
