@@ -1,0 +1,12 @@
+Class name: Listing
+Parent class: Platform
+
+Responsibility:
+* Store a list of books
+* delete books
+* add books
+* sorting method
+* to_string the list of books
+
+Collaborators:
+* books
