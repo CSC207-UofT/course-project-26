@@ -3,7 +3,7 @@ Parent class: User
 
 Responsibility:
 * Create and store Buyer
-* contain shopping cart 
+* add, delete book in shopping cart
 
 Collaborators:
-* Shopping cart
+* Book
