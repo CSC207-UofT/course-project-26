@@ -1,4 +1,4 @@
-Class name: Book\
+Class name: Login\
 Parent class: platform
 
 Responsibility:
@@ -6,6 +6,7 @@ Responsibility:
 * getUsername
 * getPassword
 * Check if the password matches the password stored in the file
+* Check if the username matches the username stored in the file
 
 Collaborators:
 * Seller
