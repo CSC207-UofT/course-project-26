@@ -6,13 +6,14 @@ public class Seller extends User{
      * @param name
      * @param utorid
      * @param email
+     * @param password
      * @param location
      * @param inventory
      */
     ArrayList<Book> inventory;
 
-    public Seller(String name, String utorid, String email, String location){
-        super(name, utorid, email, location);
+    public Seller(String name, String utorid, String email, String password, String location){
+        super(name, utorid, email, password, location);
     }
 
     public void add_book(Book book){
