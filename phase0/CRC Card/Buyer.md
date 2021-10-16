@@ -1,4 +1,4 @@
-Class name: Buyer
+Class name: Buyer \
 Parent class: User
 
 Responsibility:

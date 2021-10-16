@@ -1,4 +1,4 @@
-Class name: Listing
+Class name: Listing \
 Parent class: Platform
 
 Responsibility:

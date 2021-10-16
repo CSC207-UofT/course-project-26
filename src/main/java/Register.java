@@ -7,10 +7,10 @@ public class Register {
 
 
 //    * Store the information password
-//    * Store a list of User in a file
-//    * Add/remove User in a file - method
+//    * Store a list of User.md in a file
+//    * Add/remove User.md in a file - method
 //    * Getter for all information in the file - getter
-//    * Read the file that stored all the information for User
+//    * Read the file that stored all the information for User.md
 
     private final List<User> userList = new ArrayList<>();
 

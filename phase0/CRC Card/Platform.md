@@ -1,4 +1,4 @@
-Class name: platform\
+Class name: platform \
 Parent class: None
 
 Responsibility:

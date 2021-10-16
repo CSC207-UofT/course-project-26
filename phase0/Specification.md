@@ -1,3 +1,5 @@
+# Specification for UofT Secondhand Book MarketPlace
+
 The main purpose of this project is to create a secondary hand book platform, exclusive for the students in University
 of Toronto.
 
