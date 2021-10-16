@@ -1,4 +1,4 @@
-Class name: User
+Class name: User \
 Parent class: None
 
 Responsibility:

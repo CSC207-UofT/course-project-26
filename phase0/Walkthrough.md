@@ -1,4 +1,4 @@
-## A Typical Scenerio Walkthrough for UofT Secondhand Book MarketPlace
+# A Typical Scenerio Walkthrough for UofT Secondhand Book MarketPlace
 
 A UofT students wants to buy or sell his book on our platform. He enters the app, and he needs to log in or register his 
 account if he is a first time user. The user needs to input his "Name" and "UofT Email" to register. After registration,
