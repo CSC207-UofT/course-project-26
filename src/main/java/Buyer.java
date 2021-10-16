@@ -8,8 +8,8 @@ public class Buyer extends User{
 
     ArrayList<Book> shoppingcart;
 
-    public Buyer(String name, String utorid, String email, String location){
-        super(name, utorid, email, location);
+    public Buyer(String name, String utorid, String email, String password, String location){
+        super(name, utorid, email, password, location);
     }
 
     public void add_shoppingcart(Book book){
