@@ -1,6 +1,4 @@
-## Replace this README.md!
+## UofT Secondhand Book MarketPlace
 
-This is a standard README.md file for you to replace. You'll want to include your own content here!
-
-MD (Markdown) files use [Markdown formatting](https://guides.github.com/features/mastering-markdown/): 
-these look very much like .txt files, so you can write them in a very similar way.
+Hey there! Welcome to our project. Our purpose is to create a secondary hand book platform that connects students who wish to sell their book to potential
+buyers.
