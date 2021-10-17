@@ -1,3 +1,6 @@
+package Users;
+import Book.Book;
+
 import java.util.ArrayList;
 
 public class Buyer extends User{

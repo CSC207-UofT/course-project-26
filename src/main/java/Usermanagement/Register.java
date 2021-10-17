@@ -1,7 +1,8 @@
+package Usermanagement;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.time.format.DateTimeFormatter;
+
+import Users.User;
 
 public class Register {
 

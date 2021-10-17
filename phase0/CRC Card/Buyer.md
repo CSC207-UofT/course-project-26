@@ -1,9 +1,9 @@
-Class name: Buyer \
+Class name: Users.Buyer \
 Parent class: User
 
 Responsibility:
-* Create and store Buyer
+* Create and store Users.Buyer
 * add, delete book in shopping cart
 
 Collaborators:
-* Book
+* Book.Book

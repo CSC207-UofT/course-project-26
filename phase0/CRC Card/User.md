@@ -8,5 +8,5 @@ Responsibility:
 
 Collaborators:
 * Platform
-* Seller
-* Buyer
+* Users.Seller
+* Users.Buyer

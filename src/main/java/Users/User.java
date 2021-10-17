@@ -1,3 +1,5 @@
+package Users;
+
 public class User {
     /**
      * @param name      The name of the user

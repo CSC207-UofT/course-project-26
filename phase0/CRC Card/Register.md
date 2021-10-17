@@ -1,4 +1,4 @@
-Class name: Register\
+Class name: Usermanagement.Register\
 Parent class: platform
 
 Responsibility:
@@ -9,5 +9,5 @@ Responsibility:
 * Read the file that stored all the information for User
 
 Collaborators:
-* Seller
-* Buyer
+* Users.Seller
+* Users.Buyer
