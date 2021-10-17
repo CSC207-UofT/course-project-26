@@ -1,4 +1,7 @@
 import Users.User;
+import Users.Seller;
+import Users.Buyer;
+import Book.Book;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -7,25 +10,29 @@ import static org.junit.Assert.assertEquals;
 
 public class UserTest {
     private User user;
+    private Book book;
 
     @Before
     public void setUp(){
-        user = new User("annie", "duannie", "yunqi.du@mail.utoronto.ca","123456","Bay");
+        user = new User("Annie", "duannie", "yunqi.du@mail.utoronto.ca",
+                "123456","Bay");
+        book = new Book(100, "CSC207","Grace", "Uoft", "OCt 9, 2020", 12, 400,
+                "txt", "English", 1000, "L");
     }
 
     @Test
     public void testgetName(){
-        assertEquals("annie", user.getName());
+        assertEquals("Annie", user.getName());
     }
 
     @Test
     public void testgetemail(){
-        assertEquals("annie", user.getEmail());
+        assertEquals("yunqi.du@mail.utoronto.ca", user.getEmail());
     }
 
     @Test
     public void testgetlocation(){
-        assertEquals("annie", user.getLocation());
+        assertEquals("Bay", user.getLocation());
     }
 
 }
