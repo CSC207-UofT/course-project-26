@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 
@@ -18,18 +16,20 @@ public class Login {
 
     public String getBuyerPassword(String name){
         for (Buyer buyer : buyerList) {
-            if (Objects.equals(buyer.name, name)){
-                return buyer.password;
+            if (Objects.equals(buyer.getName(), name)){
+                return buyer.getPassword();
             }
         }
+        return name;
     }
 
     public String getSellerPassword(String name){
         for (Seller seller : sellerList) {
-            if (Objects.equals(seller.name, name)){
-                return seller.password;
+            if (Objects.equals(seller.getName(), name)){
+                return seller.getPassword();
             }
         }
+        return name;
     }
 
     public void setBuyer(Buyer buyer) {
