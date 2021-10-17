@@ -19,12 +19,13 @@ public class Main {
             String in_name = sc.nextLine();
             System.out.println("Thanks! What's your utorid?");
             String in_utorid = sc.nextLine();
-            System.out.println("Please enter your email.");
+            System.out.println("Please enter your UofT email.");
             String in_email = sc.nextLine();
             System.out.println("Please enter your password.");
             String in_password = sc.nextLine();
             System.out.println("Last step! Please enter your location in the form of your postal code (xxx xxx)");
             String in_location = sc.nextLine();
+            System.out.println("You're all set! Thanks for your patience :) Enjoy the Marketplace!");
 
             User new_user = new User(in_name, in_utorid, in_email, in_password, in_location);
             new_register.addUser(new_user);
