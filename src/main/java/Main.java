@@ -23,7 +23,7 @@ public class Main {
             String in_email = sc.nextLine();
             System.out.println("Please enter your password.");
             String in_password = sc.nextLine();
-            System.out.println("Last step! Please enter your location in the form of your postal code (xxx xxx)");
+            System.out.println("Last step! Please enter your location in the form of your address");
             String in_location = sc.nextLine();
             System.out.println("You're all set! Thanks for your patience :) Enjoy the Marketplace!");
 
