@@ -4,25 +4,33 @@ public class Main {
     /**
      * Action by user is required
      */
-    public static void init() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please take an action(\"Register\" or \"Cancel\")");
-        String action = scanner.nextLine();
-        while (!action.equals("Register") && !action.equals("Cancel")) {
-            System.out.println("Please enter the correct command");
-            action = scanner.nextLine();
-        }
-        if (action.equals("Cancel")) {
-            System.exit(0);
-        }
-    }
 
     public static void main(String[] args){
-        init();
         Register new_register = new Register();
-        // TODO: add name, email, password, to user
-        User new_user = new User();
-        new_register.addUser(new_user);
 
+        System.out.println("Welcome to UofT Marketplace! Would you like to register? Please type Register or Cancel");
+
+        Scanner sc = new Scanner(System.in);
+
+        String reg_or_cancel = sc.nextLine();
+
+        if (reg_or_cancel.equals("Register")) {
+            System.out.println("Hey there! What's your name?");
+            String in_name = sc.nextLine();
+            System.out.println("Thanks! What's your utorid?");
+            String in_utorid = sc.nextLine();
+            System.out.println("Please enter your email.");
+            String in_email = sc.nextLine();
+            System.out.println("Please enter your password.");
+            String in_password = sc.nextLine();
+            System.out.println("Last step! Please enter your location in the form of your postal code (xxx xxx)");
+            String in_location = sc.nextLine();
+
+            User new_user = new User(in_name, in_utorid, in_email, in_password, in_location);
+            new_register.addUser(new_user);
+        }
+        if (reg_or_cancel.equals("Cancel")){
+            System.exit(0);
+        }
     }
 }
