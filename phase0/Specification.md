@@ -1,4 +1,4 @@
-# Specification for UofT Secondhand Book.Book MarketPlace
+# Specification for UofT Secondhand Book MarketPlace
 
 The main purpose of this project is to create a secondary hand book platform for UofT students to buy and sell second 
 hand books. Usually an E-commerce platform limits users to represent only one function - they are either the seller 
