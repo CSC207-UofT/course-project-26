@@ -7,10 +7,9 @@ wishlist feature for buyers.
 
 ## CRC Model Summary
 Entity classes store data for Users(parent), Users.Seller(child), Buyers(child), and Books.\
-Use case classes manage use cases for entities. Usermanagement.Register will initialize a user and will manage its 
-
-use cases and update the userData accordingly. Listing will create, update, manage and store the book listings.
-CommandExecutor is a controller that will break each command into smaller tasks
+Use case classes manage use cases for entities. Usermanagement.Register will initialize a user and will manage its
+use cases and update the userData accordingly. Listing will create, update, manage and store the book listings.\
+CommandExecutor is a controller that will break each command into smaller tasks.\
 MainCommand will take text input from the user and call the appropriate functions.
 
 ## Scenario Walk-through Summary
@@ -19,12 +18,12 @@ finds a book that he wants to buy. He contacts the seller through the contact in
 trade is completed, the seller changes the status of the book to sold.
 
 ## Skeleton Program Summary
-* Created the skeleton of the User, Users.Buyer, Users.Seller, Book.Book, Usermanagement.Register and Usermanagement.Login classes.
+* Created the skeleton of the User, Users.Buyer, Users.Seller, Book.Book, Usermanagement.Register, Usermanagement.Login and Listing classes.
 * Prompted users to enter a username, an email, and a password, when creating a new account.
 
 ## Individual Responsibility
 
-* Specification: Tientien
+* Specification: Tientien, Grace
 
 * Crc Model: everyone was involved by splitting into 3 groups of 2. We worked on separate branches then combined them together.
 
@@ -32,8 +31,8 @@ trade is completed, the seller changes the status of the book to sold.
 
 * Construction of skeleton Program:\
 Taylan and Will (Book.Book);\
-Annie and Grace (User);\
-Wesley and Tientien (Platform and User Registration)
+Annie and Grace (User, User.Buyer, User.Seller, Listing, Main);\
+Wesley and Tientien (Registration, Login)
 
 * Progress Report: Grace
 
@@ -49,5 +48,5 @@ the managers help with the extra functions that are needed.
 
 ## Question
 * Not sure how to approach implementing the platform and listings classes. Should platform be a parent class or should 
-listing be a use case class?
+listing be a use case class? How do we approach implementing a listings page under our platform?
 * Not sure what is the function of the controller and how it can relate to our other classes?
