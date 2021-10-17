@@ -1,4 +1,4 @@
-# Progress Report for UofT Secondhand Book.Book MarketPlace
+# Progress Report for UofT Secondhand Book MarketPlace
 
 ## Specification Summary
 Our purpose is to create a secondary hand book platform that connects students who wish to sell their book to potential
