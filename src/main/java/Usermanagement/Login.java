@@ -1,3 +1,8 @@
+package Usermanagement;
+
+import Users.Buyer;
+import Users.Seller;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

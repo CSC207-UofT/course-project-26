@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+import Usermanagement.Register;
+import Users.User;
+
 public class Main {
     /**
      * Action by user is required
@@ -8,13 +11,13 @@ public class Main {
     public static void main(String[] args){
         Register new_register = new Register();
 
-        System.out.println("Welcome to UofT Marketplace! Would you like to register? Please type Register or Cancel");
+        System.out.println("Welcome to UofT Marketplace! Would you like to register? Please type Userregistration.Register or Cancel");
 
         Scanner sc = new Scanner(System.in);
 
         String reg_or_cancel = sc.nextLine();
 
-        if (reg_or_cancel.equals("Register")) {
+        if (reg_or_cancel.equals("Userregistration.Register")) {
             System.out.println("Hey there! What's your name?");
             String in_name = sc.nextLine();
             System.out.println("Thanks! What's your utorid?");
@@ -27,7 +30,7 @@ public class Main {
             String in_location = sc.nextLine();
             System.out.println("You're all set! Thanks for your patience :) Enjoy the Marketplace!");
 
-            User new_user = new User(in_name, in_utorid, in_email, in_password, in_location);
+            User new_user = new Users.User(in_name, in_utorid, in_email, in_password, in_location);
             new_register.addUser(new_user);
         }
         if (reg_or_cancel.equals("Cancel")){

@@ -1,4 +1,4 @@
-Class name: Book \
+Class name: Book.Book \
 Parent class: None
 
 Responsibility:
