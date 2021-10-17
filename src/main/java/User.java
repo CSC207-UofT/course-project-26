@@ -20,6 +20,7 @@ public class User {
         this.password = password;
         this.location = location;
     }
+
     public String getName() {
         return this.name;
     }

@@ -12,11 +12,10 @@ public class Register {
 //    * Getter for all information in the file - getter
 //    * Read the file that stored all the information for User.md
 
-    private final List<User> userList = new ArrayList<>();
+    private ArrayList<User> userList = new ArrayList<>();
 
-
-    public Register() {
-
+    public void addUser(User user) {
+            userList.add(user);
     }
 
 }
