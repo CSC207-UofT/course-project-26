@@ -11,13 +11,13 @@ public class Main {
     public static void main(String[] args){
         Register new_register = new Register();
 
-        System.out.println("Welcome to UofT Marketplace! Would you like to register? Please type Userregistration.Register or Cancel");
+        System.out.println("Welcome to UofT Marketplace! Would you like to register? Please type Register or Cancel");
 
         Scanner sc = new Scanner(System.in);
 
         String reg_or_cancel = sc.nextLine();
 
-        if (reg_or_cancel.equals("Userregistration.Register")) {
+        if (reg_or_cancel.equals("Register")) {
             System.out.println("Hey there! What's your name?");
             String in_name = sc.nextLine();
             System.out.println("Thanks! What's your utorid?");
