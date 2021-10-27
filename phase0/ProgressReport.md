@@ -1,4 +1,4 @@
-# Progress Report for UofT Secondhand Usecases MarketPlace
+# Progress Report for UofT Secondhand Book.Book MarketPlace
 
 ## Specification Summary
 Our purpose is to create a secondary hand book platform that connects students who wish to sell their book to potential
@@ -6,8 +6,9 @@ buyers. Key features include posting a listing, storing the listing information 
 wishlist feature for buyers.
 
 ## CRC Model Summary
-Entity classes store data for Entity(parent), Seller(child), Buyers(child), and Books.\
-Use case classes manage use cases for entities. Register will initialize a user and will manage its 
+Entity classes store data for Users(parent), Users.Seller(child), Buyers(child), and Books.\
+Use case classes manage use cases for entities. Usermanagement.Register will initialize a user and will manage its 
+
 use cases and update the userData accordingly. Listing will create, update, manage and store the book listings.
 CommandExecutor is a controller that will break each command into smaller tasks
 MainCommand will take text input from the user and call the appropriate functions.
@@ -18,7 +19,7 @@ finds a book that he wants to buy. He contacts the seller through the contact in
 trade is completed, the seller changes the status of the book to sold.
 
 ## Skeleton Program Summary
-* Created the skeleton of the User, Buyer, Seller, Usecases, Register and Login classes.
+* Created the skeleton of the User, Users.Buyer, Users.Seller, Book.Book, Usermanagement.Register and Usermanagement.Login classes.
 * Prompted users to enter a username, an email, and a password, when creating a new account.
 
 ## Individual Responsibility
@@ -30,9 +31,9 @@ trade is completed, the seller changes the status of the book to sold.
 * Scenario Walk-through: Grace
 
 * Construction of skeleton Program:\
-Taylan and Will (Usecases);\
+Taylan and Will (Book.Book);\
 Annie and Grace (User);\
-Wesley and Tientien (Controllers.Platform and User Registration)
+Wesley and Tientien (Platform and User Registration)
 
 * Progress Report: Grace
 
