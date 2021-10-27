@@ -1,5 +1,4 @@
-package Users;
-import Book.Book;
+package Entity;
 import java.util.ArrayList;
 
 public class Seller extends User{

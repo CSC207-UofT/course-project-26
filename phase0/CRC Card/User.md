@@ -7,6 +7,6 @@ Responsibility:
 * Getter for information stored
 
 Collaborators:
-* Platform
-* Users.Seller
-* Users.Buyer
+* Controllers.Platform
+* Entity.Seller
+* Entity.Buyer

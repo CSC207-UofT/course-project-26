@@ -1,4 +1,4 @@
-Class name: Usermanagement.Login\
+Class name: Controllers.Login\
 Parent class: platform
 
 Responsibility:
@@ -9,6 +9,6 @@ Responsibility:
 * Check if the username matches the username stored in the file
 
 Collaborators:
-* Users.Seller
-* Users.Buyer
+* Entity.Seller
+* Entity.Buyer
 

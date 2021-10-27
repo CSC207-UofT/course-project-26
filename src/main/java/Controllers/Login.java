@@ -1,7 +1,7 @@
-package Usermanagement;
+package Controllers;
 
-import Users.Buyer;
-import Users.Seller;
+import Entity.Buyer;
+import Entity.Seller;
 
 import java.util.ArrayList;
 import java.util.List;
