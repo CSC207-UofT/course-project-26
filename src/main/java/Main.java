@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-import Usermanagement.Register;
-import Users.User;
+import Controllers.Register;
+import Entity.User;
 
 public class Main {
     /**
@@ -30,7 +30,7 @@ public class Main {
             String in_location = sc.nextLine();
             System.out.println("You're all set! Thanks for your patience :) Enjoy the Marketplace!");
 
-            User new_user = new Users.User(in_name, in_utorid, in_email, in_password, in_location);
+            User new_user = new Entity.User(in_name, in_utorid, in_email, in_password, in_location);
             new_register.addUser(new_user);
         }
         if (reg_or_cancel.equals("Cancel")){

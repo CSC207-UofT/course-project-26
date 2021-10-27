@@ -1,9 +1,9 @@
-Class name: Users.Buyer \
+Class name: Entity.Buyer \
 Parent class: User
 
 Responsibility:
-* Create and store Users.Buyer
+* Create and store Entity.Buyer
 * add, delete book in shopping cart
 
 Collaborators:
-* Book.Book
+* Entity.Usecases

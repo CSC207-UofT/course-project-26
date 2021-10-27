@@ -1,4 +1,4 @@
-package Book;
+package Entity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,21 +8,21 @@ import java.time.format.DateTimeFormatter;
 public class Book {
 
     /**
-     * Construct a Book.Book with the following instance attributes:
+     * Construct a Entity.Book with the following instance attributes:
      *
-     * @param isSold    Whether the Book.Book is sold or not. Default value is false TODO: I'm not sure why isSold parameter is red in IntelliJ
-     * @param price     Selling price of the Book.Book in Canadian Dollars
-     * @param name      The name of the Book.Book
-     * @param author    The author of the Book.Book
-     * @param publisher The publisher of the Book.Book
-     * @param pub_date  The publish date of the Book.Book in ...  with the format yyyy-MM-dd in string
-     * @param edition   The edition of the Book.Book
-     * @param pages     The number of pages in the Book.Book
-     * @param format    The format of the Book.Book. It can be either one of "Paperback", "Hardcover", "Looseleaf",
+     * @param isSold    Whether the Entity.Book is sold or not. Default value is false TODO: I'm not sure why isSold parameter is red in IntelliJ
+     * @param price     Selling price of the Entity.Book in Canadian Dollars
+     * @param name      The name of the Entity.Book
+     * @param author    The author of the Entity.Book
+     * @param publisher The publisher of the Entity.Book
+     * @param pub_date  The publish date of the Entity.Book in ...  with the format yyyy-MM-dd in string
+     * @param edition   The edition of the Entity.Book
+     * @param pages     The number of pages in the Entity.Book
+     * @param format    The format of the Entity.Book. It can be either one of "Paperback", "Hardcover", "Looseleaf",
      *                  "Online code"
-     * @param language  The language of the Book.Book
-     * @param weight    The weight of the Book.Book in kilograms. Default value is N/A
-     * @param size      The dimensions of the Book.Book. Default value is N/A. TODO: Decide how to store dimensions
+     * @param language  The language of the Entity.Book
+     * @param weight    The weight of the Entity.Book in kilograms. Default value is N/A
+     * @param size      The dimensions of the Entity.Book. Default value is N/A. TODO: Decide how to store dimensions
      */
 
     private boolean isSold;
@@ -68,9 +68,9 @@ public class Book {
 
 
     /**
-     * Get the Book.Book info in a list.
+     * Get the Entity.Book info in a list.
      *
-     * @return a list of the information stored in the Book.Book class.
+     * @return a list of the information stored in the Entity.Book class.
      */
     public List<Object> getBookInfo() {
         return Arrays.asList(

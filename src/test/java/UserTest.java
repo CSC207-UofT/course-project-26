@@ -1,7 +1,5 @@
-import Users.User;
-import Users.Seller;
-import Users.Buyer;
-import Book.Book;
+import Entity.User;
+import Entity.Book;
 
 import org.junit.Before;
 import org.junit.Test;

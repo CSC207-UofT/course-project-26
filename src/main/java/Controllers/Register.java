@@ -1,8 +1,8 @@
-package Usermanagement;
+package Controllers;
 
 import java.util.ArrayList;
 
-import Users.User;
+import Entity.User;
 
 public class Register {
 

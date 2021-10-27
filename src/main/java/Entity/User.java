@@ -1,4 +1,4 @@
-package Users;
+package Entity;
 
 public class User {
     /**

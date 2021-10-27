@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import Entity.Book;
+
 
 public class Listing {
     private final String id;

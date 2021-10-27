@@ -9,6 +9,6 @@ Responsibility:
 
 Collaborators:
 * User
-* Usermanagement.Login
-* Usermanagement.Register
+* Controllers.Login
+* Controllers.Register
 

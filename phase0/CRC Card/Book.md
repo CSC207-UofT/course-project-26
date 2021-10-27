@@ -1,4 +1,4 @@
-Class name: Book.Book \
+Class name: Entity.Usecases \
 Parent class: None
 
 Responsibility:
@@ -19,4 +19,4 @@ whether the book is sold,
 * Setter for the stored information
 
 Collaborators:
-* Platform
+* Controllers.Platform
