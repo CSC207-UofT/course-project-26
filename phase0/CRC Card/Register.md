@@ -1,4 +1,4 @@
-Class name: Controllers.Register\
+Class name: Controller.Register\
 Parent class: platform
 
 Responsibility:

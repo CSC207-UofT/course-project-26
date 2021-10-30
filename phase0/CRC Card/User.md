@@ -1,12 +1,12 @@
 Class name: User \
-Parent class: None
+Parent class: Account
 
 Responsibility:
-* contain seller and buyer
-* store name, utorid, uoft email, location
+* Contains name, password, email, location
 * Getter for information stored
+* Can buy or sell books
 
 Collaborators:
-* Controllers.Platform
-* Entity.Seller
-* Entity.Buyer
+* Controller.Platform
+* Usecase.UserManager
+* Gateway.UserGateway

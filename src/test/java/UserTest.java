@@ -11,13 +11,13 @@ public class UserTest {
 
     @Before
     public void setUp(){
-        user = new User("Annie", "duannie", "yunqi.du@mail.utoronto.ca",
-                "123456","Bay");
+        user = new User("Annie", "duannie", "123 Bay st",
+                "yunqi.du@mail.utoronto.ca");
     }
 
     @Test
     public void testgetName(){
-        assertEquals("Annie", user.getName());
+        assertEquals("Annie", user.getUsername());
     }
 
     @Test
@@ -26,8 +26,8 @@ public class UserTest {
     }
 
     @Test
-    public void testgetlocation(){
-        assertEquals("Bay", user.getLocation());
+    public void testgetaddress(){
+        assertEquals("123 Bay st", user.getaddress());
     }
 
 }

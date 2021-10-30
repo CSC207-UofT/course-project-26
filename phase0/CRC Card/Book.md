@@ -19,4 +19,4 @@ whether the book is sold,
 * Setter for the stored information
 
 Collaborators:
-* Controllers.Platform
+* Controller.Platform

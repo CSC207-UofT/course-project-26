@@ -1,4 +1,4 @@
-Class name: Controllers.Login\
+Class name: Controller.Login\
 Parent class: platform
 
 Responsibility:
