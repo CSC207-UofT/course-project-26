@@ -1,5 +1,5 @@
 Class name: Listing \
-Parent class: Controllers.Platform
+Parent class: Controller.Platform
 
 Responsibility:
 * Store a list of books
