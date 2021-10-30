@@ -11,8 +11,8 @@ public class UserTest {
 
     @Before
     public void setUp(){
-        user = new User("Annie", "duannie", "123 Bay st",
-                "yunqi.du@mail.utoronto.ca");
+        user = new User("Annie", "duannie", "yunqi.du@mail.utoronto.ca",
+                "123 Bay st");
     }
 
     @Test
