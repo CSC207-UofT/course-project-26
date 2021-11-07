@@ -23,7 +23,7 @@ public abstract class Account implements Serializable {
      */
     public Account(String username, String password) {
         UUID inputId = UUID.randomUUID();  // creates a UUID at instantiation
-        id = String.valueOf(inputId);
+        this.id = String.valueOf(inputId);
         this.username = username;
         this.password = password;
     }

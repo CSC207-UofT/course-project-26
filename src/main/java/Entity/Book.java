@@ -10,7 +10,6 @@ public class Book {
     /**
      * Construct a Entity.Book with the following instance attributes:
      *
-     * @param isSold    Whether the Entity.Book is sold or not. Default value is false TODO: I'm not sure why isSold parameter is red in IntelliJ
      * @param price     Selling price of the Entity.Book in Canadian Dollars
      * @param name      The name of the Entity.Book
      * @param author    The author of the Entity.Book
@@ -25,7 +24,6 @@ public class Book {
      * @param size      The dimensions of the Entity.Book. Default value is N/A. TODO: Decide how to store dimensions
      */
 
-    private boolean isSold;
     private double price;
     private String name;
     private String author;
@@ -50,7 +48,6 @@ public class Book {
                  double weight,
                  String size
     ) {
-        this.isSold = false;
         this.price = price;
         this.name = name;
         this.author = author;
@@ -88,7 +85,6 @@ public class Book {
     }
     //getter methods start here...
 
-    public boolean isSold() {return this.isSold;}
     public String getName(){return this.name;}
     public String getAuthor(){return this.author;}
     public String getPublisher(){return this.publisher;}
@@ -103,7 +99,6 @@ public class Book {
 
     // setter methods start here...
 
-    public void set_isSold() {this.isSold = true;}
     public void setPrice(double price) {this.price = price;}
     public void setName(String name){this.name = name;}
     public void setAuthor(String author){this.author = author;}

@@ -60,61 +60,61 @@ public class User extends Account implements Serializable {
     }
 
     /**
-     * Adds an item ID to the user's inventory if it doesn't already exist
+     * Adds an Listing ID to the user's inventory if it doesn't already exist
      *
-     * @param itemId the item ID of an Item that this user is willing to lend
+     * @param ListingId the item ID of an Item that this user is willing to lend
      * @return true iff the item ID is added to the user's inventory
      */
-    public boolean addToInventory(String itemId) {
-        if (inventory.contains(itemId)) {
+    public boolean addToInventory(String ListingId) {
+        if (inventory.contains(ListingId)) {
             return false;
         } else {
-            inventory.add(itemId);
+            inventory.add(ListingId);
             return true;
         }
     }
 
     /**
-     * Removes an item ID from the user's inventory if it exists
+     * Removes an Listing ID from the user's inventory if it exists
      *
-     * @param itemId the item ID of an Item that this user would like to remove from their inventory
+     * @param ListingId the item ID of an Item that this user would like to remove from their inventory
      * @return true iff the item ID is present in and removed from the user's inventory
      */
-    public boolean removeFromInventory(String itemId) {
-        if (!inventory.contains(itemId)) {
+    public boolean removeFromInventory(String ListingId) {
+        if (!inventory.contains(ListingId)) {
             return false;
         } else {
-            inventory.remove(itemId);
+            inventory.remove(ListingId);
             return true;
         }
     }
 
     /**
-     * Adds an item ID to the user's wishlist if it doesn't already exist
+     * Adds an Listing ID to the user's wishlist if it doesn't already exist
      *
-     * @param itemId the item ID of an Item that this user is wishing to borrow
+     * @param ListingId the item ID of an Item that this user is wishing to buy
      * @return true iff the item ID is added to the user's wishlist
      */
-    public boolean addToWishlist(String itemId) {
-        if (wishlist.contains(itemId)) {
+    public boolean addToWishlist(String ListingId) {
+        if (wishlist.contains(ListingId)) {
             return false;
         } else {
-            wishlist.add(itemId);
+            wishlist.add(ListingId);
             return true;
         }
     }
 
     /**
-     * Removes an item ID from the user's wishlist if it exists
+     * Removes an Listing ID from the user's wishlist if it exists
      *
-     * @param itemId the item ID of an Item that this user would like to remove from their wishlist
+     * @param ListingId the item ID of an Item that this user would like to remove from their wishlist
      * @return true iff the item ID is present in and removed from the user's wishlist
      */
-    public boolean removeFromWishlist(String itemId) {
-        if (!wishlist.contains(itemId)) {
+    public boolean removeFromWishlist(String ListingId) {
+        if (!wishlist.contains(ListingId)) {
             return false;
         } else {
-            wishlist.remove(itemId);
+            wishlist.remove(ListingId);
             return true;
         }
     }
