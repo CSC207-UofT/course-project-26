@@ -2,8 +2,26 @@ package Gateway;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import Entity.Admin;
+import Usecase.AdminManager;
 
-public class AdminGateway {
+public class AdminGateway extends Gateway {
+
+    public AdminGateway() {
+
+    }
+
+    /**
+     * Get information from admin.ser
+     * @return List of admins from .ser
+     */
+    @Override
+    public List<Admin> getInfo() {
+        return helperGetInfo("Database/Admin.ser");
+    }
+
     public void saveadmintoFile(ArrayList adminList){
         try
         {
@@ -36,5 +54,21 @@ public class AdminGateway {
         }
         return adminList;
     }
+
+    /**
+     * Updates AdminManager adm to admin.ser
+     * @param adm AdminManager to be updated
+     */
+    public void updateAdminInfo(AdminManager adm) {
+        String fileName = "src/database/Admin.ser";
+        List<Admin> serList = new ArrayList<>();
+        Map<String, Admin> admAdminIdToUser = adm.getAdminIdToUser();
+        for (Map.Entry<String, Admin> entry: admAdminIdToUser.entrySet()){
+            serList.add(entry.getValue());
+        }
+        updateInfo(serList, fileName);
+    }
+
+
 
 }
