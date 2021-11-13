@@ -14,7 +14,7 @@ public class UserGateway extends Gateway {
     public void saveUsertoFile(ArrayList userList){
         try
         {
-            FileOutputStream fos = new FileOutputStream("src/main/java/Database/UserData.ser");
+            FileOutputStream fos = new FileOutputStream("src/main/java/Database/User.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(userList);
             oos.close();
@@ -28,7 +28,7 @@ public class UserGateway extends Gateway {
     public ArrayList readUserfromFile() {
         ArrayList userList = new ArrayList<>();
         try {
-            File file = new File("src/main/java/Database/UserData.ser");
+            File file = new File("src/main/java/Database/User.ser");
             file.createNewFile();
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
