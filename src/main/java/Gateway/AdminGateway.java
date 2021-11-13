@@ -40,7 +40,6 @@ public class AdminGateway extends Gateway {
         ArrayList adminList = new ArrayList<>();
         try {
             File file = new File("src/main/java/Database/Admin.ser");
-            file.createNewFile();
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
