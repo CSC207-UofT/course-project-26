@@ -29,7 +29,6 @@ public class UserGateway extends Gateway {
         ArrayList userList = new ArrayList<>();
         try {
             File file = new File("src/main/java/Database/User.ser");
-            file.createNewFile();
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
 

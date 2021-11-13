@@ -11,7 +11,7 @@ public class AdminManager implements AccountManager{
     private Map<String, Admin> adminIdToUser = new HashMap<>();
 
     /**
-     * Creates an instance of AdminManager with a list of Admin and a list of usernames that wish to be unfrozen
+     * Creates an instance of AdminManager with a list of Admin and a list of usernames
      */
     public AdminManager(List<Admin> allAdmin) {
         for (Admin admin: allAdmin) {
