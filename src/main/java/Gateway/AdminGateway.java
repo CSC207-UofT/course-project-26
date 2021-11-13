@@ -25,7 +25,7 @@ public class AdminGateway extends Gateway {
     public void saveadmintoFile(ArrayList adminList){
         try
         {
-            FileOutputStream fos = new FileOutputStream("src/main/java/Database/adminData.ser");
+            FileOutputStream fos = new FileOutputStream("src/main/java/Database/Admin.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(adminList);
             oos.close();
@@ -39,7 +39,7 @@ public class AdminGateway extends Gateway {
     public ArrayList readadminfromFile() {
         ArrayList adminList = new ArrayList<>();
         try {
-            File file = new File("src/main/java/Database/adminData.ser");
+            File file = new File("src/main/java/Database/Admin.ser");
             file.createNewFile();
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
