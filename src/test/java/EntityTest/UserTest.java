@@ -1,8 +1,13 @@
+package EntityTest;
+
 import Entity.User;
 import Entity.Book;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assert.assertEquals;
 
@@ -28,6 +33,20 @@ public class UserTest {
     @Test
     public void testgetaddress(){
         assertEquals("123 Bay st", user.getaddress());
+    }
+
+    @Test
+    public void testChangeUsername() {
+        String userId = user.getId();
+        user.setUsername("grace");
+
+        assertEquals(user.getUsername(), "grace");
+        assertEquals(user.getId(), userId);  // user ID should not change
+    }
+
+    @Test
+    public void testRemoveFromEmptyInventory() {
+        assertFalse(user.removeFromInventory("item1"));
     }
 
 }
