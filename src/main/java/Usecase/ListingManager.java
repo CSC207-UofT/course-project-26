@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ListingManager {
-    private Map<String, Listing> listingIdToListing = new HashMap<>();
+    private final Map<String, Listing> listingIdToListing = new HashMap<>();
 
     /**
      * Creates an instance of ListingManager with a list of Listing and a list of listings
@@ -26,12 +26,14 @@ public class ListingManager {
         return this.listingIdToListing;
     }
 
-    /** TODO: Taylan
-     * Adds an listing to the system
-     * @param
-     * @param
+    /**
+     * Adds a listing to the system
+     * @param list List to be added.
      */
-    public void addListing() {
+    public void addListing(Listing list) {
+        if (listingIdToListing.containsKey(list.getListingId()))
+            return;
+        listingIdToListing.put(list.getListingId(), list);
 
     }
 }
