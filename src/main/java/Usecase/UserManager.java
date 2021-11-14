@@ -11,7 +11,7 @@ import Entity.User;
 
 
 public class UserManager implements AccountManager{
-    private Map<String, User> userIdToUser = new HashMap<>();  // a HashMap with user IDs as keys and User entities as values
+    private final Map<String, User> userIdToUser = new HashMap<>();  // a HashMap with user IDs as keys and User entities as values
 
     /**
      * Creates an instance of UserManager with a list of Users allUsers
