@@ -53,7 +53,7 @@ public class BookManager {
      * Find a book with given Name
      * @param bookId The given Item id
      */
-    public Book findItem(String bookId){
+    public Book findBook(String bookId){
         return idToBook.get(bookId);
     }
 
@@ -89,7 +89,7 @@ public class BookManager {
      * @param newName the new name
      */
     public void setBookName(String bookId, String newName) {
-        Book book = findItem(bookId);
+        Book book = findBook(bookId);
         book.setName(newName);
     }
 
@@ -101,7 +101,7 @@ public class BookManager {
     public List<Book> giveListBook(List<String> bookIds) {
         List<Book> aa = new ArrayList<>();
         for (String bookId: bookIds) {
-            aa.add(findItem(bookId));
+            aa.add(findBook(bookId));
         }
         return aa;
     }

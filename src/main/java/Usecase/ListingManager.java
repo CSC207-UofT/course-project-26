@@ -36,4 +36,17 @@ public class ListingManager {
         listingIdToListing.put(list.getListingId(), list);
 
     }
+
+    /**
+     * Find a list with given id
+     * @param listId The given list id
+     */
+    public Listing findlist(String listId){
+        return listingIdToListing.get(listId);
+    }
+
+
+    public String getListingStatus(String listId) {
+        return findlist(listId).getListingStatus();
+    }
 }
