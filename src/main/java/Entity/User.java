@@ -164,8 +164,45 @@ public class User extends Account implements Serializable {
     public String toString() {
         return "Username: " + getUsername() + "\nAccount type: User" + "\nEmail: " + getEmail() + "\nAddress: " +
                 getaddress() ;
+    }
+
+    public static UserBuilder builder() {
+        return new UserBuilder();
+    }
+
+    public static class UserBuilder {
+
+        private String username;
+        private String password;
+        private String email;
+        private String address;
+
+        public UserBuilder username(final String username) {
+            this.username = username;
+            return this;
+        }
+
+        public UserBuilder password(final String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder email(final String email) {
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder address(final String address) {
+            this.address = address;
+            return this;
+        }
+
+        public User build() {
+            return new User(username, password, email, address);
+        }
 
     }
+
 }
 
 
