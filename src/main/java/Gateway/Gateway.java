@@ -6,24 +6,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Gateway {
-    public Gateway() {
-
-    }
+public abstract class Gateway implements ReadWriter{
 
     private String getSerByFileName(String serName){
         String result;
         Path currentWorkingDir = Paths.get("").toAbsolutePath();
         String pathName = currentWorkingDir.normalize().toString();
-        if (serName.equals("Database/User.ser")) {
-            result = pathName + "/src/Database/User.ser";
-        } else if(serName.equals("Database/Book.ser")) {
-            result = pathName + "/src/Database/Book.ser";
-        }else if(serName.equals("Database/Admin.ser")) {
-            result = pathName + "/src/Database/Admin.ser";
-        }else{
-            result = pathName + "/src/Database/Listing.ser";
-        }
+        result = pathName + "/src/main/java/" + serName;
         return result;
     }
 
@@ -33,11 +22,14 @@ public abstract class Gateway {
      * @param fileName the fileName
      * @param <T> Generics type of the Object
      */
+
+    @Override
     public <T> void updateInfo(List<T> serList, String fileName) {
         try {
             //Saving of object in a file
             FileOutputStream file = new FileOutputStream(fileName);
-            ObjectOutputStream out = new ObjectOutputStream(file);
+            OutputStream buffer = new BufferedOutputStream(file);
+            ObjectOutputStream out = new ObjectOutputStream(buffer);
             out.writeObject(serList);
             out.flush();
             out.close();
