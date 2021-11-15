@@ -6,7 +6,7 @@ buyers. Key features include posting a listing, storing the listing information 
 wishlist feature for buyers.
 
 ## CRC Model Summary
-Entity classes store data for Users(parent), Users.Seller(child), Buyers(child), and Books.\
+main.consoleUI.Entity classes store data for Users(parent), Users.Seller(child), Buyers(child), and Books.\
 Use case classes manage use cases for entities. Usermanagement.Register will initialize a user and will manage its
 use cases and update the userData accordingly. Listing will create, update, manage and store the book listings.\
 CommandExecutor is a controller that will break each command into smaller tasks.\
@@ -31,7 +31,7 @@ trade is completed, the seller changes the status of the book to sold.
 
 * Construction of skeleton Program:\
 Taylan and Will (Book.Book);\
-Annie and Grace (User, User.Buyer, User.Seller, Listing, Main);\
+Annie and Grace (User, User.Buyer, User.Seller, Listing, main);\
 Wesley and Tientien (Registration, Login)
 
 * Progress Report: Grace

@@ -7,7 +7,7 @@
 * Grace: worked together with Annie on Entity classes, Gateway classes, SOLID principle
 * Taylan:
 * Tien:
-* Wesley:
+* Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes. 
 * Will:
 
 

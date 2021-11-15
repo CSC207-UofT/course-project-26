@@ -6,8 +6,8 @@ Responsibility:
 * Maintains account username, password, id
 
 Collaborators:
-* Controller.Platform
-* Usecase.AdminManager
-* Usecase.UserManager
-* Gateway.UserGateway
-* Entity.Account
+* Platform
+* AdminManager
+* UserManager
+* UserGateway
+* Account

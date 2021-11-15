@@ -6,7 +6,7 @@ Responsibility:
 * Getter for information stored
 
 Collaborators:
-* Entity.User
-* Entity.Admin
-* Controller.Platform
-* Usecase.AccountManager
+* User
+* Admin
+* Platform
+* AccountManager

@@ -5,7 +5,7 @@ Responsibility:
 * Manage admin account information
 
 Collaborators:
-* Controller.Platform
-* Usecase.AccountManager
-* Gateway.AdminGateway
-* Entity.Admin
+* Platform
+* AccountManager
+* AdminGateway
+* Admin
