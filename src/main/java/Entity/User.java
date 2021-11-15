@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User extends Account implements Serializable {
-    private List<String> inventory = new ArrayList<>();  // a list of item IDs; each item ID must be unique
-    private List<String> wishlist = new ArrayList<>();  // a list of item IDs; each item ID must be unique
+    private List<String> inventory = new ArrayList<>();  // a list of books IDs; each book ID must be unique
+    private List<String> shoppingcart = new ArrayList<>();
     private String email;
     private String address;
 
@@ -16,105 +16,105 @@ public class User extends Account implements Serializable {
      * @param username the user's username
      * @param password the user's password
      */
-    public User(String username, String password, String email, String address) {
+    public User(String username, String password, String uoftemail, String address) {
         super(username, password);
         setId("@User" + getId());
-        this.email = email;
+        this.email = uoftemail;
         this.address = address;
     }
 
     /**
      * Returns the user's inventory of items, represented by unique IDs
      *
-     * @return an List of Strings representing the user's inventory of item IDs
+     * @return an List of Strings representing the user's inventory of book IDs
      */
     public List<String> getInventory() {
         return inventory;
     }
 
     /**
-     * Returns the user's wishlist of items, represented by unique IDs
+     * Returns the user's shoppingcart of books, represented by unique IDs
      *
-     * @return an list of Strings representing the user's wishlist of item IDs
+     * @return an list of Strings representing the user's shoppingcart of books IDs
      */
-    public List<String> getWishlist() {
-        return wishlist;
+    public List<String> getShoppingcart() {
+        return shoppingcart;
     }
 
     /**
-     * Sets the user's inventory list to a given ArrayList of item IDs
+     * Sets the user's inventory list to a given ArrayList of books IDs
      *
-     * @param inventory a List of item IDs that this user's inventory will be set to
+     * @param inventory a List of books IDs that this user's inventory will be set to
      */
     public void setInventory(List<String> inventory) {
         this.inventory = inventory;
     }
 
     /**
-     * Sets the user's wishlist list to a given ArrayList of item IDs
+     * Sets the user's shoppingcart list to a given ArrayList of books IDs
      *
-     * @param wishlist a List of item IDs that this user's wishlist will be set to
+     * @param shoppingcart a List of books IDs that this user's shoppingcart will be set to
      */
-    public void setWishlist(List<String> wishlist) {
-        this.wishlist = wishlist;
+    public void setShoppingcart(List<String> shoppingcart) {
+        this.shoppingcart = shoppingcart;
     }
 
     /**
-     * Adds an Listing ID to the user's inventory if it doesn't already exist
+     * Adds a book ID to the user's inventory if it doesn't already exist
      *
-     * @param ListingId the item ID of an Item that this user is willing to lend
-     * @return true iff the item ID is added to the user's inventory
+     * @param bookId the book ID of a book that this user is willing to sell
+     * @return true iff the book ID is added to the user's inventory
      */
-    public boolean addToInventory(String ListingId) {
-        if (inventory.contains(ListingId)) {
+    public boolean addToInventory(String bookId) {
+        if (inventory.contains(bookId)) {
             return false;
         } else {
-            inventory.add(ListingId);
+            inventory.add(bookId);
             return true;
         }
     }
 
     /**
-     * Removes an Listing ID from the user's inventory if it exists
+     * Removes a book ID from the user's inventory if it exists
      *
-     * @param ListingId the item ID of an Item that this user would like to remove from their inventory
-     * @return true iff the item ID is present in and removed from the user's inventory
+     * @param bookId the book ID of an Item that this user would like to remove from their inventory
+     * @return true iff the book ID is present in and removed from the user's inventory
      */
-    public boolean removeFromInventory(String ListingId) {
-        if (!inventory.contains(ListingId)) {
+    public boolean removeFromInventory(String bookId) {
+        if (!inventory.contains(bookId)) {
             return false;
         } else {
-            inventory.remove(ListingId);
+            inventory.remove(bookId);
             return true;
         }
     }
 
     /**
-     * Adds an Listing ID to the user's wishlist if it doesn't already exist
+     * Adds a book ID to the user's shoppingcart if it doesn't already exist
      *
-     * @param ListingId the item ID of an Item that this user is wishing to buy
+     * @param bookId the book ID of a book that this user is wishing to buy
      * @return true iff the item ID is added to the user's wishlist
      */
-    public boolean addToWishlist(String ListingId) {
-        if (wishlist.contains(ListingId)) {
+    public boolean addToshoppingcart(String bookId) {
+        if (shoppingcart.contains(bookId)) {
             return false;
         } else {
-            wishlist.add(ListingId);
+            shoppingcart.add(bookId);
             return true;
         }
     }
 
     /**
-     * Removes an Listing ID from the user's wishlist if it exists
+     * Removes a book ID from the user's wishlist if it exists
      *
-     * @param ListingId the item ID of an Item that this user would like to remove from their wishlist
-     * @return true iff the item ID is present in and removed from the user's wishlist
+     * @param bookId the ID of a book that this user would like to remove from their shoppingcart
+     * @return true iff the book ID is present in and removed from the user's shoppingcart
      */
-    public boolean removeFromWishlist(String ListingId) {
-        if (!wishlist.contains(ListingId)) {
+    public boolean removeFromshoppingcart(String bookId) {
+        if (!shoppingcart.contains(bookId)) {
             return false;
         } else {
-            wishlist.remove(ListingId);
+            shoppingcart.remove(bookId);
             return true;
         }
     }
@@ -162,7 +162,7 @@ public class User extends Account implements Serializable {
      */
     @Override
     public String toString() {
-        return "Username: " + getUsername() + "\nAccount type: User" + "\nEmail: " + getEmail() + "\nAddress: " +
+        return "Username: " + getUsername() + "\nEmail: " + getEmail() + "\nAddress: " +
                 getaddress() ;
     }
 

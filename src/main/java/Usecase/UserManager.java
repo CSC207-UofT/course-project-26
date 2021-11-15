@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import Entity.Account;
+
 import Entity.User;
 
 
@@ -91,7 +91,7 @@ public class UserManager implements AccountManager{
      */
     public List<String> wishlistByUserId(String userId) {
         User user = findAccountById(userId);
-        return user.getWishlist();
+        return user.getShoppingcart();
     }
 
     /**
@@ -126,12 +126,12 @@ public class UserManager implements AccountManager{
      */
     public boolean addToWishlist(String userId, String itemId) {
         User user = findAccountById(userId);
-        if (user.getWishlist().contains(itemId)) {
+        if (user.getShoppingcart().contains(itemId)) {
             return false;
         } else if (user.getInventory().contains(itemId)) {
             return false;
         } else {
-            user.addToWishlist(itemId);
+            user.addToshoppingcart(itemId);
             return true;
         }
     }
@@ -143,7 +143,7 @@ public class UserManager implements AccountManager{
      */
     public void removeFromWishlist(String userId, String itemId) {
         User user = findAccountById(userId);
-        user.removeFromWishlist(itemId);
+        user.removeFromshoppingcart(itemId);
     }
 
     /**
@@ -223,7 +223,7 @@ public class UserManager implements AccountManager{
     public List<String> findUserByItemWishlist(String itemId) {
         List<String> ids = new ArrayList<>();
         for (Map.Entry <String, User> entry : getUserIdToUser().entrySet()) {
-            if (entry.getValue().getWishlist().contains(itemId)){
+            if (entry.getValue().getShoppingcart().contains(itemId)){
                 ids.add(entry.getKey());
             }
         }
