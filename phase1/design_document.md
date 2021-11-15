@@ -30,12 +30,18 @@ including change username, change password etc.
 
 ## Clean Architecture
 
-In our project, we have different layers of clean architecture. AccountManager, AdminManager, BookManager, ListingManager, and 
-UserManager are our usercases. 
+In our project, we have different layers of clean architecture, and they follow the dependency rule of the clean architecture. 
+Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something 
+in an outer circle.
 
-The usercase class gets the information from the Entity class and manage all the data from the Entity class or from the 
-Entity class, then add it to the database class which stores all the information of Book, User, Listing, and Admin.
+The Account, Admin, Book, Listing and User are our 
+entity class. You can access them directly from our User case classes, which are AccountManager, AdminManager, 
+BookManager, ListingManager, and UserManager. The User case classes get the information from the Entity class and manage
+all the data from the Entity class.
 
+The Controller classes retrieves and store data from the database. For example, they take the information directly from 
+our user, and returns information back to the User based on our Use case classes. We are also managing to implement a
+presenter class in our phase 2.
 
 
 ## Design Patterns
