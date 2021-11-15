@@ -7,6 +7,6 @@ Responsibility:
 * Can buy or sell books
 
 Collaborators:
-* Controller.Platform
-* Usecase.UserManager
-* Gateway.UserGateway
+* Platform
+* UserManager
+* UserGateway

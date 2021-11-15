@@ -9,6 +9,6 @@ Responsibility:
 
 Collaborators:
 * User
-* Controller.Login
-* Controller.Register
+* Login
+* main.consoleUI.Controller.Register
 

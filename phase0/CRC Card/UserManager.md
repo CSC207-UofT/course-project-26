@@ -5,7 +5,7 @@ Responsibility:
 * Manage user account information
 
 Collaborators:
-* Controller.Platform
-* Usecase.AccountManager
-* Gateway.UserGateway
-* Entity.User
+* Platform
+* AccountManager
+* UserGateway
+* User

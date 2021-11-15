@@ -1,11 +1,10 @@
 package EntityTest;
 
-import Entity.User;
-import Entity.Book;
+import main.entity.User;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.*;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 
