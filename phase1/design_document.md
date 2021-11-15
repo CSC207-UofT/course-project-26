@@ -47,7 +47,13 @@ to execute request form the User.
 
 ## Design Patterns
 
-TODO: Taylan
+We implemented the Builder design pattern in our project in Book and BookManager classes. As the builder, 
+we used the Book class. And as the director, we used the BookManager class.
+The Book class knows the specifics about the book and it creates the necessary book with the given values. 
+And when the user leaves some of the values blank and doesn’t put in each detail about the book like its size, 
+its weight, etc., The BooksManager generates a Book without those details, so that the user can provide less details 
+about the book when they want. This is necessary as a seller may not know every small detail about the book they are 
+selling.
 
 ## Packaging Strategies
 The packaging strategy we use for our UofT's online second-hand book store is packaging by the layers of the clean Architecture.
