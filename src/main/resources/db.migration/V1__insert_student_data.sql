@@ -1,1 +1,0 @@
-INSERT INTO student (username, password) VALUES ('tien', 'tien123');

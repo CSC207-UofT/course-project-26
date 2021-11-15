@@ -1,0 +1,1 @@
+INSERT INTO account (username, password, DTYPE) VALUES ('tien', 'tientien', 'user');

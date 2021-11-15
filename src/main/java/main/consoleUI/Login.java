@@ -24,7 +24,15 @@ public class Login {
         System.out.print(" Enter password => ");
         String password = scanner.nextLine();
 
-        User loggedInStudent = loginController.login(userName, password);
+//        System.out.print(" Enter email => ");
+//        String email = scanner.nextLine();
+//
+//        System.out.print(" Enter address => ");
+//        String address = scanner.nextLine();
+
+        User loggedInStudent = loginController.login(userName, password
+//                , email, address
+        );
 
         if (loggedInStudent != null) {
             System.out.println(String.format(" User %s successfully logged-in", loggedInStudent.getUsername()));

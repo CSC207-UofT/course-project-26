@@ -15,10 +15,14 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    public User login(String username, String password) {
+    public User login(String username, String password
+//            , String email, String address
+    ) {
         User user = userService.getStudentByUsername(username);
 
-        if (user != null && password.equals(user.getPassword())) {
+        if (user != null && password.equals(user.getPassword())
+//                && email.equals(user.getEmail()) && address.equals(user.getaddress())
+        ) {
             return user;
         }
 
