@@ -61,4 +61,5 @@ have along the way.
 
 ## Major Design Decisions
 
-TODO: Wesley & Tien
+Seller and Buyer classes are originally the child class for User Class. However, we believe that a user can either be a 
+seller or a buyer, so User class and Admin class are now the child classes for Account class. 
