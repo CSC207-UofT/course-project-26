@@ -5,8 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
+import java.io.Serializable;
 
-public class Book {
+public class Book implements Serializable{
 
     /**
      * Construct a Entity.Book with the following instance attributes:

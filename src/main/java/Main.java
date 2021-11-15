@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import Controller.Register;
+import ConsoleUI. Register;
 import Entity.User;
 
 public class Main {
