@@ -8,7 +8,7 @@
 * Taylan:
 * Tien:
 * Wesley:
-* Will:
+* Will: worked together with Tien on the UI's, and controller, packaging strategies.
 
 
 ### Open Questions
