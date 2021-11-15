@@ -4,16 +4,24 @@ import java.util.UUID;
 
 
 public class Listing {
+    /**
+     * Listing is an entity
+     *
+     * id: The unique identifier of the listing.
+     * book:
+     * description: The description of the item.
+     * status: The status of the item in terms of availability.
+     */
     private final String id;
-    private final Book book;
+    private final String book;
     private int quantity;
     private boolean isSold;
 
     //Initialize a listing
-    public Listing(Book book, int quantity){
+    public Listing(String bookId, int quantity){
         UUID inputId = UUID.randomUUID();  // creates a UUID at instantiation
         this.id = String.valueOf(inputId); // TODO: Check if it creates the same id again in another instantiation
-        this.book = book;
+        this.book = bookId;
         this.quantity = quantity;
         this.isSold = quantity == 0;
     }
@@ -30,7 +38,7 @@ public class Listing {
      *
      * @return the Book in the Listing.
      */
-    public Book getBook() { return this.book; }
+    public String getBook() { return this.book; }
 
     /*
      * Get whether the book in the listing is available or sold out.
