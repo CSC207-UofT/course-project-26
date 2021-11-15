@@ -7,7 +7,7 @@ Responsibility:
 * Parent Class of User and Admin
 
 Collaborators:
-* Entity.User
-* Entity.Admin
-* Controller.Platform
-* Usecase.AccountManager
+* User
+* Admin
+* Platform
+* AccountManager

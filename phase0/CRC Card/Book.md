@@ -1,4 +1,4 @@
-Class name: Entity.Usecases \
+Class name: main.consoleUI.Entity.Usecases \
 Parent class: None
 
 Responsibility:
@@ -19,4 +19,4 @@ whether the book is sold,
 * Setter for the stored information
 
 Collaborators:
-* Controller.Platform
+* Platform
