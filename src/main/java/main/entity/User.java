@@ -1,13 +1,24 @@
 package main.entity;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User extends Account implements Serializable {
+    @ElementCollection
     private List<String> inventory = new ArrayList<>();  // a list of books IDs; each book ID must be unique
+
+    @ElementCollection
     private List<String> shoppingcart = new ArrayList<>();
+
+    @Column
     private String email;
+
+    @Column
     private String address;
 
     /**
@@ -21,6 +32,10 @@ public class User extends Account implements Serializable {
         setId("@User" + getId());
         this.email = uoftemail;
         this.address = address;
+    }
+
+    public User() {
+
     }
 
     /**

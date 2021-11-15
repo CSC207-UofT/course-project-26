@@ -8,6 +8,8 @@ import java.util.Map;
 import main.entity.User;
 import main.usecase.UserManager;
 import main.service.UserService;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 public class UserGateway extends Gateway implements UserService {
     public void saveUsertoFile(User[] userList){

@@ -43,8 +43,9 @@ public class BookManager {
      */
     public String createNewBook(double price, String name, String author, String publisher, String pub_date,
                                 int edition, int pages, String format, String language, double weight, String size){
-        Book newBook = new Book(price, name, author, publisher, pub_date, edition, pages, format, language, weight,
-                size);
+        Book newBook = new Book(price, name, author, publisher,
+//                pub_date,
+                edition, pages, format, language, weight, size);
         addBook(newBook);
         return newBook.getName();
     }

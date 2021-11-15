@@ -1,11 +1,16 @@
 package main.entity;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.List;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.io.Serializable;
 
+@Entity
 public class Book implements Serializable{
 
     /**
@@ -25,37 +30,64 @@ public class Book implements Serializable{
      *  size: The dimensions of the Main.ConsoleUI.Entity.Book. Default value is N/A. TODO: Decide how to store dimensions
      */
 
+    @Id
     private String id;
+
+    @Column
     private double price;
+
+    @Column
     private String name;
+
+    @Column
     private String author;
+
+    @Column
     private String publisher;
-    private DateTimeFormatter pub_date;
+
+//    private DateTimeFormatter pub_date;
+
+    @Column
     private int edition;
+
+    @Column
     private int pages;
+
+    @Column
     private String format;
+
+    @Column
     private String language;
+
+    @Column
     private double weight;
+
+    @Column
     private String size;
 
     /**
      * Constructor for "Book."
      */
-    public Book(double price, String name, String author, String publisher, String pub_date, int edition,
-                int pages, String format, String language, double weight, String size) {
+    public Book(double price, String name, String author, String publisher,
+//                String pub_date,
+                int edition, int pages, String format, String language, double weight, String size) {
         UUID inputId = UUID.randomUUID();
         this.id = String.valueOf(inputId);
         this.price = price;
         this.name = name;
         this.author = author;
         this.publisher = publisher;
-        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+//        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
         this.edition = edition;
         this.pages = pages;
         this.format = format;
         this.language = language;
         this.weight = weight;
         this.size = size;
+    }
+
+    public Book() {
+
     }
     // TODO: Use overloading to create another constructor with fewer parameters (in case some of the info isn't known about the book when it's initialized)
 
@@ -72,7 +104,7 @@ public class Book implements Serializable{
                 this.name,
                 this.author,
                 this.publisher,
-                this.pub_date,
+//                this.pub_date,
                 this.edition,
                 this.pages,
                 this.format,
@@ -85,7 +117,7 @@ public class Book implements Serializable{
     public String getName(){return this.name;}
     public String getAuthor(){return this.author;}
     public String getPublisher(){return this.publisher;}
-    public String getPub_date(){return this.pub_date.toString();}
+//    public String getPub_date(){return this.pub_date.toString();}
     public String getFormat(){return this.format;}
     public String getLanguage(){return this.language;}
     public String getSize(){return this.size;}
@@ -100,7 +132,7 @@ public class Book implements Serializable{
     public void setName(String name){this.name = name;}
     public void setAuthor(String author){this.author = author;}
     public void setPublisher(String publisher){this.publisher = publisher;}
-    public void setPub_date(String pub_date){this.pub_date = DateTimeFormatter.ofPattern(pub_date);}
+//    public void setPub_date(String pub_date){this.pub_date = DateTimeFormatter.ofPattern(pub_date);}
     public void setEdition(int edition){this.edition = edition;}
     public void setPages(int pages){this.pages = pages;}
     public void setFormat(String format){this.format = format;}

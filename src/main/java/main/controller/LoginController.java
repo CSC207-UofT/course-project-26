@@ -12,20 +12,17 @@ import java.util.Objects;
 
 @Component
 public class LoginController {
-
     @Autowired
-    private UserService studentService;
-    private UserGateway usergateway;
+    private UserService userService;
 
     public User login(String username, String password) {
-        ArrayList<User> users = usergateway.findAll();
-        for (User user: users){
-            if (user != null && password.equals(user.getPassword()) && Objects.equals(username, user.getUsername())) {
-                return user;
-            }
+        User user = userService.getStudentByUsername(username);
+
+        if (user != null && password.equals(user.getPassword())) {
+            return user;
         }
 
         return null;
     }
-
 }
+

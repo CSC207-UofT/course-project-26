@@ -1,5 +1,6 @@
 package main.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -11,9 +12,16 @@ import java.util.UUID;
  * password: the password for an Account
  */
 
-public abstract class Account implements Serializable {
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Account {
+    @Id
     private String id;
+
+    @Column
     private String username;
+
+    @Column
     private String password;
 
     /**
@@ -23,9 +31,14 @@ public abstract class Account implements Serializable {
      */
     public Account(String username, String password) {
         UUID inputId = UUID.randomUUID();  // creates a UUID at instantiation
+
         this.id = String.valueOf(inputId);
         this.username = username;
         this.password = password;
+    }
+
+    public Account() {
+
     }
 
     /**
@@ -75,7 +88,7 @@ public abstract class Account implements Serializable {
      * Returns a String that describes this account; abstract method to be implemented in the User and Admin classes
      * @return a String representation of the account
      */
-    public abstract String toString();
+//    public abstract String toString();
 
 
 }
