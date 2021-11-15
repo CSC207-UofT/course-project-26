@@ -46,8 +46,8 @@ public class UserGateway extends Gateway implements UserService {
     }
 
     @Override
-    public ArrayList findAll() {
-        ArrayList userList = new ArrayList<>();
+    public ArrayList<User> findAll() {
+        ArrayList<User> userList = new ArrayList<>();
         try {
             File file = new File("src/main/java/Database/User.ser");
             FileInputStream fis = new FileInputStream(file);
@@ -66,6 +66,13 @@ public class UserGateway extends Gateway implements UserService {
 
     @Override
     public User getStudentByUsername(String username) {
+        ArrayList<User> users = findAll();
+        for (User user: users){
+            if (user.getUsername().equals(username)){
+                return user;
+            }
+        }
+        System.out.println("Guest can not modify profile");
         return null;
     }
 
