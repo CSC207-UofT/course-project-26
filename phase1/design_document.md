@@ -62,4 +62,11 @@ have along the way.
 ## Major Design Decisions
 
 Seller and Buyer classes are originally the child class for User Class. However, we believe that a user can either be a 
-seller or a buyer, so User class and Admin class are now the child classes for Account class. 
+seller or a buyer, so User class and Admin class are now the child classes for Account class. The second major decision
+will be we choose to use Spring Boot and command line to present our system. Spring Boot is an open source Java-based 
+framework used to create a micro Service.
+
+These major design decisions lead us to have four strategy 
+design pattern. The first one is MVC (model, view, controller).
+Then we have the builder. Next is the spring boot. Lastly, is 
+the dependency injection (autowire) and interface (repository).

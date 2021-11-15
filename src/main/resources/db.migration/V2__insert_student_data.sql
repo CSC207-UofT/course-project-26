@@ -1,1 +1,0 @@
-INSERT INTO student (username, password) VALUES ('will', 'will123');

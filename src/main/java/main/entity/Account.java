@@ -15,10 +15,10 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Account {
-    @Id
+    @Column
     private String id;
 
-    @Column
+    @Id
     private String username;
 
     @Column
