@@ -119,13 +119,13 @@ public class AdminManager implements AccountManager{
 
     /**
      * Checks if the inputted password is correct
-     * @param username the username of an Admin
+     * @param useId the useId of an Admin
      * @param password the password input received from an Admin
-     * @return true iff the password input matches the username's password
+     * @return true iff the password input matches the useId's password
      */
     @Override
-    public boolean checkPassword(String username, String password) {
-        Admin admin = findAdminByUsername(username);
+    public boolean checkPassword(String useId, String password) {
+        Admin admin = findAdminByUsername(useId);
         return admin.getPassword().equals(password);
     }
 
