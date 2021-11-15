@@ -1,4 +1,4 @@
-Class name: Controller.Register\
+Class name: main.consoleUI.Controller.Register\
 Parent class: platform
 
 Responsibility:
@@ -9,5 +9,5 @@ Responsibility:
 * Read the file that stored all the information for User
 
 Collaborators:
-* Entity.Seller
-* Entity.Buyer
+* main.consoleUI.Entity.Seller
+* main.consoleUI.Entity.Buyer

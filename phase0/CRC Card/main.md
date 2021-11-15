@@ -1,4 +1,4 @@
-Class name: Main \
+Class name: main \
 Parent class: None
 
 Responsibilities:
