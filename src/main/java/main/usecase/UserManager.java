@@ -1,13 +1,13 @@
-package Usecase;
+package main.usecase;
 
-import Entity.Account;
+import main.entity.Account;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Entity.User;
+import main.entity.User;
 
 
 public class UserManager implements AccountManager{
