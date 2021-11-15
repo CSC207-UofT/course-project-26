@@ -49,7 +49,14 @@ presenter class in our phase 2.
 TODO: Taylan
 
 ## Packaging Strategies
-TODO: Will
+The packaging strategy we use for our UofT's online second-hand book store is packaging by the layers of the clean Architecture.
+We separate java files of different layer into different packages. For instance, we have the ConsoleUI, Controller, User cases and Entities
+packages that contain corresponding layer of java file. Since our program consists of many classes that belong to different categories
+but the same layer in clean architecture, we also divided some layers by its categories. For example, even though controller
+and Gateway belong to the same layer, we separate them into its own packages, so that the files for gateways and controllers will not be
+that overcrowded and disturbing to find a certain file. Using the packaging by layer strategy not only contribute to our clean packages organization which 
+could allow us to locate the class we want efficiently but also help us avoid some violations of the clean architecture that we might
+have along the way.
 
 ## Major Design Decisions
 
