@@ -30,7 +30,13 @@ including change username, change password etc.
 
 ## Clean Architecture
 
-TODO: Wesley & Tien
+In our project, we have different layers of clean architecture. AccountManager, AdminManager, BookManager, ListingManager, and 
+UserManager are our usercases. 
+
+The usercase class gets the information from the Entity class and manage all the data from the Entity class or from the 
+Entity class, then add it to the database class which stores all the information of Book, User, Listing, and Admin.
+
+
 
 ## Design Patterns
 
