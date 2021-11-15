@@ -17,10 +17,10 @@ public class BookManager {
 
     /**
      * Create an BookManager with given books
-     * @param allItems all current items in the system (if any)
+     * @param allBooks all current items in the system (if any)
      */
-    public BookManager(List<Book> allItems) {
-        for (Book book: allItems){
+    public BookManager(List<Book> allBooks) {
+        for (Book book: allBooks){
             idToBook.put(book.getId(), book);
         }
     }
@@ -51,7 +51,7 @@ public class BookManager {
 
     /**
      * Find a book with given Name
-     * @param bookId The given Item id
+     * @param bookId The given book id
      */
     public Book findBook(String bookId){
         return idToBook.get(bookId);
@@ -76,16 +76,16 @@ public class BookManager {
 
     /**
      * Get the bookId based on book Object
-     * @param book the Item object
+     * @param book the book object
      * @return the bookId in String
      */
-    public String getItemIdByItem(Book book) {
+    public String getBookIdByBook(Book book) {
         return book.getId();
     }
 
     /**
      * Set the book name
-     * @param bookId itemId of the Item
+     * @param bookId bookId of the book
      * @param newName the new name
      */
     public void setBookName(String bookId, String newName) {
