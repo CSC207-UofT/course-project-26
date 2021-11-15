@@ -9,10 +9,6 @@ import main.usecase.AdminManager;
 
 public class AdminGateway extends Gateway {
 
-    public AdminGateway() {
-
-    }
-
     /**
      * Get information from admin.ser
      * @return List of admins from .ser

@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ListingGateway extends Gateway{
+public class ListingGateway extends Gateway {
     @Override
     public List<Listing> getInfo() {
         return helperGetInfo("Database/Book.ser");
     }
 
-    public void saveListingtoFile(ListingManager listing){
+    public void saveListingtoFile(ListingManager listing) {
         String fileName = "src/database/Listing.ser";
         List<Listing> serList = new ArrayList<>();
         Map<String, Listing> lisitngIdToUser = listing.getListingIdToListing();
-        for (Map.Entry<String, Listing> entry: lisitngIdToUser.entrySet()){
+        for (Map.Entry<String, Listing> entry : lisitngIdToUser.entrySet()) {
             serList.add(entry.getValue());
         }
         updateInfo(serList, fileName);
@@ -42,19 +42,4 @@ public class ListingGateway extends Gateway{
         }
         return listingList;
     }
-
-    /**
-     * Updates ListingManager lm to Listing.ser
-     * @param lm ListingManager to be updated
-     */
-    public void updateUserInfo(ListingManager lm) {
-        String fileName = "src/Main.ConsoleUI.Database/Listing.ser";
-        List<Listing> serList = new ArrayList<>();
-        Map<String, Listing> lmListingIdToUser = lm.getListingIdToListing();
-        for (Map.Entry<String, Listing> entry: lmListingIdToUser.entrySet()){
-            serList.add(entry.getValue());
-        }
-        updateInfo(serList, fileName);
-    }
-
 }
