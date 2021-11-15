@@ -16,7 +16,7 @@ public class StudentPortal {
     @Autowired
     private StudentController studentController;
 
-    public void showStudentPortal(Scanner scanner, String username) {
+    public void showStudentPortal(Scanner scanner, String username, String password) {
         System.out.println("\n\n=== STUDENT PORTAL ===" +
                 "\n1) Type 'profile' to show your student information" +
                 "\n2) Type 'update' to update your info" +
@@ -30,13 +30,12 @@ public class StudentPortal {
             if (command.equals("profile")) {
                 studentController.displayStudent(username);
             } else if (command.equals("update")) {
-                System.out.print("Enter username and email and address separated by comma (for example: david123, david123@gmail.com, 101 Happy Street)\n Enter here => ");
+                System.out.print("Enter username and email and address separated by comma (for example: david123@gmail.com, 101 Happy Street)\n Enter here => ");
                 String[] info = scanner.nextLine().split(",");
-                String userName = info[0];
-                String email = info[1];
-                String address = info[2];
+                String email = info[0];
+                String address = info[1];
 
-                User newStudentInfo = User.builder().username(userName).email(email).address(address).build();
+                User newStudentInfo = User.builder().username(username).password(password).email(email).address(address).build();
 //                User newStudentInfo = User.builder().username(username).password(password).email(email).address(address).build();
 
                 if (studentController.updateStudent(newStudentInfo)) {

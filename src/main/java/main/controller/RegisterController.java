@@ -11,21 +11,23 @@ import java.util.List;
 import java.util.Objects;
 
 @Component
-public class LoginController {
+public class RegisterController {
 
     @Autowired
     private UserService studentService;
     private UserGateway usergateway;
 
-    public User login(String username, String password) {
-        ArrayList<User> users = usergateway.findAll();
+    public User register(String username, String password, String email, String address) {
+        List<User> users = usergateway.findAll();
         for (User user: users){
-            if (user != null && password.equals(user.getPassword()) && Objects.equals(username, user.getUsername())) {
-                return user;
+            if (user.getUsername().equals(username)) {
+                System.out.println("The username has been taken!");
             }
         }
 
-        return null;
-    }
+        User new_user = new User(username, password, email, address);
+        usergateway.saveOrUpdate(new_user);
+        return new_user;
 
+    }
 }

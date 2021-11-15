@@ -1,6 +1,7 @@
 package main.consoleUI;
 
 import main.controller.LoginController;
+import main.controller.RegisterController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ import java.util.Scanner;
 @Component
 public class Register {
     @Autowired
-    private LoginController loginController;
+    private RegisterController registerController;
 
     public User registerUser(Scanner scanner) {
         System.out.print(" Enter your desired user name => ");
@@ -30,7 +31,7 @@ public class Register {
         System.out.print(" Enter your address in Toronto => ");
         String address = scanner.nextLine();
 
-        User loggedInStudent = loginController.register(userName, password, email, address);
+        User loggedInStudent = registerController.register(userName, password, email, address);
 
         if (loggedInStudent != null) {
             System.out.println(String.format(" User %s successfully registered and logged-in", loggedInStudent.getUsername()));

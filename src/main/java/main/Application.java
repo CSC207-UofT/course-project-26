@@ -42,33 +42,44 @@ public class Application implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
         User loggedInStudent = null;
 
-        System.out.println("Please enter 1 to register, 2 to login, or any key to continue as guest");
-        String selection = scanner.nextLine();
-        if (Objects.equals(selection, "2")){
-                while (!userIsLoggedIn) {
-                    loggedInStudent = login.loginUser(scanner);
-                    userIsLoggedIn = loggedInStudent != null;
-                }
-                studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername());
-        } else if (Objects.equals(selection, "1")) {
+        while (true) {
             while (!userIsLoggedIn) {
-                loggedInStudent = register.registerUser(scanner);
+                loggedInStudent = login.loginUser(scanner);
                 userIsLoggedIn = loggedInStudent != null;
             }
-        } else{
-                while (true) {
-                    studentPortal.showStudentPortal(scanner, "guest");
-                    }
-                }
-        while (true) {
-            studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername());
-        }
 
+            studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername(), loggedInStudent.getPassword());
+        }
     }
 
+//    @Override
+//    public void run(String... args) throws Exception {
+//        boolean userIsLoggedIn = false;
+//        Scanner scanner = new Scanner(System.in);
+//        User loggedInStudent = null;
+//
+//        System.out.println("Please enter 1 to register, 2 to login, or any key to continue as guest");
+//        String selection = scanner.nextLine();
+//
+//        if (Objects.equals(selection, "2")){
+//                while (!userIsLoggedIn) {
+//                    loggedInStudent = login.loginUser(scanner);
+//                    userIsLoggedIn = loggedInStudent != null;
+//                }
+//                studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername());
+//        } else if (Objects.equals(selection, "1")) {
+//            while (!userIsLoggedIn) {
+//                loggedInStudent = register.registerUser(scanner);
+//                userIsLoggedIn = loggedInStudent != null;
+//            }
+//        } else{
+//                while (true) {
+//                    studentPortal.showStudentPortal(scanner, "guest");
+//                    }
+//                }
+//        while (true) {
+//            studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername());
+//        }
+//
+//    }
 }
-
-
-
-
-
