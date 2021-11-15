@@ -8,7 +8,7 @@
 * Taylan:
 * Tien:
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes. 
-* Will:
+* Will: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
 
 
 ### Open Questions
