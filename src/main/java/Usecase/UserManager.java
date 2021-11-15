@@ -43,16 +43,7 @@ public class UserManager implements AccountManager{
      */
     @Override
     public User findAccountById(String userId) {
-        return userIdToUser.get(userId);
-    }
-
-    private User findUserByUsername(String username) {
-        Map<String, String> userUsernameToId = new HashMap<>();
-        for (Map.Entry <String, User> entry : getUserIdToUser().entrySet()) {
-            userUsernameToId.put(entry.getValue().getUsername(), entry.getKey());
-        }
-        String userId = userUsernameToId.get(username);
-        return findAccountById(userId);
+        return this.userIdToUser.get(userId);
     }
 
     /**
@@ -66,84 +57,75 @@ public class UserManager implements AccountManager{
     }
 
     /**
-     * Returns the userID of the User associated with a given username
-     * @param username the username to look up
-     * @return the associated user ID
+     * Checks whether bookId in the userId's shoppingcart
+     * @param userId the user ID of a user
+     * @param bookId the item ID of a book
+     * @return true iff book Id in the given user Id's user's shoppingcart
      */
-    public String userIdByUsername(String username) {
-        return findUserByUsername(username).getId();
+    public boolean bookIdInShoppingcart(String userId, String bookId) {
+        return ShoppingcartByUserId(userId).contains(bookId);
     }
 
     /**
-     * Checks whether itemId in the userId's wishlist
+     * Returns books IDs in shoppingcart associated with this userId
      * @param userId the user ID of a user
-     * @param itemId the item ID of an item
-     * @return true iff item Id in the given user Id's user's wishlist
+     * @return an ArrayList of ints representing shoppingcart of items belonging to this user ID
      */
-    public boolean itemIdInWishlist(String userId, String itemId) {
-        return wishlistByUserId(userId).contains(itemId);
-    }
-
-    /**
-     * Returns a wishlist item IDs associated with this userId
-     * @param userId the user ID of a user
-     * @return an ArrayList of ints representing wishlist of items belonging to this user ID
-     */
-    public List<String> wishlistByUserId(String userId) {
+    public List<String> ShoppingcartByUserId(String userId) {
         User user = findAccountById(userId);
         return user.getShoppingcart();
     }
 
     /**
-     * Adds an item ID to the userId of User's inventory
+     * Adds a book ID to the userId of User's inventory
      * @param userId the user ID of the User
-     * @param itemId the item ID of an Item to be added to the User's inventory
+     * @param bookId the book ID of a book to be added to the User's inventory
      */
-    public void addToInventory(String userId, String itemId) {
+    public void addToInventory(String userId, String bookId) {
         User user = findAccountById(userId);
         if (user == null) return;
-        user.addToInventory(itemId);
+        user.addToInventory(bookId);
     }
 
     /**
-     * Removes an itemId from the userId's User's inventory if it exists, removes the item from all user's wishlist
+     * Removes a bookId from the userId's User's inventory if it exists, removes the item from all user's shoppingcart
      * @param userId the user ID of the User
-     * @param itemId the item ID of an Item to be removed from the User's inventory
+     * @param bookId the item ID of an Item to be removed from the User's inventory
      */
-    public void removeFromInventory(String userId, String itemId) {
+    public void removeFromInventory(String userId, String bookId) {
         User user = findAccountById(userId);
-        List<String> ids = findUserByItemWishlist(itemId);
+        List<String> ids = findUserByShoppingcart(bookId);
         for (String id: ids) {
-            removeFromWishlist(id, itemId);
+            removeFromShoppingcart(id, bookId);
         }
-        user.removeFromInventory(itemId);
+        user.removeFromInventory(bookId);
     }
 
     /**
-     * Adds an itemId to the userId's User's wishlist if it doesn't already exist
+     * Adds an bookId to the userId's User's shoppingcart if it doesn't already exist
      * @param userId the user ID of the User
-     * @param itemId the item ID of an Item to be added to the User's wishlist
+     * @param bookId the book ID of a book to be added to the User's shoppingcart
      */
-    public boolean addToWishlist(String userId, String itemId) {
+    public boolean addToShoppingcart(String userId, String bookId) {
         User user = findAccountById(userId);
-        if (user.getShoppingcart().contains(itemId)) {
+        if (user.getShoppingcart().contains(bookId)) {
             return false;
-        } else if (user.getInventory().contains(itemId)) {
+        } else if (user.getInventory().contains(bookId)) {
             return false;
         } else {
-            user.addToshoppingcart(itemId);
+            user.addToshoppingcart(bookId);
             return true;
         }
     }
 
     /**
-     * Removes an itemId from the userId of the User's wishlist if it exists
+     * Removes an bookId from the userId of the User's shoppingcart if it exists
      * @param userId the user ID of the User
-     * @param itemId the item ID of an Item to be removed from the User's wishlist
+     * @param bookId the item ID of an Item to be removed from the User's shoppingcart
      */
-    public void removeFromWishlist(String userId, String itemId) {
+    public void removeFromShoppingcart(String userId, String bookId) {
         User user = findAccountById(userId);
-        user.removeFromshoppingcart(itemId);
+        user.removeFromshoppingcart(bookId);
     }
 
     /**
@@ -191,24 +173,24 @@ public class UserManager implements AccountManager{
 
     /**
      * Checks if the inputted password is correct
-     * @param username the username of a user
+     * @param userId the ID of a user
      * @param password the password input received from a user
-     * @return true iff the password input matches the username's password
+     * @return true iff the password input matches the userid's password
      */
     @Override
-    public boolean checkPassword(String username, String password) {
-        User user = findUserByUsername(username);
+    public boolean checkPassword(String userId, String password) {
+        User user = findAccountById(userId);
         return user.getPassword().equals(password);
     }
 
     /**
-     * Returns userId whose inventory contain itemId
-     * @param itemId Id of an item
+     * Returns userId whose inventory contain bookId
+     * @param bookId Id of an item
      * @return the userId whose inventory contains the Item
      */
-    public String findUserByItemInventory(String itemId) {
+    public String findUserByItemInventory(String bookId) {
         for (Map.Entry <String, User> entry : getUserIdToUser().entrySet()) {
-            if (entry.getValue().getInventory().contains(itemId)){
+            if (entry.getValue().getInventory().contains(bookId)){
                 return  entry.getKey();
             }
         }
@@ -216,14 +198,14 @@ public class UserManager implements AccountManager{
     }
 
     /**
-     * Returns userIds whose wishlist contains itemId
-     * @param itemId Id of an item
-     * @return the List of userId's whose wishlist contains the itemId
+     * Returns userIds whose shoopingcart contains bookId
+     * @param bookId Id of an item
+     * @return the List of userId's whose shoopingcart contains the bookId
      */
-    public List<String> findUserByItemWishlist(String itemId) {
+    public List<String> findUserByShoppingcart(String bookId) {
         List<String> ids = new ArrayList<>();
         for (Map.Entry <String, User> entry : getUserIdToUser().entrySet()) {
-            if (entry.getValue().getShoppingcart().contains(itemId)){
+            if (entry.getValue().getShoppingcart().contains(bookId)){
                 ids.add(entry.getKey());
             }
         }
