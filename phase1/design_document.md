@@ -42,7 +42,7 @@ all the data from the Entity class.
 
 The Controller classes retrieves and store data from the database. For example, they take the information directly from 
 our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
-to execute request form the User. We are also managing to implement a presenter class in our phase 2.
+to execute request form the User. 
 
 
 ## Design Patterns
