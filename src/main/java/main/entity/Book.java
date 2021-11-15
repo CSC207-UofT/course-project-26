@@ -86,11 +86,51 @@ public class Book implements Serializable{
         this.size = size;
     }
 
+    /**
+     * Constructor for "Book" with missing weight and size values.
+     */
+    public Book(double price, String name, String author, String publisher,
+//                String pub_date,
+                int edition, int pages, String format, String language) {
+        UUID inputId = UUID.randomUUID();
+        this.id = String.valueOf(inputId);
+        this.price = price;
+        this.name = name;
+        this.author = author;
+        this.publisher = publisher;
+        //        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+        this.edition = edition;
+        this.pages = pages;
+        this.format = format;
+        this.language = language;
+        this.weight = 0;
+        this.size = null;
+    }
+
+    /**
+     * Constructor for "Book" with missing edition, pages, format, language, weight, size values.
+     */
+    public Book(double price, String name, String author, String publisher
+//                , String pub_date
+    ) {
+        UUID inputId = UUID.randomUUID();
+        this.id = String.valueOf(inputId);
+        this.price = price;
+        this.name = name;
+        this.author = author;
+        this.publisher = publisher;
+        //        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+        this.edition = 0;
+        this.pages = 0;
+        this.format = null;
+        this.language = null;
+        this.weight = 0;
+        this.size = null;
+    }
+
     public Book() {
 
     }
-    // TODO: Use overloading to create another constructor with fewer parameters (in case some of the info isn't known about the book when it's initialized)
-
 
     /**
      * Get the Main.ConsoleUI.Entity.Book info in a list.
