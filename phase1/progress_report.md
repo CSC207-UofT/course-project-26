@@ -1,4 +1,4 @@
-TODO: ALL
+# Group 26 - Progress Report - Phase 1
 
 
 ## Individual Responsibility
