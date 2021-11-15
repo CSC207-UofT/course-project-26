@@ -10,8 +10,3 @@ the data from the user, then the controller can decide to display
 user or to update student. The controller will use some service
 to work with the entity, it can do things like CRUD, create,
 read, update, or delete.
-
-
-## Key Features
-
-
