@@ -3,7 +3,11 @@ package main.gateway;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import main.entity.Book;
+import main.entity.Listing;
+import main.usecase.BookManager;
 
 public class BookGateway extends Gateway {
     @Override
@@ -11,18 +15,14 @@ public class BookGateway extends Gateway {
         return helperGetInfo("Database/Book.ser");
     }
 
-    public void saveBooktoFile(ArrayList bookList){
-        try
-        {
-            FileOutputStream fos = new FileOutputStream("src/main/java/Main.ConsoleUI.Database/Book.ser");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(bookList);
-            oos.close();
-            fos.close();
+    public void saveBooktoFile(BookManager books){
+        String fileName = "src/database/Book.ser";
+        List<Book> serList = new ArrayList<>();
+        Map<String, Book> BookIdToUser = books.getIdToBook();
+        for (Map.Entry<String, Book> entry: BookIdToUser.entrySet()){
+            serList.add(entry.getValue());
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        updateInfo(serList, fileName);
     }
 
     public ArrayList readBookfromFile() {

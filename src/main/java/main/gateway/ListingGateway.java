@@ -1,5 +1,6 @@
 package main.gateway;
 
+import main.entity.Admin;
 import main.entity.Listing;
 import main.usecase.ListingManager;
 
@@ -14,18 +15,14 @@ public class ListingGateway extends Gateway{
         return helperGetInfo("Database/Book.ser");
     }
 
-    public void saveListingtoFile(ArrayList listingList){
-        try
-        {
-            FileOutputStream fos = new FileOutputStream("src/main/java/Main.ConsoleUI.Database/Listing.ser");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(listingList);
-            oos.close();
-            fos.close();
+    public void saveListingtoFile(ListingManager listing){
+        String fileName = "src/database/Listing.ser";
+        List<Listing> serList = new ArrayList<>();
+        Map<String, Listing> lisitngIdToUser = listing.getListingIdToListing();
+        for (Map.Entry<String, Listing> entry: lisitngIdToUser.entrySet()){
+            serList.add(entry.getValue());
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        updateInfo(serList, fileName);
     }
 
     public ArrayList readListingfromFile() {

@@ -11,7 +11,7 @@ When we add new features to our code base, we extend upon the code we already ha
 software entities.
 
 #### Liskov Substitution Principle
-In our project, User and Admin classes are child classes of Account class. The objects User and Admin may be substituted 
+In our project, Usergateway and Admingateway classes are child classes of Gateway class. The objects User and Admin may be substituted 
 without altering any of the desired properties of the program.
 
 #### Dependency Inversion Principle
@@ -26,7 +26,7 @@ the interface will have the method.
 
 #### Interface Segregation Principle
 The use case Account manager is implemented as an interface to store the essential features when managing an account,
-including change username, change password etc.
+including change username, change password etc. No realization class is forced to implement irrelevant  methods of an interface.
 
 ## Clean Architecture
 
