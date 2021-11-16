@@ -48,4 +48,29 @@ public class UserTest {
         assertFalse(user.removeFromInventory("item1"));
     }
 
+
+    @Test
+    public void testRemoveFromEmptyshoppingcart() {
+        assertFalse(user.removeFromshoppingcart("item1"));
+    }
+
+    @Test
+    public void testAddtoRemoveFromInventory() {
+        assertTrue(user.addToInventory("book5"));
+        assertTrue(user.getInventory().contains("book5"));
+        assertTrue(user.removeFromInventory("book5"));
+        assertFalse(user.removeFromInventory("book50"));
+        assertFalse(user.getInventory().contains("book5"));
+    }
+
+    @Test
+    public void testAddtoRemoveFromshoppingcart() {
+        assertTrue(user.addToshoppingcart("item1"));
+        assertTrue(user.getShoppingcart().contains("item1"));
+        assertTrue(user.removeFromshoppingcart("item1"));
+        assertFalse(user.removeFromshoppingcart("item100"));
+        assertFalse(user.removeFromshoppingcart("item1"));
+        assertFalse(user.getShoppingcart().contains("item1"));
+    }
+
 }
