@@ -46,7 +46,7 @@ public class ListingManager {
     }
 
 
-    public String getListingStatus(String listId) {
-        return findlist(listId).getListingStatus();
+    public String getStatus(String listId) {
+        return findlist(listId).getStatus();
     }
 }

@@ -27,7 +27,9 @@ public class Book implements Serializable{
      *          "Online code"
      *  language: The language of the Main.ConsoleUI.Entity.Book
      *  weight: The weight of the Main.ConsoleUI.Entity.Book in kilograms. Default value is N/A
-     *  size: The dimensions of the Main.ConsoleUI.Entity.Book. Default value is N/A. TODO: Decide how to store dimensions
+     *  size: The dimensions of the Main.ConsoleUI.Entity.Book. It is stored in the format of
+     *      "14-10-4" (length-width-height) in meters. Each value is separated with the '-' symbol.
+     *      Default value is N/A. TODO: Decide how to store dimensions
      */
 
     @Id

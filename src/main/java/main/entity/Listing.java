@@ -34,18 +34,25 @@ public class Listing {
     public String getListingId() { return this.id; }
 
     /*
-     * Get the book in the Listing.
+     * Get the book id of the book in the Listing.
      *
      * @return the Book in the Listing.
      */
-    public String getBook() { return this.book; }
+    public String getBookId() { return this.book; }
+
+    /*
+     * Get the number of books left in the Listing.
+     *
+     * @return the number of books in the Listing.
+     */
+    public int getQuantity() { return this.quantity; }
 
     /*
      * Get whether the book in the listing is available or sold out.
      *
      * @return "Available" or "Sold out" depending on the availability of the book.
      */
-    public String getListingStatus() {
+    public String getStatus() {
         if (this.isSold) {
             return "Sold out";
         }
