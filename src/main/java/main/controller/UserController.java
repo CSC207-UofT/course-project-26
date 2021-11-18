@@ -1,5 +1,7 @@
 package main.controller;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 import main.entity.User;
 import main.service.UserService;
 import org.apache.commons.lang3.StringUtils;
@@ -25,10 +27,17 @@ public class UserController {
     public boolean updateStudent(User newUser) {
         User oldUser = studentService.getUserByUsername(newUser.getUsername());
 
+        String email = newUser.getEmail();
+        boolean is_email_valid = email.matches("^[a-zA-Z0-9]+@utoronto.[a-zA-Z0-9]+$");
+
+        if (!is_email_valid) {
+            System.out.println("Invalid uoft email");
+        }
+
         if (oldUser != null && StringUtils.isAlpha(newUser.getFirstName())
                 && StringUtils.isAlpha(newUser.getLastName())
-                && StringUtils.isAlpha(newUser.getEmail())
-                && StringUtils.isAlpha(newUser.getAddress())) {
+                && is_email_valid
+                && !newUser.getAddress().isEmpty()) {
 
             oldUser.setFirstName(newUser.getFirstName());
             oldUser.setLastName(newUser.getLastName());

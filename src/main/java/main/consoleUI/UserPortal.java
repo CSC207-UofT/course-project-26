@@ -36,7 +36,7 @@ public class UserPortal {
 
             } else if (command.equals("update")) {
                 System.out.print("Enter first name, last name, email and address separated by comma " +
-                        "(for example: tien,han,hantien2002@gmail.com,123 Happy Street)\n Enter here => ");
+                        "(for example: tien,han,hantien2002@utoronto.com,123 Happy Street)\n Enter here => ");
                 String[] info = scanner.nextLine().split(",");
                 String firstName = info[0];
                 String lastName = info[1];
@@ -62,4 +62,4 @@ public class UserPortal {
         System.exit(1);
     }
 
-    }
+}
