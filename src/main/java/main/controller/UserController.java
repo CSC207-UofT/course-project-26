@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StudentController {
+public class UserController {
     @Autowired
     private UserService studentService;
 
     public void displayStudent(String username) {
-        User user = studentService.getStudentByUsername(username);
+        User user = studentService.getUserByUsername(username);
 
         String info = String.format(
                 "Id: %s \n" + "Username: %s \n" + "Email: %s \n" + "Address: %s \n",
@@ -20,15 +20,15 @@ public class StudentController {
         System.out.println(info);
     }
 
-    public boolean updateStudent(User newStudent) {
-        User oldStudent = studentService.getStudentByUsername(newStudent.getUsername());
+    public boolean updateStudent(User newUser) {
+        User oldStudent = studentService.getUserByUsername(newUser.getUsername());
 
-        if (oldStudent != null && StringUtils.isAlpha(newStudent.getUsername())
-                && StringUtils.isAlpha(newStudent.getEmail())
-                && StringUtils.isAlpha(newStudent.getaddress())) {
-            oldStudent.setUsername(newStudent.getUsername());
-            oldStudent.setEmail(newStudent.getEmail());
-            oldStudent.setaddress(newStudent.getaddress());
+        if (oldStudent != null && StringUtils.isAlpha(newUser.getUsername())
+                && StringUtils.isAlpha(newUser.getEmail())
+                && StringUtils.isAlpha(newUser.getaddress())) {
+            oldStudent.setUsername(newUser.getUsername());
+            oldStudent.setEmail(newUser.getEmail());
+            oldStudent.setaddress(newUser.getaddress());
 
             studentService.saveOrUpdate(oldStudent);
 

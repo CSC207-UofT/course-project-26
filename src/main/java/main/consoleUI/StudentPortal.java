@@ -1,6 +1,6 @@
 package main.consoleUI;
 
-import main.controller.StudentController;
+import main.controller.UserController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import java.util.Scanner;
 @Component
 public class StudentPortal {
     @Autowired
-    private StudentController studentController;
+    private UserController studentController;
 
     public void showStudentPortal(Scanner scanner, String username, String password) {
         System.out.println("\n\n=== STUDENT PORTAL ===" +

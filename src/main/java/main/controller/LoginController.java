@@ -18,7 +18,7 @@ public class LoginController {
     public User login(String username, String password
 //            , String email, String address
     ) {
-        User user = userService.getStudentByUsername(username);
+        User user = userService.getUserByUsername(username);
 
         if (user != null && password.equals(user.getPassword())
 //                && email.equals(user.getEmail()) && address.equals(user.getaddress())

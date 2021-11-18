@@ -66,7 +66,7 @@ public class UserGateway extends Gateway implements UserService {
     }
 
     @Override
-    public User getStudentByUsername(String username) {
+    public User getUserByUsername(String username) {
         ArrayList<User> users = findAll();
         for (User user: users){
             if (user.getUsername().equals(username)){
