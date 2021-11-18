@@ -1,6 +1,5 @@
 package EntityTest;
 
-import main.entity.Account;
 import main.entity.Book;
 import org.junit.Before;
 import org.junit.Test;

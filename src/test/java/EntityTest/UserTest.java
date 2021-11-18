@@ -15,8 +15,8 @@ public class UserTest {
 
     @Before
     public void setUp(){
-        user = new User("Annie", "duannie", "yunqi.du@mail.utoronto.ca",
-                "123 Bay st");
+        user = new User("duannie", "Annie", "Du",
+                "yunqi.du@mail.utoronto.ca", "123 Bay st");
     }
 
     @Test
@@ -31,46 +31,16 @@ public class UserTest {
 
     @Test
     public void testgetaddress(){
-        assertEquals("123 Bay st", user.getaddress());
+        assertEquals("123 Bay st", user.getAddress());
     }
 
     @Test
     public void testChangeUsername() {
-        String userId = user.getId();
+        String username = user.getUsername();
         user.setUsername("grace");
 
         assertEquals(user.getUsername(), "grace");
-        assertEquals(user.getId(), userId);  // user ID should not change
-    }
-
-    @Test
-    public void testRemoveFromEmptyInventory() {
-        assertFalse(user.removeFromInventory("item1"));
-    }
-
-
-    @Test
-    public void testRemoveFromEmptyshoppingcart() {
-        assertFalse(user.removeFromshoppingcart("item1"));
-    }
-
-    @Test
-    public void testAddtoRemoveFromInventory() {
-        assertTrue(user.addToInventory("book5"));
-        assertTrue(user.getInventory().contains("book5"));
-        assertTrue(user.removeFromInventory("book5"));
-        assertFalse(user.removeFromInventory("book50"));
-        assertFalse(user.getInventory().contains("book5"));
-    }
-
-    @Test
-    public void testAddtoRemoveFromshoppingcart() {
-        assertTrue(user.addToshoppingcart("item1"));
-        assertTrue(user.getShoppingcart().contains("item1"));
-        assertTrue(user.removeFromshoppingcart("item1"));
-        assertFalse(user.removeFromshoppingcart("item100"));
-        assertFalse(user.removeFromshoppingcart("item1"));
-        assertFalse(user.getShoppingcart().contains("item1"));
+        assertEquals(user.getUsername(), username);  // user ID should not change
     }
 
 }

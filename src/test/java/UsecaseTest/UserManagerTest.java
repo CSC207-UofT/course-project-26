@@ -17,18 +17,18 @@ public class UserManagerTest {
 
     @Test
     public void test_id_management(){
-        User user1 = new User("Grace", "123", "grace@mail.utoronto.ca",
-                "123 Bay st");
-        User user2 = new User("Annie", "778", "annie@mail.utoronto.ca",
-                "778 Bay st");
+        User user1 = new User("grace123", "Grace", "Liu",
+                "grace@mail.utoronto.ca", "123 Bay st");
+        User user2 = new User("annie778", "Annie", "Du",
+                "annie@mail.utoronto.ca", "778 Bay st");
         List<User> l1 = new ArrayList<User>();
         l1.add(user1);
         l1.add(user2);
 
         um = new UserManager(l1);
-        assertEquals("Grace", user1.getUsername());
-        assertEquals(user1, um.findAccountById(user1.getId()));
-        assertEquals(user1.getUsername(), um.usernameById(user1.getId()));
-        assertTrue(um.checkPassword(user1.getId(), "123"));
+        assertEquals("grace123", user1.getUsername());
+        assertEquals(user1, um.findAccountById(user1.getUsername()));
+        assertEquals(user1.getUsername(), um.usernameById(user1.getUsername()));
+        assertTrue(um.checkPassword(user1.getUsername(), "123"));
     }
 }

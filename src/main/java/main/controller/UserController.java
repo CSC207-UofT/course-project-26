@@ -14,27 +14,33 @@ public class UserController {
     public void displayStudent(String username) {
         User user = studentService.getUserByUsername(username);
 
-        String info = String.format(
-                "Id: %s \n" + "Username: %s \n" + "Email: %s \n" + "Address: %s \n",
-                user.getId(), user.getUsername(), user.getEmail(), user.getaddress());
+        String info = String.format("Username: %s \n" + "First Name: %s \n" +
+                        "Last Name: %s \n" + "Email: %s \n" + "Address: %s \n",
+                user.getUsername(), user.getFirstName(),
+                user.getLastName(), user.getEmail(), user.getAddress());
         System.out.println(info);
     }
 
+
     public boolean updateStudent(User newUser) {
-        User oldStudent = studentService.getUserByUsername(newUser.getUsername());
+        User oldUser = studentService.getUserByUsername(newUser.getUsername());
 
-        if (oldStudent != null && StringUtils.isAlpha(newUser.getUsername())
+        if (oldUser != null && StringUtils.isAlpha(newUser.getFirstName())
+                && StringUtils.isAlpha(newUser.getLastName())
                 && StringUtils.isAlpha(newUser.getEmail())
-                && StringUtils.isAlpha(newUser.getaddress())) {
-            oldStudent.setUsername(newUser.getUsername());
-            oldStudent.setEmail(newUser.getEmail());
-            oldStudent.setaddress(newUser.getaddress());
+                && StringUtils.isAlpha(newUser.getAddress())) {
 
-            studentService.saveOrUpdate(oldStudent);
+            oldUser.setFirstName(newUser.getFirstName());
+            oldUser.setLastName(newUser.getLastName());
+            oldUser.setEmail(newUser.getEmail());
+            oldUser.setAddress(newUser.getAddress());
+
+            studentService.saveOrUpdate(oldUser);
 
             return true;
         }
 
         return false;
     }
+
 }

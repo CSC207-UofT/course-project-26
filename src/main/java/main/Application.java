@@ -9,9 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import main.consoleUI.Register;
 import main.consoleUI.Login;
-import main.consoleUI.StudentPortal;
+import main.consoleUI.UserPortal;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -30,7 +29,7 @@ public class Application implements CommandLineRunner {
     private Login login;
 
     @Autowired
-    private StudentPortal studentPortal;
+    private UserPortal userPortal;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -48,7 +47,7 @@ public class Application implements CommandLineRunner {
                 userIsLoggedIn = loggedInStudent != null;
             }
 
-            studentPortal.showStudentPortal(scanner, loggedInStudent.getUsername(), loggedInStudent.getPassword());
+            userPortal.showUserPortal(scanner, loggedInStudent.getUsername());
         }
     }
 

@@ -17,15 +17,18 @@ public class RegisterController {
     private UserService studentService;
     private UserGateway usergateway;
 
-    public User register(String username, String password, String email, String address) {
+    public User register(String username, String password, String firstname, String lastname,
+                         String email, String address) {
+
         List<User> users = usergateway.findAll();
+
         for (User user: users){
             if (user.getUsername().equals(username)) {
                 System.out.println("The username has been taken!");
             }
         }
 
-        User new_user = new User(username, password, email, address);
+        User new_user = new User(username, firstname, lastname, email, address);
         usergateway.saveOrUpdate(new_user);
         return new_user;
 

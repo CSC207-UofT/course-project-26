@@ -20,10 +20,16 @@ public class Register {
 
     public User registerUser(Scanner scanner) {
         System.out.print(" Enter your desired user name => ");
-        String userName = scanner.nextLine();
+        String username = scanner.nextLine();
 
         System.out.print(" Enter your desired password => ");
         String password = scanner.nextLine();
+
+        System.out.print(" Enter your firstname => ");
+        String firstname = scanner.nextLine();
+
+        System.out.print(" Enter your lastname => ");
+        String lastname = scanner.nextLine();
 
         System.out.print(" Enter your email address => ");
         String email = scanner.nextLine();
@@ -31,7 +37,7 @@ public class Register {
         System.out.print(" Enter your address in Toronto => ");
         String address = scanner.nextLine();
 
-        User loggedInStudent = registerController.register(userName, password, email, address);
+        User loggedInStudent = registerController.register(username, password, firstname, lastname, email, address);
 
         if (loggedInStudent != null) {
             System.out.println(String.format(" User %s successfully registered and logged-in", loggedInStudent.getUsername()));

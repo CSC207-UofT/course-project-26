@@ -34,7 +34,7 @@ public class UserGateway extends Gateway implements UserService {
     public void updateUserInfo(UserManager um) {
         String fileName = "src/Main.ConsoleUI.Database/User.ser";
         List<User> serList = new ArrayList<>();
-        Map<String, User> umUserIdToUser = um.getUserIdToUser();
+        Map<String, User> umUserIdToUser = um.getUsernameToUser();
         for (Map.Entry<String, User> entry: umUserIdToUser.entrySet()){
             serList.add(entry.getValue());
         }
