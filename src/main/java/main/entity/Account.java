@@ -12,18 +12,14 @@ import java.util.UUID;
  * password: the password for an Account
  */
 
-@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Account {
 
-    @Id
     private String username;
 
     @Column
     private String password;
 
-    @Column
-    private String id;
 
     /**
      * Creates an Account
@@ -31,9 +27,7 @@ public class Account {
      * @param password the password of the account
      */
     public Account(String username, String password) {
-        UUID inputId = UUID.randomUUID();  // creates a UUID at instantiation
 
-        this.id = String.valueOf(inputId);
         this.username = username;
         this.password = password;
     }
@@ -41,17 +35,6 @@ public class Account {
     public Account() {
 
     }
-
-    /**
-     * Gets the account's ID
-     * @return a String that represents the account's ID
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String accountId) {
-        this.id = accountId;}
 
     /**
      * Gets the account's username

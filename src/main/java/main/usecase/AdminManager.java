@@ -15,7 +15,7 @@ public class AdminManager implements AccountManager{
      */
     public AdminManager(List<Admin> allAdmin) {
         for (Admin admin: allAdmin) {
-            this.adminIdToUser.put(admin.getId(), admin);
+            this.adminIdToUser.put(admin.getUsername(), admin);
         }
     }
 
@@ -35,7 +35,7 @@ public class AdminManager implements AccountManager{
     public void addAdmin(String newUsername, String newPassword) {
         Admin newAdmin = new Admin(newUsername, newPassword);
         Map<String, Admin> hm = getAdminIdToUser();
-        hm.put(newAdmin.getId(), newAdmin);
+        hm.put(newAdmin.getUsername(), newAdmin);
     }
 
     /**
@@ -71,7 +71,7 @@ public class AdminManager implements AccountManager{
      * @return the associated admin ID
      */
     public String adminIdByUsername(String username) {
-        return findAdminByUsername(username).getId();
+        return findAdminByUsername(username).getUsername();
     }
 
     /**

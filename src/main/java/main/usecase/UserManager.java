@@ -19,7 +19,7 @@ public class UserManager implements AccountManager{
      */
     public UserManager(List<User> allUsers) {
         for (User user: allUsers) {
-            this.userIdToUser.put(user.getId(), user);
+            this.userIdToUser.put(user.getUsername(), user);
         }
     }
 
@@ -222,7 +222,7 @@ public class UserManager implements AccountManager{
     public ArrayList<String> userIdsSameCity(String city, String country) {
         ArrayList<String> al = new ArrayList<>();
         for (Map.Entry <String, User> entry : getUserIdToUser().entrySet()) {
-            String[] cityAndCountry = entry.getValue().getaddress().split("-");
+            String[] cityAndCountry = entry.getValue().getAddress().split("-");
             String desiredCity = cityAndCountry[0].trim();
             String desiredCountry = cityAndCountry[1].trim();
             if (desiredCity.equalsIgnoreCase(city.trim()) && desiredCountry.equalsIgnoreCase(country.trim())) {
@@ -238,21 +238,20 @@ public class UserManager implements AccountManager{
      * @return the cityAddress chosen by the user
      */
     public String findPlaceByUserId(String userId) {
-        return findAccountById(userId).getaddress();
+        return findAccountById(userId).getAddress();
     }
 
     /**
      * Creates new User entity
      * @param username the username of the new User
-     * @param password the password of the new User
      * @param email the email address of the new User
      * @param address the city of the new User
      * @return the id of the new User
      */
-    public String createNewUser(String username, String password, String email, String address) {
-        User newUser = new User(username, password, address, email);
-        addUser(newUser.getId(), newUser);
-        return newUser.getId();
+    public String createNewUser(String username, String firstName, String lastName, String email, String address) {
+        User newUser = new User(username, firstName, lastName, email, address);
+        addUser(newUser.getUsername(), newUser);
+        return newUser.getUsername();
     }
 
     /**

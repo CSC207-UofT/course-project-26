@@ -3,6 +3,7 @@ package main.entity;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,18 @@ public class User extends Account implements Serializable {
     @ElementCollection
     private List<String> shoppingcart = new ArrayList<>();
 
+    @Id
+    private String username;
+
+    @Column
+    private String password;
+
+    @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
+
     @Column
     private String email;
 
@@ -25,12 +38,15 @@ public class User extends Account implements Serializable {
      * Creates an instance of User
      *
      * @param username the user's username
-     * @param password the user's password
+     * @param firstName the user's firstName
+     * @param lastName the user's lastName
      */
-    public User(String username, String password, String uoftemail, String address) {
-        super(username, password);
-        setId("@User" + getId());
-        this.email = uoftemail;
+    public User(String username, String firstName, String lastName, String email, String address) {
+        super();
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
         this.address = address;
     }
 
@@ -139,7 +155,7 @@ public class User extends Account implements Serializable {
      *
      * @param address the new address for User
      */
-    public void setaddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -148,7 +164,7 @@ public class User extends Account implements Serializable {
      *
      * @return the String representation of the User's address
      */
-    public String getaddress() {
+    public String getAddress() {
         return this.address;
     }
 
@@ -175,21 +191,63 @@ public class User extends Account implements Serializable {
      *
      * @return a String representation of the user
      */
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     @Override
     public String toString() {
         return "Username: " + getUsername() + "\nEmail: " + getEmail() + "\nAddress: " +
-                getaddress() ;
+                getAddress() ;
     }
 
     public static UserBuilder builder() {
         return new UserBuilder();
     }
 
+
     public static class UserBuilder {
 
+
         private String username;
+
         private String password;
+
+        private String firstName;
+
+        private String lastName;
+
         private String email;
+
         private String address;
 
         public UserBuilder username(final String username) {
@@ -197,8 +255,13 @@ public class User extends Account implements Serializable {
             return this;
         }
 
-        public UserBuilder password(final String password) {
-            this.password = password;
+        public UserBuilder firstName(final String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public UserBuilder lastName(final String lastName) {
+            this.lastName = lastName;
             return this;
         }
 
@@ -213,7 +276,7 @@ public class User extends Account implements Serializable {
         }
 
         public User build() {
-            return new User(username, password, email, address);
+            return new User(username, firstName, lastName, email, address);
         }
 
     }

@@ -12,11 +12,15 @@ import java.util.Scanner;
  * showing account info, updating account info
  */
 @Component
-public class StudentPortal {
+public class UserPortal {
     @Autowired
-    private UserController studentController;
+    private UserController userController;
 
-    public void showStudentPortal(Scanner scanner, String username, String password) {
+    private void printAskForCommandMessage() {
+        System.out.print(" Enter command (profile,update,exit)=> ");
+    }
+
+    public void showUserPortal(Scanner scanner, String username) {
         System.out.println("\n\n=== STUDENT PORTAL ===" +
                 "\n1) Type 'profile' to show your student information" +
                 "\n2) Type 'update' to update your info" +
@@ -28,17 +32,20 @@ public class StudentPortal {
 
         while (!command.equals("exit")) {
             if (command.equals("profile")) {
-                studentController.displayStudent(username);
+                userController.displayStudent(username);
+
             } else if (command.equals("update")) {
-                System.out.print("Enter username and email and address separated by comma (for example: david123@gmail.com, 101 Happy Street)\n Enter here => ");
+                System.out.print("Enter first name, last name, email and address separated by comma " +
+                        "(for example: tien,han,hantien2002@mail.utoronto.com,123 Happy Street)\n Enter here => ");
                 String[] info = scanner.nextLine().split(",");
-                String email = info[0];
-                String address = info[1];
+                String firstName = info[0];
+                String lastName = info[1];
+                String email = info[2];
+                String address = info[3];
 
-                User newStudentInfo = User.builder().username(username).password(password).email(email).address(address).build();
-//                User newStudentInfo = User.builder().username(username).password(password).email(email).address(address).build();
+                User newStudentInfo = User.builder().username(username).firstName(firstName).lastName(lastName).email(email).address(address).build();
 
-                if (studentController.updateStudent(newStudentInfo)) {
+                if (userController.updateStudent(newStudentInfo)) {
                     System.out.println("Student info successfully updated!");
                 } else {
                     System.out.println("Student info update failed!");
@@ -55,7 +62,4 @@ public class StudentPortal {
         System.exit(1);
     }
 
-    private void printAskForCommandMessage() {
-        System.out.print(" Enter command (profile,update,exit)=> ");
-    }
 }

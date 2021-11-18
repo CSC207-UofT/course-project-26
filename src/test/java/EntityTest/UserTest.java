@@ -15,7 +15,7 @@ public class UserTest {
 
     @Before
     public void setUp(){
-        user = new User("Annie", "duannie", "yunqi.du@mail.utoronto.ca",
+        user = new User("duannie", "Annie", "Du", "yunqi.du@mail.utoronto.ca",
                 "123 Bay st");
     }
 
@@ -31,16 +31,14 @@ public class UserTest {
 
     @Test
     public void testgetaddress(){
-        assertEquals("123 Bay st", user.getaddress());
+        assertEquals("123 Bay st", user.getAddress());
     }
 
     @Test
     public void testChangeUsername() {
-        String userId = user.getId();
         user.setUsername("grace");
 
         assertEquals(user.getUsername(), "grace");
-        assertEquals(user.getId(), userId);  // user ID should not change
     }
 
     @Test

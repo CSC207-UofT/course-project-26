@@ -23,7 +23,7 @@ public class AdminManagerTest {
 
         am = new AdminManager(l1);
         assertEquals("Grace", admin1.getUsername());
-        assertEquals(admin1, am.findAccountById(admin1.getId()));
-        assertEquals(admin1.getUsername(), am.usernameById(admin1.getId()));
+        assertEquals(admin1, am.findAccountById(admin1.getUsername()));
+        assertEquals(admin1.getUsername(), am.usernameById(admin1.getUsername()));
     }
 }

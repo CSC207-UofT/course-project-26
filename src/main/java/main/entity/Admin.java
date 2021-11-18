@@ -10,7 +10,6 @@ public class Admin extends Account implements Serializable {
      */
     public Admin(String username, String password) {
         super(username, password);
-        setId("@Admin" + getId());
     }
 
     /**
