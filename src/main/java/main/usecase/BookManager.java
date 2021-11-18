@@ -1,6 +1,7 @@
 package main.usecase;
 
 import main.entity.Book;
+import main.entity.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,9 +86,10 @@ public class BookManager {
      * Find a book with given Name
      * @param bookId The given book id
      */
-    public Book findBook(String bookId){
-        return idToBook.get(bookId);
+    public Book findBookById(String bookId) {
+        return this.idToBook.get(bookId);
     }
+
 
 
     /**
@@ -96,6 +98,10 @@ public class BookManager {
      */
     public List<String> getAllBooks() {
         return new ArrayList<>(idToBook.keySet());
+    }
+
+    public List<String> getBookIdList() {
+        return new ArrayList<>(getIdToBook().keySet());
     }
 
     /**
@@ -115,13 +121,16 @@ public class BookManager {
         return book.getId();
     }
 
+
+    public String getBookNameById(String bookId) {return findBookById(bookId).getName();}
     /**
+     *
      * Set the book name
      * @param bookId bookId of the book
      * @param newName the new name
      */
     public void setBookName(String bookId, String newName) {
-        Book book = findBook(bookId);
+        Book book = findBookById(bookId);
         book.setName(newName);
     }
 
@@ -133,10 +142,11 @@ public class BookManager {
     public List<Book> giveListBook(List<String> bookIds) {
         List<Book> aa = new ArrayList<>();
         for (String bookId: bookIds) {
-            aa.add(findBook(bookId));
+            aa.add(findBookById(bookId));
         }
         return aa;
     }
+
 
 }
 
