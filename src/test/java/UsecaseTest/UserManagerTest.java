@@ -29,6 +29,5 @@ public class UserManagerTest {
         assertEquals("Grace", user1.getUsername());
         assertEquals(user1, um.findAccountById(user1.getUsername()));
         assertEquals(user1.getUsername(), um.usernameById(user1.getUsername()));
-        assertTrue(um.checkPassword(user1.getUsername(), "123"));
     }
 }
