@@ -20,7 +20,7 @@ public class Listing {
     //Initialize a listing
     public Listing(String bookId, int quantity){
         UUID inputId = UUID.randomUUID();  // creates a UUID at instantiation
-        this.id = String.valueOf(inputId); // TODO: Check if it creates the same id again in another instantiation
+        this.id = String.valueOf(inputId);
         this.book = bookId;
         this.quantity = quantity;
         this.isSold = quantity == 0;

@@ -55,7 +55,7 @@ public class BookTest {
                     book.getName(),
                     book.getAuthor(),
                     book.getPublisher(),
-//                    book.getPub_date(),
+//                    book.getPub_year(),
                     book.getEdition(),
                     book.getPages(),
                     book.getFormat(),

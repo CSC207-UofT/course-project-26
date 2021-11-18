@@ -41,10 +41,10 @@ public class BookManager {
      *
      * @return String The Name of the newly created Book.
      */
-    public String createNewBook(double price, String name, String author, String publisher, String pub_date,
+    public String createNewBook(double price, String name, String author, String publisher, int pub_year,
                                 int edition, int pages, String format, String language, double weight, String size){
         Book newBook = new Book(price, name, author, publisher,
-//                pub_date,
+//                pub_year,
                 edition, pages, format, language, weight, size);
         addBook(newBook);
         return newBook.getName();
@@ -57,10 +57,10 @@ public class BookManager {
      * @return String The Name of the newly created Book.
      */
     public String createNewBook(double price, String name, String author, String publisher,
-//                               String pub_date,
+//                               int pub_year,
                                 int edition, int pages, String format, String language){
         Book newBook = new Book(price, name, author, publisher,
-//                pub_date,
+//                pub_year,
                 edition, pages, format, language);
         addBook(newBook);
         return newBook.getName();
@@ -72,10 +72,10 @@ public class BookManager {
      * @return String The Name of the newly created Book.
      */
     public String createNewBook(double price, String name, String author, String publisher
-//                               , String pub_date
+//                               , int pub_year
     ){
         Book newBook = new Book(price, name, author, publisher
-//                , pub_date
+//                , pub_year
         );
         addBook(newBook);
         return newBook.getName();

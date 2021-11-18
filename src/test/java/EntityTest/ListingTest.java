@@ -29,7 +29,7 @@ public class ListingTest {
     }
 
     @Test
-    public void testgetListingStatus() {
+    public void testgetStatus() {
         assertEquals("Available", listing.getStatus());
     }
 

@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.List;
-import java.time.format.DateTimeFormatter;
+//import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.io.Serializable;
 
@@ -20,16 +20,16 @@ public class Book implements Serializable{
      *  name: The name of the Main.ConsoleUI.Entity.Book
      *  author: The author of the Main.ConsoleUI.Entity.Book
      *  publisher: The publisher of the Main.ConsoleUI.Entity.Book
-     *  pub_date: The publish date of the Main.ConsoleUI.Entity.Book in ...  with the format yyyy-MM-dd in string
+     *  pub_year: The publication year of the Main.ConsoleUI.Entity.Book
      *  edition: The edition of the Main.ConsoleUI.Entity.Book
      *  pages: The number of pages in the Main.ConsoleUI.Entity.Book
-     *  format: The format of the Main.ConsoleUI.Entity.Book. It can be either one of "Paperback", "Hardcover", "Looseleaf",
-     *          "Online code"
+     *  format: The format of the Main.ConsoleUI.Entity.Book. It can be either one of "Paperback", "Hardcover",
+     *          "Looseleaf", "Online code"
      *  language: The language of the Main.ConsoleUI.Entity.Book
-     *  weight: The weight of the Main.ConsoleUI.Entity.Book in kilograms. Default value is N/A
+     *  weight: The weight of the Main.ConsoleUI.Entity.Book in kilograms. Default value is null
      *  size: The dimensions of the Main.ConsoleUI.Entity.Book. It is stored in the format of
-     *      "14-10-4" (length-width-height) in meters. Each value is separated with the '-' symbol.
-     *      Default value is N/A. TODO: Decide how to store dimensions
+     *      "14-10-4" (length-width-height) in centimeters. Each value is separated with the '-' symbol.
+     *      Default value is null.
      */
 
     @Id
@@ -47,7 +47,7 @@ public class Book implements Serializable{
     @Column
     private String publisher;
 
-//    private DateTimeFormatter pub_date;
+//    private int pub_year;
 
     @Column
     private int edition;
@@ -71,7 +71,7 @@ public class Book implements Serializable{
      * Constructor for "Book."
      */
     public Book(double price, String name, String author, String publisher,
-//                String pub_date,
+//                int pub_year,
                 int edition, int pages, String format, String language, double weight, String size) {
         UUID inputId = UUID.randomUUID();
         this.id = String.valueOf(inputId);
@@ -79,7 +79,7 @@ public class Book implements Serializable{
         this.name = name;
         this.author = author;
         this.publisher = publisher;
-//        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+//        this.pub_year = pub_year;
         this.edition = edition;
         this.pages = pages;
         this.format = format;
@@ -92,7 +92,7 @@ public class Book implements Serializable{
      * Constructor for "Book" with missing weight and size values.
      */
     public Book(double price, String name, String author, String publisher,
-//                String pub_date,
+//                int pub_year,
                 int edition, int pages, String format, String language) {
         UUID inputId = UUID.randomUUID();
         this.id = String.valueOf(inputId);
@@ -100,7 +100,7 @@ public class Book implements Serializable{
         this.name = name;
         this.author = author;
         this.publisher = publisher;
-        //        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+        //        this.pub_year = pub_year;
         this.edition = edition;
         this.pages = pages;
         this.format = format;
@@ -113,7 +113,7 @@ public class Book implements Serializable{
      * Constructor for "Book" with missing edition, pages, format, language, weight, size values.
      */
     public Book(double price, String name, String author, String publisher
-//                , String pub_date
+//                , String pub_year
     ) {
         UUID inputId = UUID.randomUUID();
         this.id = String.valueOf(inputId);
@@ -121,7 +121,7 @@ public class Book implements Serializable{
         this.name = name;
         this.author = author;
         this.publisher = publisher;
-        //        this.pub_date = DateTimeFormatter.ofPattern(pub_date);
+        //        this.pub_year = pub_year;
         this.edition = 0;
         this.pages = 0;
         this.format = null;
@@ -146,7 +146,7 @@ public class Book implements Serializable{
                 this.name,
                 this.author,
                 this.publisher,
-//                this.pub_date,
+//                this.pub_year,
                 this.edition,
                 this.pages,
                 this.format,
@@ -159,7 +159,7 @@ public class Book implements Serializable{
     public String getName(){return this.name;}
     public String getAuthor(){return this.author;}
     public String getPublisher(){return this.publisher;}
-//    public String getPub_date(){return this.pub_date.toString();}
+//    public int getPub_year(){return this.pub_year;}
     public String getFormat(){return this.format;}
     public String getLanguage(){return this.language;}
     public String getSize(){return this.size;}
@@ -174,7 +174,7 @@ public class Book implements Serializable{
     public void setName(String name){this.name = name;}
     public void setAuthor(String author){this.author = author;}
     public void setPublisher(String publisher){this.publisher = publisher;}
-//    public void setPub_date(String pub_date){this.pub_date = DateTimeFormatter.ofPattern(pub_date);}
+//    public void setPub_year(int pub_year){this.pub_year = pub_year;}
     public void setEdition(int edition){this.edition = edition;}
     public void setPages(int pages){this.pages = pages;}
     public void setFormat(String format){this.format = format;}
