@@ -31,7 +31,7 @@ public class Login {
             return loggedInStudent;
         }
 
-        System.out.println(" Invalid userName of password");
+        System.out.println(" Invalid userName or Incorrect password, Please try again");
 
         return null;
     }
