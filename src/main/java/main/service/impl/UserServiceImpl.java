@@ -39,9 +39,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUser(String username, String password, String firstName, String lastName, String email, String address) {
+    public User createUser(String username, String password, String firstName, String lastName, String email, String address) {
         User user = new User(username, firstName, lastName, email, address);
 
+        return user;
     };
 
 }
