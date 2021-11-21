@@ -12,4 +12,6 @@ public interface UserService {
      void saveOrUpdate(User user);
 
      void deleteByUsername(String username);
+
+     void createUser(String username, String password, String firstName, String lastName, String email, String address);
 }

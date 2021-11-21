@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     UserRepository userRepository;
 
@@ -36,4 +37,11 @@ public class UserServiceImpl implements UserService {
     public void deleteByUsername(String username) {
         userRepository.deleteById(username);
     }
+
+    @Override
+    public void createUser(String username, String password, String firstName, String lastName, String email, String address) {
+        User user = new User(username, firstName, lastName, email, address);
+
+    };
+
 }

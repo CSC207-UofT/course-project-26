@@ -1,9 +1,6 @@
 package main.entity;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +30,9 @@ public class User extends Account implements Serializable {
 
     @Column
     private String address;
+
+//    @OneToMany
+//    private List<Book> books = new ArrayList<>();
 
     /**
      * Creates an instance of User

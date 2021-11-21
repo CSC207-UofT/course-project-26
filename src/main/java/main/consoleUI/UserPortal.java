@@ -22,7 +22,7 @@ public class UserPortal {
 
     public void showUserPortal(Scanner scanner, String username) {
         System.out.println("\n\n=== STUDENT PORTAL ===" +
-                "\n1) Type 'profile' to show your student information" +
+                "\n1) Type 'profile' to show your user information" +
                 "\n2) Type 'update' to update your info" +
                 "\n3) Type 'exit' to exit the system" +
                 "\n==================");

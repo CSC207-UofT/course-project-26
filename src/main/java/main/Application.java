@@ -13,7 +13,6 @@ import main.consoleUI.UserPortal;
 
 import java.util.Scanner;
 
-
 /**
  *  Main application starting point.
  */
