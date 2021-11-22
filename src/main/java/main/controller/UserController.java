@@ -28,7 +28,7 @@ public class UserController {
         User oldUser = studentService.getUserByUsername(newUser.getUsername());
 
         String email = newUser.getEmail();
-        boolean is_email_valid = email.matches("^[a-zA-Z0-9]+@mail.utoronto.[a-zA-Z0-9]+$");
+        boolean is_email_valid = email.matches("^[a-zA-Z0-9.]+@mail.utoronto.[a-zA-Z0-9]+$");
 
         if (!is_email_valid) {
             System.out.println("Invalid uoft email");

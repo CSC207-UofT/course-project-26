@@ -41,8 +41,9 @@ public class User extends Account implements Serializable {
      * @param firstName the user's firstName
      * @param lastName the user's lastName
      */
-    public User(String username, String firstName, String lastName, String email, String address) {
+    public User(String username, String password, String firstName, String lastName, String email, String address) {
         super();
+        this.password = password;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -275,8 +276,13 @@ public class User extends Account implements Serializable {
             return this;
         }
 
+        public UserBuilder password(final String password) {
+            this.password = password;
+            return this;
+        }
+
         public User build() {
-            return new User(username, firstName, lastName, email, address);
+            return new User(username, password, firstName, lastName, email, address);
         }
 
     }

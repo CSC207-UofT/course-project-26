@@ -248,8 +248,8 @@ public class UserManager implements AccountManager{
      * @param address the city of the new User
      * @return the id of the new User
      */
-    public String createNewUser(String username, String firstName, String lastName, String email, String address) {
-        User newUser = new User(username, firstName, lastName, email, address);
+    public String createNewUser(String username,String password, String firstName, String lastName, String email, String address) {
+        User newUser = new User(username,password, firstName, lastName, email, address);
         addUser(newUser.getUsername(), newUser);
         return newUser.getUsername();
     }

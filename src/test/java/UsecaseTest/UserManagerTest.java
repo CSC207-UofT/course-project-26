@@ -17,9 +17,9 @@ public class UserManagerTest {
 
     @Test
     public void test_id_management(){
-        User user1 = new User("Grace","Grace", "Liu", "grace@mail.utoronto.ca",
+        User user1 = new User("Grace", "password","Grace", "Liu", "grace@mail.utoronto.ca",
                 "123 Bay st");
-        User user2 = new User("Annie","Annie", "778", "annie@mail.utoronto.ca",
+        User user2 = new User("Annie", "secondpassword","Annie", "778", "annie@mail.utoronto.ca",
                 "778 Bay st");
         List<User> l1 = new ArrayList<User>();
         l1.add(user1);
