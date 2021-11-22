@@ -61,7 +61,9 @@ public class Application implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
         User loggedInStudent = null;
 
-        System.out.println("Please enter 1 to register, 2 to login, or any key to continue as guest");
+        System.out.println("=== Welcome to UofT BookStore: ===" +
+                "\nPlease enter 1 to register, 2 to login, or any key to continue as guest");
+        System.out.print(" Enter here => ");
         String selection = scanner.nextLine();
 
         if (Objects.equals(selection, "2")){

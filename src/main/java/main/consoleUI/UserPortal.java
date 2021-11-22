@@ -34,7 +34,7 @@ public class UserPortal {
             if (command.equals("profile")) {
                 userController.displayStudent(user.getUsername());
 
-            } else if (command.equals("update") & !user.getUsername().equals("Guest")) {
+            } else if (command.equals("update") && !user.getUsername().equals("Guest")) {
                 System.out.print("Enter first name, last name and address separated by comma " +
                         "(for example: tien,han, 123 Happy Street)\n Enter here => ");
                 String[] info = scanner.nextLine().split(",");
