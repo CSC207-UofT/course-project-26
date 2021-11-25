@@ -28,15 +28,15 @@ public class UserController {
         User oldUser = studentService.getUserByUsername(newUser.getUsername());
 
         String email = newUser.getEmail();
-        boolean is_email_valid = email.matches("^[a-zA-Z0-9.]+@mail.utoronto.[a-zA-Z0-9]+$");
+        boolean email_is_valid = email.matches("^[a-zA-Z0-9.]+@mail.utoronto.[a-zA-Z0-9]+$");
 
-        if (!is_email_valid) {
+        if (!email_is_valid) {
             System.out.println("Invalid uoft email");
         }
 
         if (oldUser != null && StringUtils.isAlpha(newUser.getFirstName())
                 && StringUtils.isAlpha(newUser.getLastName())
-                && is_email_valid
+                && email_is_valid
                 && !newUser.getAddress().isEmpty()) {
 
             oldUser.setFirstName(newUser.getFirstName());
