@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 /**
- *  Main application starting point.
+ * Main application starting point.
  */
 
 @SpringBootApplication
@@ -51,20 +51,20 @@ public class Application implements CommandLineRunner {
         System.out.print(" Enter here => ");
         String selection = scanner.nextLine();
 
-        if (Objects.equals(selection, "2")){
-                while (!userIsLoggedIn) {
-                    loggedInStudent = login.loginUser(scanner);
-                    userIsLoggedIn = loggedInStudent != null;
-                }
-                userPortal.showUserPortal(scanner, loggedInStudent);
+        if (Objects.equals(selection, "2")) {
+            while (!userIsLoggedIn) {
+                loggedInStudent = login.loginUser(scanner);
+                userIsLoggedIn = loggedInStudent != null;
+            }
+            userPortal.showUserPortal(scanner, loggedInStudent);
         } else if (Objects.equals(selection, "1")) {
             while (!userIsLoggedIn) {
                 loggedInStudent = register.registerUser(scanner);
                 userIsLoggedIn = loggedInStudent != null;
             }
-        } else{
+        } else {
             loggedInStudent = userService.getUserByUsername("Guest");
-                }
+        }
         userPortal.showUserPortal(scanner, loggedInStudent);
 
 
