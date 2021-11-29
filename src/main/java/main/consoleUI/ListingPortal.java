@@ -27,43 +27,57 @@ public class ListingPortal {
     @Autowired
     UserService userService;
 
+    /**
+     * This is one of the portal UI for viewing the listings as well as other commands corresponding to the listings.
+     * It is the user interface for both the Users that is in our system and Guests.
+     **/
+
+
+    /** The following are the messages asking for user command **/
     private void printAskForCommandMessage() {
         System.out.print(" Enter command (buy,sell,exit)=> ");
     }
-    private void printAskForCommandMessage2() {
-        System.out.print(" Enter command (1,2,3,4,5,6,7,8,9,0)=> ");
+    private void printAskForCommandMessageforUser() {
+        System.out.print(" Enter command ('1','2','3','4','5','6','7','8','9' or 'exit')=> ");
+    }
+    private void printAskForCommandMessageforGuest() {
+        System.out.print(" Enter command \"9\", \"0\" or \"exit\" to view next page, previous page or exit the book " +
+                "portal--> ");
     }
 
+    /** Showing the listings for Users in our system **/
     public void ListingUser(Scanner scanner, User user) {
-        System.out.print("\n\n=== BOOK PORTAL ===\" +" +
+        System.out.print("\n\n=== BOOK PORTAL ===\"" +
                 "\n1) Type 'buy' to view the list and buy the books you want" +
                 "\n2) Type 'sell' to sell books" +
                 "\n3) Type 'exit' to exit " +
-                "\n==============");
+                "\n===");
         printAskForCommandMessage();
         String command = scanner.nextLine();
+        List<Book> books = listingPortalController.getAllBooks();
 
         while (!command.equals("exit")) {
             if (command.equals("buy")){
-                List<Book> books = listingPortalController.getAllBooks();
                 List<List<Book>> booksPartitions = Lists.partition(books, 3);
 
                 int page = 0;
 
-                while (!command.equals("exit")) {
+                while (!command.equals("exit") && !books.isEmpty()) {
+                    // Checks if the page is not valid for the number of books in listings.
                     if (page < booksPartitions.size() && page >= 0) {
 
-                        Integer page_number = page + 1;
+                        int page_number = page + 1;
 
-                        System.out.print("\n\n=== Page" + page_number + "===\" +" +
+                        System.out.print("\n\n=== Page " + page_number + " ===" +
                                 getBookMessage(booksPartitions.get(page)) +
-                                "\n9) Type 9 to go to the previous page" +
-                                "\n0) Type 0 to go to the next page" +
+                                "\n8) Type 8 to go to the previous page" +
+                                "\n9) Type 9 to go to the next page" +
                                 "\nExit) Type 'exit' to go back to the BOOK PORTAL\n");
 
-                        printAskForCommandMessage2();
+                        printAskForCommandMessageforUser();
                         command = scanner.nextLine();
 
+                        // Checks for the input command
                         switch (command) {
                             case "1":
                                 String username1 = booksPartitions.get(page).get(0).getUser();
@@ -92,23 +106,64 @@ public class ListingPortal {
                                         "Seller's Address: " + user3.getAddress() + "\n" +
                                         "====================");
                                 break;
-                            case "9":
+                            case "4":
+                                String username4 = booksPartitions.get(page).get(3).getUser();
+                                User user4= userService.getUserByUsername(username4);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user4.getFirstName() + " " + user4.getLastName() + "\n" +
+                                        "Seller's Email: " + user4.getEmail() + "\n" +
+                                        "Seller's Address: " + user4.getAddress() + "\n" +
+                                        "====================");
+                                break;
+                            case "5":
+                                String username5 = booksPartitions.get(page).get(4).getUser();
+                                User user5= userService.getUserByUsername(username5);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user5.getFirstName() + " " + user5.getLastName() + "\n" +
+                                        "Seller's Email: " + user5.getEmail() + "\n" +
+                                        "Seller's Address: " + user5.getAddress() + "\n" +
+                                        "====================");
+                                break;
+                            case "6":
+                                String username6 = booksPartitions.get(page).get(5).getUser();
+                                User user6= userService.getUserByUsername(username6);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user6.getFirstName() + " " + user6.getLastName() + "\n" +
+                                        "Seller's Email: " + user6.getEmail() + "\n" +
+                                        "Seller's Address: " + user6.getAddress() + "\n" +
+                                        "====================");
+                                break;
+                            case "7":
+                                String username7 = booksPartitions.get(page).get(6).getUser();
+                                User user7= userService.getUserByUsername(username7);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user7.getFirstName() + " " + user7.getLastName() + "\n" +
+                                        "Seller's Email: " + user7.getEmail() + "\n" +
+                                        "Seller's Address: " + user7.getAddress() + "\n" +
+                                        "====================");
+                                break;
+                            case "8":
                                 page--;
                                 break;
-                            case "0":
+                            case "9":
                                 page++;
                                 break;
                             case "exit":
                                 break;
                             default:
-                                printAskForCommandMessage2();
+                                printAskForCommandMessageforUser();
                                 command = scanner.nextLine();
                         }
                     } else {
-                        System.out.print(" Error happen ");
+                        System.out.print("Invalid page command( this is the first or last page. You can't go beyond!)\n");
                         break;
                     }
                 }
+                if (books.isEmpty()){
+                    System.out.println("There is no listed books! You can view it other times!");
+                }
+
+
             } else if(command.equals("sell")){
                 System.out.print(" Enter the name of the book => ");
                 String book_name = scanner.nextLine();
@@ -129,15 +184,88 @@ public class ListingPortal {
 
     }
 
-    private String getBookMessage(List<Book> books) {
-        String message = "";
-        for (int i = 0; i < books.size(); i++) {
-            Integer number = i + 1;
+    // Showing the listing user interface for Guests
+    public void ListingGuest(Scanner scanner) {
 
-            message += ("\n" + number + ") " + books.get(i).toString());
+                List<Book> books = listingPortalController.getAllBooks();
+                int page = 0;
+
+                if (!books.isEmpty()) {
+                    List<List<Book>> booksPartitions = Lists.partition(books, 7);
+
+                    int page_number = page + 1;
+
+                    System.out.print("\n\n=== Page " + page_number + " === " +
+                            getBookMessage(booksPartitions.get(page)) +
+                            "\n8) Type '8' to go to the previous page" +
+                            "\n9) Type '9' to go to the next page" +
+                            "\nExit) Type 'exit' to go back to the BOOK PORTAL\n");
+
+                    printAskForCommandMessageforGuest();
+                    String command = scanner.nextLine();
+
+                    switch (command) {
+                        case "8":
+                            page--;
+                            break;
+                        case "9":
+                            page++;
+                            break;
+                        case "exit":
+                            break;
+                        default:
+                            printAskForCommandMessageforGuest();
+                            command = scanner.nextLine();
+                    }
+                    while (!command.equals("exit")) {
+                        if (page < booksPartitions.size() && page >= 0) {
+
+                            page_number = page + 1;
+
+                            System.out.print("\n\n=== Page " + page_number + " ===" +
+                                    getBookMessage(booksPartitions.get(page)) +
+                                    "\n8) Type '8' to go to the previous page" +
+                                    "\n9) Type '9' to go to the next page" +
+                                    "\nExit) Type 'exit' to go back to the BOOK PORTAL\n");
+
+                            printAskForCommandMessageforGuest();
+                            command = scanner.nextLine();
+
+                            switch (command) {
+                                case "8":
+                                    page--;
+                                    break;
+                                case "9":
+                                    page++;
+                                    break;
+                                case "exit":
+                                    break;
+                                default:
+                                    printAskForCommandMessageforGuest();
+                                    command = scanner.nextLine();
+                            }
+                        } else {
+                            System.out.print("Invalid page command( this is the first or last page. You can't go" +
+                                    " beyond!)\n");
+                            break;
+                        }
+                    }
+                } else{
+                    System.out.println("There is no listed books! You can view it other times!");
+                }
+
+    }
+
+    // a helper method for getting the book
+    private String getBookMessage(List<Book> books) {
+        StringBuilder message = new StringBuilder();
+        for (int i = 0; i < books.size(); i++) {
+            int number = i + 1;
+
+            message.append("\n").append(number).append(") ").append(books.get(i).toString());
         }
 
-        return message;
+        return message.toString();
     }
 
 }

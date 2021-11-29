@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 /**
- * Console UI to ask user for login input
+ * Console UI to ask user for registry input
  */
 
 @Component

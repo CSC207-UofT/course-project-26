@@ -80,7 +80,8 @@ public class Book implements Serializable{
     public void setUser(String username){this.username = username;}
 
     public String toString(){
-        return this.getName() + " , " + this.getAuthor() + " , " + this.getPrice();
+        return "The book named '" +this.getName() + "' by the author '" + this.getAuthor() + "' is currently listed " +
+                "for a price of " + this.getPrice();
     }
 
 }

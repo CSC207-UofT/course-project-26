@@ -20,14 +20,14 @@ public class UserPortal {
     private ListingPortal listingPortal;
 
     private void printAskForCommandMessage() {
-        System.out.print(" Enter command (profile,update,book,exit)=> ");
+        System.out.print(" Enter command (profile,update,listing,exit)=> ");
     }
 
     public void showUserPortal(Scanner scanner, User user) {
         System.out.println("\n\n=== STUDENT PORTAL ===" +
                 "\n1) Type 'profile' to show your user information" +
                 "\n2) Type 'update' to update your info" +
-                "\n3) Type 'book' to view, sell, or buy books (guest can only view the listing)" +
+                "\n3) Type 'listing' to view, sell, or buy books (guests can only view the listing)" +
                 "\n4) Type 'exit' to exit the system" +
                 "\n==================");
 
@@ -53,12 +53,10 @@ public class UserPortal {
                 } else {
                     System.out.println("Student info update failed!");
                 }
-            } else if (command.equals("book") && user.getUsername().equals("Guest")) {
-
-
-            } else if (command.equals("book") && !user.getUsername().equals("Guest")) {
+            } else if (command.equals("listing") && user.getUsername().equals("Guest")) {
+                listingPortal.ListingGuest(scanner);
+            } else if (command.equals("listing") && !user.getUsername().equals("Guest")) {
                 listingPortal.ListingUser(scanner, user);
-
             } else {
                 System.out.println("No such command!");
             }

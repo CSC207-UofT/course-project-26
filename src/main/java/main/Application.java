@@ -39,22 +39,6 @@ public class Application implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
- 
-//    @Override
-//    public void run(String... args) throws Exception {
-//        boolean userIsLoggedIn = false;
-//        Scanner scanner = new Scanner(System.in);
-//        User loggedInStudent = null;
-//
-//        while (true) {
-//            while (!userIsLoggedIn) {
-//                loggedInStudent = login.loginUser(scanner);
-//                userIsLoggedIn = loggedInStudent != null;
-//            }
-//
-//            userPortal.showUserPortal(scanner, loggedInStudent.getUsername());
-//        }
-//    }
 
     @Override
     public void run(String... args) throws Exception {
