@@ -5,6 +5,7 @@ import main.controller.ListingPortalController;
 import main.entity.Book;
 import main.entity.User;
 import main.service.BookService;
+import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,9 @@ public class ListingPortal {
 
     @Autowired
     BookService bookService;
+
+    @Autowired
+    UserService userService;
 
     private void printAskForCommandMessage() {
         System.out.print(" Enter command (buy,sell,exit)=> ");
@@ -62,13 +66,31 @@ public class ListingPortal {
 
                         switch (command) {
                             case "1":
-                                System.out.println(booksPartitions.get(page).get(0).getUser());
+                                String username1 = booksPartitions.get(page).get(0).getUser();
+                                User user1 = userService.getUserByUsername(username1);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user1.getFirstName() + " " + user1.getLastName() + "\n" +
+                                        "Seller's Email: " + user1.getEmail() + "\n" +
+                                        "Seller's Address: " + user1.getAddress() + "\n" +
+                                        "====================");
                                 break;
                             case "2":
-                                System.out.println(booksPartitions.get(page).get(1).getUser());
+                                String username2 = booksPartitions.get(page).get(1).getUser();
+                                User user2 = userService.getUserByUsername(username2);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user2.getFirstName() + " " + user2.getLastName() + "\n" +
+                                        "Seller's Email: " + user2.getEmail() + "\n" +
+                                        "Seller's Address: " + user2.getAddress() + "\n" +
+                                        "====================");
                                 break;
                             case "3":
-                                System.out.println(booksPartitions.get(page).get(2).getUser());
+                                String username3 = booksPartitions.get(page).get(2).getUser();
+                                User user3= userService.getUserByUsername(username3);
+                                System.out.println("\n====================" + "\n" +
+                                        "Seller's Name: " + user3.getFirstName() + " " + user3.getLastName() + "\n" +
+                                        "Seller's Email: " + user3.getEmail() + "\n" +
+                                        "Seller's Address: " + user3.getAddress() + "\n" +
+                                        "====================");
                                 break;
                             case "9":
                                 page--;

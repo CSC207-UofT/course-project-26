@@ -59,7 +59,6 @@ public class UserPortal {
             } else if (command.equals("book") && !user.getUsername().equals("Guest")) {
                 listingPortal.ListingUser(scanner, user);
 
-
             } else {
                 System.out.println("No such command!");
             }
