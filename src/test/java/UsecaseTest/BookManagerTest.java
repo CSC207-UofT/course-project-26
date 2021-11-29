@@ -17,14 +17,9 @@ public class BookManagerTest {
     @Test
     public void test_id_management(){
         Book book1  = new Book(
-                20.00, "A Random Walk Down Wall Street", "Burton Malkiel", "W. W. Norton & Company, Inc.",
-//                    2019,
-                7, 432, "HardCover", "English", 2.5, "14-10-5"
-        );
+                20.00, "A Random Walk Down Wall Street", "Burton Malkiel");
         Book book2  = new Book(
-                40.00, "Harry Potter and the Philosopher's Stone", "J.K Rowling", "Bloomsbury Publishing",
-//                    2019,
-                1, 223, "HardCover", "English", 2.5, "14-10-5");
+                40.00, "Harry Potter and the Philosopher's Stone", "J.K Rowling");
 
         List<Book> l1 = new ArrayList<Book>();
         l1.add(book1);

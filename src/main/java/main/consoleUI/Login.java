@@ -18,7 +18,7 @@ public class Login {
     private LoginController loginController;
 
     public User loginUser(Scanner scanner) {
-        System.out.print(" Enter user name => ");
+        System.out.print(" Enter username => ");
         String userName = scanner.nextLine();
 
         System.out.print(" Enter password => ");
@@ -31,7 +31,7 @@ public class Login {
             return loggedInStudent;
         }
 
-        System.out.println(" Invalid userName or Incorrect password, Please try again");
+        System.out.println(" Invalid username or incorrect password, please try again");
 
         return null;
     }

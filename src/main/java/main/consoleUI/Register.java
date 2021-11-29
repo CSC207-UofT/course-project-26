@@ -44,7 +44,7 @@ public class Register {
             return loggedInStudent;
         }
 
-        System.out.println(" Register unsuccessfully, please try again");
+        System.out.println(" Registration failed, please try again");
 
         return null;
     }

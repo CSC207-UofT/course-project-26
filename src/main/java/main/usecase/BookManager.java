@@ -42,42 +42,8 @@ public class BookManager {
      *
      * @return String The Name of the newly created Book.
      */
-    public String createNewBook(double price, String name, String author, String publisher, int pub_year,
-                                int edition, int pages, String format, String language, double weight, String size){
-        Book newBook = new Book(price, name, author, publisher,
-//                pub_year,
-                edition, pages, format, language, weight, size);
-        addBook(newBook);
-        return newBook.getName();
-    }
-
-    /**
-     * Create a new Book with given price, name author, publisher, pub_date, edition, pages, format and language
-     * of the book, add it to the BookManager
-     *
-     * @return String The Name of the newly created Book.
-     */
-    public String createNewBook(double price, String name, String author, String publisher,
-//                               int pub_year,
-                                int edition, int pages, String format, String language){
-        Book newBook = new Book(price, name, author, publisher,
-//                pub_year,
-                edition, pages, format, language);
-        addBook(newBook);
-        return newBook.getName();
-    }
-
-    /**
-     * Create a new Book with given price, name author, publisher and pub_date of the book, add it to the BookManager
-     *
-     * @return String The Name of the newly created Book.
-     */
-    public String createNewBook(double price, String name, String author, String publisher
-//                               , int pub_year
-    ){
-        Book newBook = new Book(price, name, author, publisher
-//                , pub_year
-        );
+    public String createNewBook(double price, String name, String author){
+        Book newBook = new Book(price, name, author);
         addBook(newBook);
         return newBook.getName();
     }
