@@ -1,7 +1,6 @@
 package main.entity;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Arrays;
