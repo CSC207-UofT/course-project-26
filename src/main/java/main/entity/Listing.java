@@ -2,7 +2,6 @@ package main.entity;
 
 import java.util.UUID;
 
-
 public class Listing {
     /**
      * Listing is an entity

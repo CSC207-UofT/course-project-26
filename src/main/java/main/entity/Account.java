@@ -1,8 +1,6 @@
 package main.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.UUID;
 
 /**
  * Represents an account in the system; an abstract class that is extended by the User and Admin classes

@@ -1,6 +1,5 @@
 package main.consoleUI;
 
-import main.controller.LoginController;
 import main.controller.RegisterController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;

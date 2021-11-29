@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import main.entity.Book;
-import main.entity.Listing;
 import main.usecase.BookManager;
 
 public class BookGateway extends Gateway {

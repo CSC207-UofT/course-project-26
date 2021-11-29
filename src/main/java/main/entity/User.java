@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 public class User extends Account implements Serializable {
+
     @ElementCollection
     private List<String> inventory = new ArrayList<>();  // a list of books IDs; each book ID must be unique
 
@@ -30,9 +31,6 @@ public class User extends Account implements Serializable {
 
     @Column
     private String address;
-
-//    @OneToMany
-//    private List<Book> books = new ArrayList<>();
 
     /**
      * Creates an instance of User

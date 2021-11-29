@@ -1,7 +1,5 @@
 package main.controller;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 import main.entity.User;
 import main.service.UserService;
 import org.apache.commons.lang3.StringUtils;
@@ -10,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserController {
+
     @Autowired
     private UserService studentService;
 

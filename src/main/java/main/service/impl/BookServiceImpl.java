@@ -1,17 +1,13 @@
 package main.service.impl;
 
 import main.entity.Book;
-import main.entity.User;
 import main.repository.BookRepository;
-import main.repository.UserRepository;
 import main.service.BookService;
-import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * A service class that performs student-related activity.

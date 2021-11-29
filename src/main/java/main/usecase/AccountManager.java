@@ -1,7 +1,6 @@
 package main.usecase;
 
 import java.util.List;
-
 import main.entity.Account;
 
 public interface AccountManager {

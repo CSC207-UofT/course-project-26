@@ -1,12 +1,9 @@
 package main.controller;
 
 import main.entity.User;
-import main.gateway.UserGateway;
 import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +12,6 @@ public class RegisterController {
 
     @Autowired
     private UserService studentService;
-    private UserGateway usergateway;
 
     public User register(String username, String password, String firstname, String lastname,
                          String email, String address) {

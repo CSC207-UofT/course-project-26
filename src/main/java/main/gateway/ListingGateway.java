@@ -1,6 +1,5 @@
 package main.gateway;
 
-import main.entity.Admin;
 import main.entity.Listing;
 import main.usecase.ListingManager;
 

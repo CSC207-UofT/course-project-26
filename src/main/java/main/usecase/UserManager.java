@@ -1,14 +1,11 @@
 package main.usecase;
 
 import main.entity.Account;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import main.entity.User;
-
 
 public class UserManager implements AccountManager{
     private final Map<String, User> userIdToUser = new HashMap<>();  // a HashMap with user IDs as keys and User entities as values
