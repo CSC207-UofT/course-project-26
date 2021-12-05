@@ -1,6 +1,6 @@
 # Group 26 - Design Document - Phase 2
 
-## UofT Book Marketplace - Specification - Phase 2
+## Specification
 The main purpose of this project is to create a second hand book platform for UofT students to buy and sell second
 hand books. Usually an E-commerce platform limits users to represent only one function - they are either the seller
 (store owner) or the buyer (customer). Our application creates a community that solves students' needs to buy affordable
@@ -22,6 +22,9 @@ the data from the user, then the controller can decide to display
 user or to update student. The controller will use some service
 to work with the entity, it can do things like CRUD, create,
 read, update, or delete.
+
+# TODO: Wesley
+
 
 ## Solid
 
@@ -67,6 +70,7 @@ The Controller classes retrieves and store data from the database. For example, 
 our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
 to execute request form the User. 
 
+# TODO: Annie and Grace
 
 ## Design Patterns
 
@@ -77,6 +81,8 @@ And when the user leaves some of the values blank and doesn’t put in each deta
 its weight, etc., The BooksManager generates a Book without those details, so that the user can provide less details 
 about the book when they want. This is necessary as a seller may not know every small detail about the book they are 
 selling.
+
+# TODO: Annie
 
 ## Use of Github Features
 We took advantage of a variety of features that Github offers for version control and collaborating as a team. We used 
@@ -127,6 +133,11 @@ that overcrowded and disturbing to find a certain file. Using the packaging by l
 could allow us to locate the class we want efficiently but also help us avoid some violations of the clean architecture that we might
 have along the way.
 
+
+## Accessibility
+
+# TODO: Wesley
+
 ## Major Design Decisions
 
 Seller and Buyer classes are originally the child class for User Class. However, we believe that a user can either be a 
@@ -140,7 +151,7 @@ Then we have the builder. Next is the spring boot. Lastly, is
 the dependency injection (autowire) and interface (repository).
 
 
-## Progress Report - Phase 2
+## Progress Report
 
 #### Individual Responsibility
 
