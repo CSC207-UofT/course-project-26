@@ -13,18 +13,38 @@ to easily access the books they want to sell when creating listings.
 
 #### Profile system
 Users in our database system can now have access to their profile which includes their personal information as well as
-the login information. They are also now able to edit their profile, such as changing the address, uoft email address
-as well as the password.
+the login information. Users can now edit their first name, last name, and address as well. The information will be 
+updated immediately. 
 
-#### Interacting with Database
-ConsoleUI can print and read the data we type. Until we get
-the data from the user, then the controller can decide to display
-user or to update student. The controller will use some service
-to work with the entity, it can do things like CRUD, create,
-read, update, or delete.
+#### Database configuration (H2 Database)
+H2 database is an open-source database written in Java programming language which supports querying data in standard
+SQL. It is very much lightweight and its JAR file is only 1.5 MB in size. It also also provides a web interface called
+H2 Console to see the data.
 
-# TODO: Wesley
+The best thing about using an in-memory database is that we don’t have to do any configuration at all. We've' added
+a single property to the application file which enable the H2 console. Therefore, we can access the Web UI for our 
+in-memory database via the following link:
+http://localhost:8080/h2-console.
+This URL is reachable only when our application is in a running mode. We will have a look at this console once we run 
+our project.
 
+#### H2 Database with Spring Boot
+Java Spring Boot (Spring Boot) is a tool that makes developing web application and microservices with Spring Framework 
+faster and easier. It provides a tool that allows you to set up a Spring-based application with minimal
+configuration and setup. With it, developers like us can get started quickly without losing time on preparing and 
+configuring their Spring application.
+
+So, how does H2 and Spring Boot combination work? Spring Boot is intelligent, it looks at the entities and creates the
+database and the tables. Spring Boot Application connect to the database h2 by Spring Boot Auto Configuration. It 
+attempts to automatically configure your Spring application based on the jar dependencies that we've added.
+
+#### Data Access Layer interface and the ConsoleUI
+To access the database, we will be defining a simple JPA interface which provides its own helper functions. Once We run 
+our application with a command-line runner, it will call the functions we defined from the JPA Repository interface 
+, and  we will be able to see a simple output in our terminal.
+
+It is important to note that the above UI console is accessible only for the time this application is running. Also, 
+after the application has stopped, this console won’t be reachable anymore.
 
 ## Solid
 
