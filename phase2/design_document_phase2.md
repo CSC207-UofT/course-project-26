@@ -79,7 +79,32 @@ about the book when they want. This is necessary as a seller may not know every 
 selling.
 
 ## Use of Github Features
-# TODO: Grace
+We took advantage of a variety of features that Github offers for version control and collaborating as a team. We used 
+features like branching, creating pull requests where we review each others code and resolve merge conflicts.
+
+#### Branching
+Each of us work on our own feature branch to develop new features to our project, providing us space to 
+make changes without affecting the main branch. Whenever we make a completed change, we write concise but informative 
+commit messages to help ourselves and future contributors to understand what changes the commit contains. After we 
+commit our changes, we push our work to remote storage, so we can access our work from any device and our team can see 
+each of our work, answer questions, and make suggestions.
+
+#### Creating Pull Requests & Conducting Code Reviews
+After we commit and push our feature branch to remote, we create a pull request by including a summary of the changes 
+and what problem they solve. This feature allows us to ask each other for feedback on our changes before we merge into
+our main branch. \
+
+Pull request review is valuable for us in identifying potential issues in each other's code - we are 
+able to comment on specific lines that cause problems, and everyone is able to see. It helps to address issues before
+merging to main, and it allows everyone to be aware of the added code and problems it may cause, so other members can 
+avoid repeating the same problem with their features.
+
+#### Resolving Merge Conflicts
+Sometimes multiple members push changes to the same code which causes merge conflicts. We utilize the feature of 
+resolving merge conflicts in Github to select the code we wish to keep before we merge into main. This feature gives us 
+flexibility to create changes on any files in our project without the need to worry that the changes may conflict with 
+another member's and will get lost during version control.
+
 
 ## Refactoring and Code Smells
 
