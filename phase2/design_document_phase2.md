@@ -14,11 +14,11 @@ to easily access the books they want to sell when creating listings.
 #### Profile system
 Users in our database system can now have access to their profile which includes their personal information as well as
 the login information. Users can now edit their first name, last name, and address as well. The information will be 
-updated immediately. 
+updated immediately. Also, if you don't want to be registered, you can still use our platform as a guest.
 
 #### Database configuration (H2 Database)
 H2 database is an open-source database written in Java programming language which supports querying data in standard
-SQL. It is very much lightweight and its JAR file is only 1.5 MB in size. It also also provides a web interface called
+SQL. It is very much lightweight and its JAR file is only 1.5 MB in size. It also provides a web interface called
 H2 Console to see the data.
 
 The best thing about using an in-memory database is that we don’t have to do any configuration at all. We've' added
@@ -155,8 +155,46 @@ have along the way.
 
 
 ## Accessibility
+### The 7 Principles of Universal Design
+#### Equitable Use
+We believed that our design is useful and marketable to people with diverse abilities. LIke what we mentioned in our 
+specification. Our application creates a community that solves students' needs to buy affordable books for their new 
+school term while also satisfying their needs to sell their old textbooks. We make our design appealing to all 
+users (students.)
+#### Simple and Intuitive Use
+We believe that our design is easy to understand, regardless of the user's experience, knowledge, language skills, or 
+current concentration level. The instructions given are detailed and well illustrated. 
+#### Tolerance for Error
+Our second-hand book platform simply follow this principle by providing warnings of hazards and errors. The system 
+will print error and show where the errors are when the given commands are wrong. This avoids the Users from getting Error messages when 
+they kee on using our system.
+#### Low Physical Effort
+Our second-hand book platform can be used efficiently and comfortably and with a minimum of fatigue. It's really simple 
+and required zero efforts. It also allows users to maintain a neutral body position while using our system.
+#### Size and Space for Approach and Use
+In our design, we provide a clear line of sight to important elements by making them bold. Some important instructions
+and commands are also being highlighted. It's comfortable and no stress when using our system. 
 
-# TODO: Wesley
+#### Flexibility in Use
+In the future, we can provide different choices in methods of use. For now, the database are only connected when we run
+the codes we have, and we use command line for our system. Therefore, flexibility are limited.
+#### Perceptible Information
+We could improve a lot more on our User Interface in the future. We could provide adequate contrast between essential 
+information and its surroundings, and perhaps provide compatibility with a variety of techniques or devices used by 
+people with sensory limitations.
+
+### Target Customer
+Our Target customers will simply be the students. For now, it has been narrowed down to the UofT students who want to 
+buy and sell second hand books. Our second-hand book platform creates a community that solves students' needs to buy 
+affordable books for their new school term while also satisfying their needs to sell their old textbooks. Therefore, it 
+is different from other E-commerce platform which limits their users to represent only one function - they are either
+the seller(store owner) or the buyer (customer). 
+
+Our second-hand book platform are specifically designed for students who want to either buy second-hand books or sell
+their old textbooks. Therefore, our system are less likely to be used for students who want new textbooks. Also, our
+system are less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
+so you will need to wait for your books just like buying stuff online.
+
 
 ## Major Design Decisions
 
