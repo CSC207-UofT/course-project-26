@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import main.consoleUI.Register;
 import main.consoleUI.Login;
 import main.consoleUI.UserPortal;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -65,7 +66,6 @@ public class Application implements CommandLineRunner {
             loggedInStudent = userService.getUserByUsername("Guest");
         }
         userPortal.showUserPortal(scanner, loggedInStudent);
-
 
     }
 }
