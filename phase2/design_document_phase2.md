@@ -76,19 +76,27 @@ including change username, change password etc. No realization class is forced t
 
 ## Clean Architecture
 
-In our project, we have different layers of clean architecture, and they follow the dependency rule of the clean architecture. 
-Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something 
-in an outer circle.
+Our project is divided into different logical pieces, and they effectively communicate with each other. 
+We aim to facilitate the development, deployment, operation and maintenance of the system by creating different layers 
+of clean architecture that follow the dependency rule.
 
-The Account, Admin, Book, Listing and User are our 
-entity class, and they are independent. They store the interfaces that we need for each different class. You can access the Entity classes
-directly from our User case classes, which are AccountManager, AdminManager, 
+In clean architecture, entity classes are the highest level policies, meaning that they are the farthest from inputs and 
+outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User" classes. They are independent of each 
+other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
+operating on critical business data (variables). 
+
+
+We access the Entity classes directly from our User case classes, which are AccountManager, AdminManager, 
 BookManager, ListingManager, and UserManager. The User case classes get the information from the Entity class and manage
 all the data from the Entity class.
 
 The Controller classes retrieves and store data from the database. For example, they take the information directly from 
 our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
 to execute request form the User. 
+
+Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
+in an outer circle.
+
 
 # TODO: Annie and Grace
 
