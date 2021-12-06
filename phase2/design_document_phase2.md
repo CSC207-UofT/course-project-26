@@ -13,8 +13,8 @@ to easily access the books they want to sell when creating listings.
 
 #### Profile system
 Users in our database system can now have access to their profile which includes their personal information as well as
-the login information. Users can now edit their first name, last name, and address as well. The information will be 
-updated immediately. Also, if you don't want to be registered, you can still use our platform as a guest.
+the login information. Also, users can now edit their first name, last name, and address. The information will be 
+updated immediately. Moreover, if you don't want to be registered, you can still access our platform as a guest.
 
 #### Database configuration (H2 Database)
 H2 database is an open-source database written in Java programming language which supports querying data in standard
@@ -41,7 +41,7 @@ attempts to automatically configure your Spring application based on the jar dep
 #### Data Access Layer interface and the ConsoleUI
 To access the database, we will be defining a simple JPA interface which provides its own helper functions. Once We run 
 our application with a command-line runner, it will call the functions we defined from the JPA Repository interface 
-, and  we will be able to see a simple output in our terminal.
+and we will be able to see a simple output in our terminal.
 
 It is important to note that the above UI console is accessible only for the time this application is running. Also, 
 after the application has stopped, this console won’t be reachable anymore.
@@ -157,8 +157,8 @@ have along the way.
 ## Accessibility
 ### The 7 Principles of Universal Design
 #### Equitable Use
-We believed that our design is useful and marketable to people with diverse abilities. LIke what we mentioned in our 
-specification. Our application creates a community that solves students' needs to buy affordable books for their new 
+We believed that our design is useful and marketable to people with diverse abilities, lIke what we mentioned in our 
+specification. Our application creates a community that fulfills students' needs to buy affordable books for their new 
 school term while also satisfying their needs to sell their old textbooks. We make our design appealing to all 
 users (students.)
 #### Simple and Intuitive Use
@@ -166,33 +166,32 @@ We believe that our design is easy to understand, regardless of the user's exper
 current concentration level. The instructions given are detailed and well illustrated. 
 #### Tolerance for Error
 Our second-hand book platform simply follow this principle by providing warnings of hazards and errors. The system 
-will print error and show where the errors are when the given commands are wrong. This avoids the Users from getting Error messages when 
-they kee on using our system.
+will print error and show where the errors are when the given commands are wrong. This avoids Users from getting Error messages when 
+they keep on using our system.
 #### Low Physical Effort
-Our second-hand book platform can be used efficiently and comfortably and with a minimum of fatigue. It's really simple 
-and required zero efforts. It also allows users to maintain a neutral body position while using our system.
+Our second-hand book platform can be used efficiently and comfortably, without getting fatigued. It is simple 
+and requires zero effort. It also allows users to maintain a neutral body position while using our system.
 #### Size and Space for Approach and Use
 In our design, we provide a clear line of sight to important elements by making them bold. Some important instructions
-and commands are also being highlighted. It's comfortable and no stress when using our system. 
+and commands are also being highlighted, which provides convenience to users when using our system. 
 
 #### Flexibility in Use
-In the future, we can provide different choices in methods of use. For now, the database are only connected when we run
-the codes we have, and we use command line for our system. Therefore, flexibility are limited.
+In the future, we can provide different methods of use. Due to the fact that we currently use command line for our user 
+interface, the flexibility of our application is limited. 
+
 #### Perceptible Information
 We could improve a lot more on our User Interface in the future. We could provide adequate contrast between essential 
-information and its surroundings, and perhaps provide compatibility with a variety of techniques or devices used by 
-people with sensory limitations.
+information and its surroundings. Furthermore, we could provide compatibility to people with sensory limitations by 
+advacning the techniques.
 
 ### Target Customer
 Our Target customers will simply be the students. For now, it has been narrowed down to the UofT students who want to 
-buy and sell second hand books. Our second-hand book platform creates a community that solves students' needs to buy 
-affordable books for their new school term while also satisfying their needs to sell their old textbooks. Therefore, it 
-is different from other E-commerce platform which limits their users to represent only one function - they are either
-the seller(store owner) or the buyer (customer). 
+buy and sell second hand books. Our platform is different from other E-commerce platform which limits their users to 
+represent either a seller or a buyer.
 
-Our second-hand book platform are specifically designed for students who want to either buy second-hand books or sell
-their old textbooks. Therefore, our system are less likely to be used for students who want new textbooks. Also, our
-system are less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
+Our second-hand book platform is specifically designed for students who want to either buy second-hand books or sell
+their old textbooks. Therefore, our system is less likely to be used for students who want new textbooks. Also, our
+system is less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
 so you will need to wait for your books just like buying stuff online.
 
 
@@ -218,6 +217,7 @@ the dependency injection (autowire) and interface (repository).
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
+For phase 2, I complete the specification, functionality, and the accessibility. 
 * Will: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
 
 
