@@ -74,15 +74,7 @@ public class ListingPortal {
 
 
             } else if (command.equals("sell")) {
-                System.out.print(" Enter the name of the book => ");
-                String book_name = scanner.nextLine();
-
-                System.out.print(" Enter your desired price for the book => ");
-                double book_price = Double.parseDouble(scanner.nextLine());
-
-                System.out.print(" Enter the name of the author of the book => ");
-                String book_author = scanner.nextLine();
-                listingPortalController.sell(user.getUsername(), book_price, book_name, book_author);
+                helper_function_user2(scanner, user);
             } else {
                 System.out.println("No such command!");
             }
@@ -91,6 +83,18 @@ public class ListingPortal {
             command = scanner.nextLine();
         }
 
+    }
+
+    private void helper_function_user2(Scanner scanner, User user) {
+        System.out.print(" Enter the name of the book => ");
+        String book_name = scanner.nextLine();
+
+        System.out.print(" Enter your desired price for the book => ");
+        double book_price = Double.parseDouble(scanner.nextLine());
+
+        System.out.print(" Enter the name of the author of the book => ");
+        String book_author = scanner.nextLine();
+        listingPortalController.sell(user.getUsername(), book_price, book_name, book_author);
     }
 
     private void helper_listing_user(Scanner scanner, String command, List<Book> books, List<List<Book>> booksPartitions, int page) {
