@@ -85,16 +85,19 @@ outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User"
 other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
 operating on critical business data (variables). 
 
+For the usecase layer, we have varies manager classes, each to manage a specific entity class.
 
-We access the Entity classes directly from our User case classes, which are AccountManager, AdminManager, 
-BookManager, ListingManager, and UserManager. The User case classes get the information from the Entity class and manage
-all the data from the Entity class.
+Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
+interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
+The Servicesimple classes implements Services interfaces and depened on Repository interfaces, so they interpret that
+data, and uses it to control the dance of the Entities. Ideally, the controller accesses entity classes through use
+case classes in order to maintain clean architecture - our controller uses service interface to obatain rules and
+data from entities.
 
-The Controller classes retrieves and store data from the database. For example, they take the information directly from 
-our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
-to execute request form the User. 
+Finally, consoleUI classes are in the fourth layer. They get the input data, then hand them in to Service, Controller
+classes which are in the third layer.
 
-Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
+Overall, Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
 in an outer circle.
 
 
