@@ -85,20 +85,16 @@ outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User"
 other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
 operating on critical business data (variables). 
 
+We access the Entity classes directly from our Usecase classes, which are "AccountManager", "AdminManager", 
+"BookManager", "ListingManager", and "UserManager". The Usecase classes get the information from Entity classes and manage
+all the data from the Entity classes.
 
-We access the Entity classes directly from our User case classes, which are AccountManager, AdminManager, 
-BookManager, ListingManager, and UserManager. The User case classes get the information from the Entity class and manage
-all the data from the Entity class.
-
-The Controller classes retrieves and store data from the database. For example, they take the information directly from 
+Controller classes retrieve and store data from the database. For example, they take the information directly from 
 our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
 to execute request form the User. 
 
 Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
 in an outer circle.
-
-
-# TODO: Annie and Grace
 
 ## Design Patterns
 
@@ -145,7 +141,6 @@ another member's and will get lost during version control.
 # TODO: Will & Tien
 
 ## Testing
-# TODO: Taylan
 We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system
 in test files that we have in our actual code that makes it easier to access and use the tests we have for our program.
 Some of these tests test basic functionalities of the program like getters and setters of entity classes while the other
@@ -154,7 +149,6 @@ gives an exception when an amount more than available is given and changes the L
 the number of books in the listing drops to zero.
 
 ## Code Style and Documentation
-# TODO: Taylan
 For the code style, our code passes all the default code style formatting requirements that are in IntelliJ.
 We have used proper naming conventions for all of our classes, methods and variables. We also used proper indentation
 to increase the readability of our code. We have included documentation for all of our classes and most of the methods 
@@ -233,7 +227,11 @@ the dependency injection (autowire) and interface (repository).
 #### Individual Responsibility
 
 * Annie: worked together with Grace on Entity classes, Gateway classes, SOLID principle
-* Grace: worked together with Annie on Entity classes, Gateway classes, SOLID principle, contributed to specification, testing
+* Grace: Contributed to the writeup for Github features, SOLID principle, Clean Architecture
+  https://github.com/CSC207-UofT/course-project-26/commit/c41480590e628e859de69445f456dce29496c1dc is one of my significant
+  contribution where I made significant changes to our entity (Account, User, Admin) classes design and added testing. In 
+  this PR, I decided to remove buyer and seller classes and instead have Admin and User under Account interface because
+  every user can buy or sell.
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
