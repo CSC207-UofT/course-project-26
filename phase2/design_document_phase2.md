@@ -147,7 +147,7 @@ another member's and will get lost during version control.
 
 ## Testing
 We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system
-in test files that we have in our actual code that makes it easier to access and use the tests we have for our program.
+in test files that we have in our actual code that made it easier to access and use the tests we have for our program.
 Some of these tests test basic functionalities of the program like getters and setters of entity classes while the other
 tests check more specific capabilities of the program such as removing books from a listing to check if the program
 gives an exception when an amount more than available is given and changes the Listing's status to "Sold out" when 
@@ -236,7 +236,8 @@ the dependency injection (autowire) and interface (repository).
   https://github.com/CSC207-UofT/course-project-26/commit/c41480590e628e859de69445f456dce29496c1dc is one of my significant
   contributions where I made changes to the design of entity classes. I replaced Buyer and Seller classes with Admin and 
   User since a user can buy and sell.
-* Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
+* Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design 
+  patterns, code style and documentation as well as creating tests for some entity and usecase classes.
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
 For phase 2, I worked on the specification, functionality, and the accessibility. 
