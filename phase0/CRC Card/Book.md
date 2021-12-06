@@ -1,4 +1,4 @@
-Class name: main.consoleUI.Entity.Usecases \
+Class name: main.consoleui.Entity.Usecases \
 Parent class: None
 
 Responsibility:

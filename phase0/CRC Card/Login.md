@@ -9,6 +9,6 @@ Responsibility:
 * Check if the username matches the username stored in the file
 
 Collaborators:
-* main.consoleUI.Entity.Seller
-* main.consoleUI.Entity.Buyer
+* main.consoleui.Entity.Seller
+* main.consoleui.Entity.Buyer
 

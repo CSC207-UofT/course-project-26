@@ -143,7 +143,18 @@ another member's and will get lost during version control.
 
 ## Refactoring and Code Smells
 
-# TODO: Will & Tien
+- Shorten the methods in Listing portal by having helper methods.
+
+- Refactor some of the method's name and package's name.
+
+< helper_sell_book > - a helper method for selling a book, which the seller will have to give the name, the desired price, and the author of the book.
+
+< helper_listing_user > - a helper method for showing the listing portal of the books, and print out the seller's information, including the name, the email, and the address.
+
+< helper_for_book_page_guest > - a helper method for showing the listing portal of the books for guests users which only
+includes information about the book
+
+- Reformat the code so that the code looks clean and easy to follow along with.
 
 ## Testing
 We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system

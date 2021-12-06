@@ -1,4 +1,4 @@
-package main.consoleUI;
+package main.consoleui;
 
 import com.google.common.collect.Lists;
 import main.controller.ListingPortalController;

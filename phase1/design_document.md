@@ -21,7 +21,7 @@ thus violating principles of clean architecture. In this case, use cases is more
 have more use cases while gateway can only be used specifically for one file, and it is more preferred to have something 
 more concrete to depend on something more abstract, not the other way around. In order to revert the source code 
 dependency, we convert our gateway class into an interface. Then, we pass in the interface to our use case class constructor. Now, even thought it calls a 
-method in the gateway class, it is no longer dependent on the main.consoleUI.Gateway class because any gateway class that implements 
+method in the gateway class, it is no longer dependent on the main.consoleui.Gateway class because any gateway class that implements 
 the interface will have the method.
 
 #### Interface Segregation Principle
