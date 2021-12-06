@@ -100,9 +100,6 @@ classes which are in the third layer.
 Overall, Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
 in an outer circle.
 
-
-# TODO: Annie and Grace
-
 ## Design Patterns
 
 We implemented the Builder design pattern in our project in Book and BookManager classes. As the builder, 
@@ -148,7 +145,6 @@ another member's and will get lost during version control.
 # TODO: Will & Tien
 
 ## Testing
-# TODO: Taylan
 We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system
 in test files that we have in our actual code that makes it easier to access and use the tests we have for our program.
 Some of these tests test basic functionalities of the program like getters and setters of entity classes while the other
@@ -157,7 +153,6 @@ gives an exception when an amount more than available is given and changes the L
 the number of books in the listing drops to zero.
 
 ## Code Style and Documentation
-# TODO: Taylan
 For the code style, our code passes all the default code style formatting requirements that are in IntelliJ.
 We have used proper naming conventions for all of our classes, methods and variables. We also used proper indentation
 to increase the readability of our code. We have included documentation for all of our classes and most of the methods 
@@ -236,16 +231,13 @@ the dependency injection (autowire) and interface (repository).
 #### Individual Responsibility
 
 * Annie: worked together with Grace on Entity classes, Gateway classes, SOLID principle
-* Grace: worked together with Annie on Entity classes, Gateway classes, SOLID principle, contributed to specification, testing
+* Grace: Contributed to the writeup for the use of Github features, SOLID principle, Clean Architecture
+  https://github.com/CSC207-UofT/course-project-26/commit/c41480590e628e859de69445f456dce29496c1dc is one of my significant
+  contributions where I made changes to the design of entity classes. I replaced Buyer and Seller classes with Admin and 
+  User since a user can buy and sell.
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
 For phase 2, I complete the specification, functionality, and the accessibility. 
 * Will: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
 
-
-#### Open Questions
-* already answered during presentation
-
-#### What has worked well so far
-* Our classes organization is clean. 
