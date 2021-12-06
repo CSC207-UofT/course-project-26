@@ -57,7 +57,7 @@ When we add new features to our code base, we extend upon the code we already ha
 software entities. 
 
 #### Liskov Substitution Principle
-In our project, Usergateway and Admingateway classes are child classes of Gateway class. The objects User and Admin may be substituted 
+In our project, User and Admin classes are child classes of Account class. The objects User and Admin may be substituted 
 without altering any of the desired properties of the program.
 
 #### Dependency Inversion Principle
@@ -65,7 +65,7 @@ without altering any of the desired properties of the program.
 The Listingportal class in UI layer is used for getting input data and hand it into Service(Controller layer) classes.
 However, this action involves calling instances from Service classes, making the Listingportal class dependent on Service classes.
 High-level modules should not depend on low-level modules; instead, both should depend on abstractions.
-Therefore, we convert our services classes into an interfaces. Then, we let Listingportal class depends on the Service
+Therefore, we create Service interfaces. Then, we let Listingportal class depends on the Service
 interfaces, and make Services classes implement Service interfaces. Now, even though Listingportal class calls a
 method in the Service class, it is no longer depend on it.
 
@@ -86,17 +86,16 @@ outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User"
 other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
 operating on critical business data (variables). 
 
-For the usecase layer, we have varies manager classes, each to manage a specific entity class.
+For the usecase layer, we have various manager classes, each to manage a specific entity class.
 
 Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
 interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
-The ServiceImple classes implements Services interfaces and depened on Repository interfaces, so they interpret input
+The ServiceImple classes implements Services interfaces and depend on Repository interfaces, so they interpret input
 data, and uses it to control the dance of the Entities. Ideally, the controller accesses entity classes through use
-case classes in order to maintain clean architecture - our controller uses service interface to obatain rules and
+case in order to maintain clean architecture - our controller uses service interface to obatain rules and
 data from entities.
 
-Finally, consoleUI classes are in the fourth layer. They get the input data, then hand them in to Service, Controller
-classes which are in the third layer.
+Finally, consoleUI are in the fourth layer. They get the input data, then hand them in to Controller.
 
 Overall, Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
 in an outer circle.
@@ -111,7 +110,9 @@ its weight, etc., The BooksManager generates a Book without those details, so th
 about the book when they want. This is necessary as a seller may not know every small detail about the book they are 
 selling.
 
-# TODO: Annie
+Another design pattern we implemented is Dependency Injection pattern by using autowired which is offered by
+springboot. For example, While constructing the UserController object, if there's no constructor or setter method to inject
+UserService, the container will use reflection to inject UserService into UserController.
 
 ## Use of Github Features
 We took advantage of a variety of features that Github offers for version control and collaborating as a team. We used 
