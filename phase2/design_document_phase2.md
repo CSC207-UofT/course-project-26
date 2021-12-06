@@ -86,7 +86,7 @@ outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User"
 other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
 operating on critical business data (variables). 
 
-For the usecase layer, we have varies manager classes, each to manage a specific entity class.
+For the usecase layer, we have various manager classes, each to manage a specific entity class.
 
 Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
 interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
