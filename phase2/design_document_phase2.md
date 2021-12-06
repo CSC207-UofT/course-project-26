@@ -73,6 +73,8 @@ method in the Service class, it is no longer depend on it.
 The use case Account manager is implemented as an interface to store the essential features when managing an account,
 including change username, change password etc. No realization class is forced to implement irrelevant  methods of an interface.
 
+The User Service interface is implemented as an interface to control users including getuserbyusername and deleteuserbyusername etc.
+No realization class is forced to implement irrelevant methods of an interface.
 ## Clean Architecture
 
 Our project is divided into different logical pieces, and they effectively communicate with each other. 
