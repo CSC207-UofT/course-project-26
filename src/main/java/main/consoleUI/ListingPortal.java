@@ -74,7 +74,7 @@ public class ListingPortal {
 
 
             } else if (command.equals("sell")) {
-                helper_function_user2(scanner, user);
+                helper_sell_book(scanner, user);
             } else {
                 System.out.println("No such command!");
             }
@@ -85,7 +85,8 @@ public class ListingPortal {
 
     }
 
-    private void helper_function_user2(Scanner scanner, User user) {
+    // A helper method for selling a book
+    private void helper_sell_book(Scanner scanner, User user) {
         System.out.print(" Enter the name of the book => ");
         String book_name = scanner.nextLine();
 
@@ -97,6 +98,8 @@ public class ListingPortal {
         listingPortalController.sell(user.getUsername(), book_price, book_name, book_author);
     }
 
+    // A helper method for showing the listing portal of the books,
+    // and print out the seller's information, including the name, the email, and the address
     private void helper_listing_user(Scanner scanner, String command, List<Book> books, List<List<Book>> booksPartitions, int page) {
         while (!command.equals("exit") && !books.isEmpty()) {
             // Checks if the page is not valid for the number of books in listings.

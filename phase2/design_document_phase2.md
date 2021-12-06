@@ -116,6 +116,17 @@ another member's and will get lost during version control.
 
 # TODO: Will & Tien
 
+< helper_sell_book > - a helper method for selling a book, which the seller will have to give the name, the desired 
+price, and the author of the book.
+
+< helper_listing_user > - a helper method for showing the listing portal of the books, and print out the seller's 
+information, including the name, the email, and the address.
+
+< helper_for_book_page_guest > -
+
+
+
+
 ## Testing
 # TODO: Taylan
 
