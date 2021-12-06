@@ -54,26 +54,27 @@ We have isolated complex functionalities to different classes, so that each clas
 
 #### Open / Closed Principle
 When we add new features to our code base, we extend upon the code we already have instead of modifying the 
-software entities.
+software entities. 
 
 #### Liskov Substitution Principle
 In our project, Usergateway and Admingateway classes are child classes of Gateway class. The objects User and Admin may be substituted 
 without altering any of the desired properties of the program.
 
 #### Dependency Inversion Principle
-The gateway class is used for interacting with the database by reading and saving information to our files. However, 
-this action involves calling instances from use case classes, making the gateway class dependent on use case classes and
-thus violating principles of clean architecture. In this case, use cases is more abstract than gateway because use cases
-have more use cases while gateway can only be used specifically for one file, and it is more preferred to have something 
-more concrete to depend on something more abstract, not the other way around. In order to revert the source code 
-dependency, we convert our gateway class into an interface. Then, we pass in the interface to our use case class constructor. Now, even thought it calls a 
-method in the gateway class, it is no longer dependent on the main.consoleUI.Gateway class because any gateway class that implements 
-the interface will have the method.
+
+The Listingportal class in UI layer is used for getting input data and hand it into Service(Controller layer) classes.
+However, this action involves calling instances from Service classes, making the Listingportal class dependent on Service classes.
+High-level modules should not depend on low-level modules; instead, both should depend on abstractions.
+Therefore, we convert our services classes into an interfaces. Then, we let Listingportal class depends on the Service
+interfaces, and make Services classes implement Service interfaces. Now, even though Listingportal class calls a
+method in the Service class, it is no longer depend on it.
 
 #### Interface Segregation Principle
 The use case Account manager is implemented as an interface to store the essential features when managing an account,
 including change username, change password etc. No realization class is forced to implement irrelevant  methods of an interface.
 
+The User Service interface is implemented as an interface to control users including getuserbyusername and deleteuserbyusername etc.
+No realization class is forced to implement irrelevant methods of an interface.
 ## Clean Architecture
 
 Our project is divided into different logical pieces, and they effectively communicate with each other. 
@@ -89,7 +90,7 @@ For the usecase layer, we have varies manager classes, each to manage a specific
 
 Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
 interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
-The Servicesimple classes implements Services interfaces and depened on Repository interfaces, so they interpret that
+The ServiceImple classes implements Services interfaces and depened on Repository interfaces, so they interpret input
 data, and uses it to control the dance of the Entities. Ideally, the controller accesses entity classes through use
 case classes in order to maintain clean architecture - our controller uses service interface to obatain rules and
 data from entities.
