@@ -111,7 +111,9 @@ its weight, etc., The BooksManager generates a Book without those details, so th
 about the book when they want. This is necessary as a seller may not know every small detail about the book they are 
 selling.
 
-# TODO: Annie
+Another design pattern we implemented is Dependency Injection pattern by using autowired which is offered by
+springboot. For example, While constructing the UserController object, if there's no constructor or setter method to inject
+UserService, the container will use reflection to inject UserService into UserController.
 
 ## Use of Github Features
 We took advantage of a variety of features that Github offers for version control and collaborating as a team. We used 
