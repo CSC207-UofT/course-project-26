@@ -65,7 +65,7 @@ without altering any of the desired properties of the program.
 The Listingportal class in UI layer is used for getting input data and hand it into Service(Controller layer) classes.
 However, this action involves calling instances from Service classes, making the Listingportal class dependent on Service classes.
 High-level modules should not depend on low-level modules; instead, both should depend on abstractions.
-Therefore, we convert our services classes into an interfaces. Then, we let Listingportal class depends on the Service
+Therefore, we create Service interfaces. Then, we let Listingportal class depends on the Service
 interfaces, and make Services classes implement Service interfaces. Now, even though Listingportal class calls a
 method in the Service class, it is no longer depend on it.
 
