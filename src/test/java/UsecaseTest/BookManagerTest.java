@@ -27,8 +27,6 @@ public class BookManagerTest {
 
         wes = new BookManager(l1);
         assertEquals("A Random Walk Down Wall Street", book1.getName());
-        assertEquals(book1, wes.findBookById(book1.getName()));
-        assertEquals(book1.getName(), wes.getBookNameById(book1.getName()));
 
     }
 }

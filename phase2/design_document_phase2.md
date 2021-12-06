@@ -13,18 +13,38 @@ to easily access the books they want to sell when creating listings.
 
 #### Profile system
 Users in our database system can now have access to their profile which includes their personal information as well as
-the login information. They are also now able to edit their profile, such as changing the address, uoft email address
-as well as the password.
+the login information. Users can now edit their first name, last name, and address as well. The information will be 
+updated immediately. Also, if you don't want to be registered, you can still use our platform as a guest.
 
-#### Interacting with Database
-ConsoleUI can print and read the data we type. Until we get
-the data from the user, then the controller can decide to display
-user or to update student. The controller will use some service
-to work with the entity, it can do things like CRUD, create,
-read, update, or delete.
+#### Database configuration (H2 Database)
+H2 database is an open-source database written in Java programming language which supports querying data in standard
+SQL. It is very much lightweight and its JAR file is only 1.5 MB in size. It also provides a web interface called
+H2 Console to see the data.
 
-# TODO: Wesley
+The best thing about using an in-memory database is that we don’t have to do any configuration at all. We've' added
+a single property to the application file which enable the H2 console. Therefore, we can access the Web UI for our 
+in-memory database via the following link:
+http://localhost:8080/h2-console.
+This URL is reachable only when our application is in a running mode. We will have a look at this console once we run 
+our project.
 
+#### H2 Database with Spring Boot
+Java Spring Boot (Spring Boot) is a tool that makes developing web application and microservices with Spring Framework 
+faster and easier. It provides a tool that allows you to set up a Spring-based application with minimal
+configuration and setup. With it, developers like us can get started quickly without losing time on preparing and 
+configuring their Spring application.
+
+So, how does H2 and Spring Boot combination work? Spring Boot is intelligent, it looks at the entities and creates the
+database and the tables. Spring Boot Application connect to the database h2 by Spring Boot Auto Configuration. It 
+attempts to automatically configure your Spring application based on the jar dependencies that we've added.
+
+#### Data Access Layer interface and the ConsoleUI
+To access the database, we will be defining a simple JPA interface which provides its own helper functions. Once We run 
+our application with a command-line runner, it will call the functions we defined from the JPA Repository interface 
+, and  we will be able to see a simple output in our terminal.
+
+It is important to note that the above UI console is accessible only for the time this application is running. Also, 
+after the application has stopped, this console won’t be reachable anymore.
 
 ## Solid
 
@@ -56,19 +76,27 @@ including change username, change password etc. No realization class is forced t
 
 ## Clean Architecture
 
-In our project, we have different layers of clean architecture, and they follow the dependency rule of the clean architecture. 
-Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something 
-in an outer circle.
+Our project is divided into different logical pieces, and they effectively communicate with each other. 
+We aim to facilitate the development, deployment, operation and maintenance of the system by creating different layers 
+of clean architecture that follow the dependency rule.
 
-The Account, Admin, Book, Listing and User are our 
-entity class, and they are independent. They store the interfaces that we need for each different class. You can access the Entity classes
-directly from our User case classes, which are AccountManager, AdminManager, 
+In clean architecture, entity classes are the highest level policies, meaning that they are the farthest from inputs and 
+outputs. Our entity classes are "Account", "Admin", "Book", "Listing" and "User" classes. They are independent of each 
+other. Our entity classes act as objects within our software system that embody sets of critical business rules (methods)
+operating on critical business data (variables). 
+
+
+We access the Entity classes directly from our User case classes, which are AccountManager, AdminManager, 
 BookManager, ListingManager, and UserManager. The User case classes get the information from the Entity class and manage
 all the data from the Entity class.
 
 The Controller classes retrieves and store data from the database. For example, they take the information directly from 
 our user, and returns information back to the User based on our Use case classes. It interacts with our use case layer
 to execute request form the User. 
+
+Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
+in an outer circle.
+
 
 # TODO: Annie and Grace
 
@@ -147,8 +175,46 @@ have along the way.
 
 
 ## Accessibility
+### The 7 Principles of Universal Design
+#### Equitable Use
+We believed that our design is useful and marketable to people with diverse abilities. LIke what we mentioned in our 
+specification. Our application creates a community that solves students' needs to buy affordable books for their new 
+school term while also satisfying their needs to sell their old textbooks. We make our design appealing to all 
+users (students.)
+#### Simple and Intuitive Use
+We believe that our design is easy to understand, regardless of the user's experience, knowledge, language skills, or 
+current concentration level. The instructions given are detailed and well illustrated. 
+#### Tolerance for Error
+Our second-hand book platform simply follow this principle by providing warnings of hazards and errors. The system 
+will print error and show where the errors are when the given commands are wrong. This avoids the Users from getting Error messages when 
+they kee on using our system.
+#### Low Physical Effort
+Our second-hand book platform can be used efficiently and comfortably and with a minimum of fatigue. It's really simple 
+and required zero efforts. It also allows users to maintain a neutral body position while using our system.
+#### Size and Space for Approach and Use
+In our design, we provide a clear line of sight to important elements by making them bold. Some important instructions
+and commands are also being highlighted. It's comfortable and no stress when using our system. 
 
-# TODO: Wesley
+#### Flexibility in Use
+In the future, we can provide different choices in methods of use. For now, the database are only connected when we run
+the codes we have, and we use command line for our system. Therefore, flexibility are limited.
+#### Perceptible Information
+We could improve a lot more on our User Interface in the future. We could provide adequate contrast between essential 
+information and its surroundings, and perhaps provide compatibility with a variety of techniques or devices used by 
+people with sensory limitations.
+
+### Target Customer
+Our Target customers will simply be the students. For now, it has been narrowed down to the UofT students who want to 
+buy and sell second hand books. Our second-hand book platform creates a community that solves students' needs to buy 
+affordable books for their new school term while also satisfying their needs to sell their old textbooks. Therefore, it 
+is different from other E-commerce platform which limits their users to represent only one function - they are either
+the seller(store owner) or the buyer (customer). 
+
+Our second-hand book platform are specifically designed for students who want to either buy second-hand books or sell
+their old textbooks. Therefore, our system are less likely to be used for students who want new textbooks. Also, our
+system are less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
+so you will need to wait for your books just like buying stuff online.
+
 
 ## Major Design Decisions
 

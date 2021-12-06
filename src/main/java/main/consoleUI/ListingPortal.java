@@ -32,7 +32,6 @@ public class ListingPortal {
      * It is the user interface for both the Users that is in our system and Guests.
      */
 
-
     /**
      * The following are the messages asking for user command
      **/
@@ -68,103 +67,7 @@ public class ListingPortal {
 
                 int page = 0;
 
-                while (!command.equals("exit") && !books.isEmpty()) {
-                    // Checks if the page is not valid for the number of books in listings.
-                    if (page < booksPartitions.size() && page >= 0) {
-
-                        int page_number = page + 1;
-
-                        System.out.print("\n\n=== Page " + page_number + " ===" +
-                                getBookMessage(booksPartitions.get(page)) +
-                                "\n8) Type 8 to go to the previous page" +
-                                "\n9) Type 9 to go to the next page" +
-                                "\nExit) Type 'exit' to go back to the BOOK PORTAL\n");
-
-                        printAskForCommandMessageforUser();
-                        command = scanner.nextLine();
-
-                        // Checks for the input command
-                        switch (command) {
-                            case "1":
-                                String username1 = booksPartitions.get(page).get(0).getUser();
-                                User user1 = userService.getUserByUsername(username1);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user1.getFirstName() + " " + user1.getLastName() + "\n" +
-                                        "Seller's Email: " + user1.getEmail() + "\n" +
-                                        "Seller's Address: " + user1.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "2":
-                                String username2 = booksPartitions.get(page).get(1).getUser();
-                                User user2 = userService.getUserByUsername(username2);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user2.getFirstName() + " " + user2.getLastName() + "\n" +
-                                        "Seller's Email: " + user2.getEmail() + "\n" +
-                                        "Seller's Address: " + user2.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "3":
-                                String username3 = booksPartitions.get(page).get(2).getUser();
-                                User user3 = userService.getUserByUsername(username3);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user3.getFirstName() + " " + user3.getLastName() + "\n" +
-                                        "Seller's Email: " + user3.getEmail() + "\n" +
-                                        "Seller's Address: " + user3.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "4":
-                                String username4 = booksPartitions.get(page).get(3).getUser();
-                                User user4 = userService.getUserByUsername(username4);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user4.getFirstName() + " " + user4.getLastName() + "\n" +
-                                        "Seller's Email: " + user4.getEmail() + "\n" +
-                                        "Seller's Address: " + user4.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "5":
-                                String username5 = booksPartitions.get(page).get(4).getUser();
-                                User user5 = userService.getUserByUsername(username5);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user5.getFirstName() + " " + user5.getLastName() + "\n" +
-                                        "Seller's Email: " + user5.getEmail() + "\n" +
-                                        "Seller's Address: " + user5.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "6":
-                                String username6 = booksPartitions.get(page).get(5).getUser();
-                                User user6 = userService.getUserByUsername(username6);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user6.getFirstName() + " " + user6.getLastName() + "\n" +
-                                        "Seller's Email: " + user6.getEmail() + "\n" +
-                                        "Seller's Address: " + user6.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "7":
-                                String username7 = booksPartitions.get(page).get(6).getUser();
-                                User user7 = userService.getUserByUsername(username7);
-                                System.out.println("\n====================" + "\n" +
-                                        "Seller's Name: " + user7.getFirstName() + " " + user7.getLastName() + "\n" +
-                                        "Seller's Email: " + user7.getEmail() + "\n" +
-                                        "Seller's Address: " + user7.getAddress() + "\n" +
-                                        "====================");
-                                break;
-                            case "8":
-                                page--;
-                                break;
-                            case "9":
-                                page++;
-                                break;
-                            case "exit":
-                                break;
-                            default:
-                                printAskForCommandMessageforUser();
-                                command = scanner.nextLine();
-                        }
-                    } else {
-                        System.out.print("Invalid page command( this is the first or last page. You can't go beyond!)\n");
-                        break;
-                    }
-                }
+                helper_listing_user(scanner, command, books, booksPartitions, page);
                 if (books.isEmpty()) {
                     System.out.println("There is no listed books! You can view it other times!");
                 }
@@ -188,6 +91,106 @@ public class ListingPortal {
             command = scanner.nextLine();
         }
 
+    }
+
+    private void helper_listing_user(Scanner scanner, String command, List<Book> books, List<List<Book>> booksPartitions, int page) {
+        while (!command.equals("exit") && !books.isEmpty()) {
+            // Checks if the page is not valid for the number of books in listings.
+            if (page < booksPartitions.size() && page >= 0) {
+
+                int page_number = page + 1;
+
+                System.out.print("\n\n=== Page " + page_number + " ===" +
+                        getBookMessage(booksPartitions.get(page)) +
+                        "\n8) Type 8 to go to the previous page" +
+                        "\n9) Type 9 to go to the next page" +
+                        "\nExit) Type 'exit' to go back to the BOOK PORTAL\n");
+
+                printAskForCommandMessageforUser();
+                command = scanner.nextLine();
+
+                // Checks for the input command
+                switch (command) {
+                    case "1":
+                        String username1 = booksPartitions.get(page).get(0).getUser();
+                        User user1 = userService.getUserByUsername(username1);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user1.getFirstName() + " " + user1.getLastName() + "\n" +
+                                "Seller's Email: " + user1.getEmail() + "\n" +
+                                "Seller's Address: " + user1.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "2":
+                        String username2 = booksPartitions.get(page).get(1).getUser();
+                        User user2 = userService.getUserByUsername(username2);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user2.getFirstName() + " " + user2.getLastName() + "\n" +
+                                "Seller's Email: " + user2.getEmail() + "\n" +
+                                "Seller's Address: " + user2.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "3":
+                        String username3 = booksPartitions.get(page).get(2).getUser();
+                        User user3 = userService.getUserByUsername(username3);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user3.getFirstName() + " " + user3.getLastName() + "\n" +
+                                "Seller's Email: " + user3.getEmail() + "\n" +
+                                "Seller's Address: " + user3.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "4":
+                        String username4 = booksPartitions.get(page).get(3).getUser();
+                        User user4 = userService.getUserByUsername(username4);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user4.getFirstName() + " " + user4.getLastName() + "\n" +
+                                "Seller's Email: " + user4.getEmail() + "\n" +
+                                "Seller's Address: " + user4.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "5":
+                        String username5 = booksPartitions.get(page).get(4).getUser();
+                        User user5 = userService.getUserByUsername(username5);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user5.getFirstName() + " " + user5.getLastName() + "\n" +
+                                "Seller's Email: " + user5.getEmail() + "\n" +
+                                "Seller's Address: " + user5.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "6":
+                        String username6 = booksPartitions.get(page).get(5).getUser();
+                        User user6 = userService.getUserByUsername(username6);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user6.getFirstName() + " " + user6.getLastName() + "\n" +
+                                "Seller's Email: " + user6.getEmail() + "\n" +
+                                "Seller's Address: " + user6.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "7":
+                        String username7 = booksPartitions.get(page).get(6).getUser();
+                        User user7 = userService.getUserByUsername(username7);
+                        System.out.println("\n====================" + "\n" +
+                                "Seller's Name: " + user7.getFirstName() + " " + user7.getLastName() + "\n" +
+                                "Seller's Email: " + user7.getEmail() + "\n" +
+                                "Seller's Address: " + user7.getAddress() + "\n" +
+                                "====================");
+                        break;
+                    case "8":
+                        page--;
+                        break;
+                    case "9":
+                        page++;
+                        break;
+                    case "exit":
+                        break;
+                    default:
+                        printAskForCommandMessageforUser();
+                        command = scanner.nextLine();
+                }
+            } else {
+                System.out.print("Invalid page command( this is the first or last page. You can't go beyond!)\n");
+                break;
+            }
+        }
     }
 
     // Showing the listing user interface for Guests
