@@ -202,7 +202,7 @@ interface, the flexibility of our application is limited.
 #### Perceptible Information
 We could improve a lot more on our User Interface in the future. We could provide adequate contrast between essential 
 information and its surroundings. Furthermore, we could provide compatibility to people with sensory limitations by 
-advacning the techniques.
+advancing the techniques.
 
 ### Target Customer
 Our Target customers will simply be the students. For now, it has been narrowed down to the UofT students who want to 
