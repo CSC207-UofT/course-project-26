@@ -1,4 +1,4 @@
-package main.consoleUI;
+package main.consoleui;
 
 import main.controller.LoginController;
 import main.entity.User;

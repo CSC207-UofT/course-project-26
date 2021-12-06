@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import main.consoleUI.Register;
-import main.consoleUI.Login;
-import main.consoleUI.UserPortal;
+import main.consoleui.Register;
+import main.consoleui.Login;
+import main.consoleui.UserPortal;
 
 import java.util.Objects;
 import java.util.Scanner;

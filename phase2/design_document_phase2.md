@@ -47,7 +47,7 @@ thus violating principles of clean architecture. In this case, use cases is more
 have more use cases while gateway can only be used specifically for one file, and it is more preferred to have something 
 more concrete to depend on something more abstract, not the other way around. In order to revert the source code 
 dependency, we convert our gateway class into an interface. Then, we pass in the interface to our use case class constructor. Now, even thought it calls a 
-method in the gateway class, it is no longer dependent on the main.consoleUI.Gateway class because any gateway class that implements 
+method in the gateway class, it is no longer dependent on the main.consoleui.Gateway class because any gateway class that implements 
 the interface will have the method.
 
 #### Interface Segregation Principle
@@ -114,18 +114,18 @@ another member's and will get lost during version control.
 
 ## Refactoring and Code Smells
 
-# TODO: Will & Tien
+- Shorten the methods in Listing portal by having helper methods.
 
-< helper_sell_book > - a helper method for selling a book, which the seller will have to give the name, the desired 
-price, and the author of the book.
+- Refactor some of the method's name and package's name.
 
-< helper_listing_user > - a helper method for showing the listing portal of the books, and print out the seller's 
-information, including the name, the email, and the address.
+< helper_sell_book > - a helper method for selling a book, which the seller will have to give the name, the desired price, and the author of the book.
 
-< helper_for_book_page_guest > -
+< helper_listing_user > - a helper method for showing the listing portal of the books, and print out the seller's information, including the name, the email, and the address.
 
+< helper_for_book_page_guest > - a helper method for showing the listing portal of the books for guests users which only
+includes information about the book
 
-
+- Reformat the code so that the code looks clean and easy to follow along with.
 
 ## Testing
 # TODO: Taylan
