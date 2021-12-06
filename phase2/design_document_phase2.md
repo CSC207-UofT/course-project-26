@@ -54,7 +54,7 @@ We have isolated complex functionalities to different classes, so that each clas
 
 #### Open / Closed Principle
 When we add new features to our code base, we extend upon the code we already have instead of modifying the 
-software entities.
+software entities. 
 
 #### Liskov Substitution Principle
 In our project, Usergateway and Admingateway classes are child classes of Gateway class. The objects User and Admin may be substituted 
@@ -90,7 +90,7 @@ For the usecase layer, we have varies manager classes, each to manage a specific
 
 Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
 interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
-The Servicesimple classes implements Services interfaces and depened on Repository interfaces, so they interpret that
+The ServiceImple classes implements Services interfaces and depened on Repository interfaces, so they interpret input
 data, and uses it to control the dance of the Entities. Ideally, the controller accesses entity classes through use
 case classes in order to maintain clean architecture - our controller uses service interface to obatain rules and
 data from entities.
