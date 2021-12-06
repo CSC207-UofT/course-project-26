@@ -238,6 +238,6 @@ the dependency injection (autowire) and interface (repository).
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
-For phase 2, I complete the specification, functionality, and the accessibility. 
+For phase 2, I completed the specification, functionality, and the accessibility. 
 * Will: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
 
