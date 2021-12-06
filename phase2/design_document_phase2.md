@@ -208,7 +208,7 @@ Our Target customers will simply be the students. For now, it has been narrowed 
 buy and sell second hand books. Our platform is different from other E-commerce platform which limits their users to 
 represent either a seller or a buyer.
 
-Our second-hand book platform is specifically designed for students who want to either buy second-hand books or sell
+Our second-hand book platform is specifically designed for students who want to buy second-hand books or sell
 their old textbooks. Therefore, our system is less likely to be used for students who want new textbooks. Also, our
 system is less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
 so you will need to wait for your books just like buying stuff online.
