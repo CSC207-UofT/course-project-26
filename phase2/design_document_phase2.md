@@ -208,7 +208,7 @@ Our Target customers will simply be the students. For now, it has been narrowed 
 buy and sell second hand books. Our platform is different from other E-commerce platform which limits their users to 
 represent either a seller or a buyer.
 
-Our second-hand book platform is specifically designed for students who want to either buy second-hand books or sell
+Our second-hand book platform is specifically designed for students who want to buy second-hand books or sell
 their old textbooks. Therefore, our system is less likely to be used for students who want new textbooks. Also, our
 system is less likely to be used for students who are in a hurry on getting their textbooks. It is an online platform, 
 so you will need to wait for your books just like buying stuff online.
@@ -239,6 +239,6 @@ the dependency injection (autowire) and interface (repository).
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
-For phase 2, I complete the specification, functionality, and the accessibility. 
+For phase 2, I worked on the specification, functionality, and the accessibility. 
 * Will: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
 
