@@ -98,7 +98,7 @@ each of our work, answer questions, and make suggestions.
 #### Creating Pull Requests & Conducting Code Reviews
 After we commit and push our feature branch to remote, we create a pull request by including a summary of the changes 
 and what problem they solve. This feature allows us to ask each other for feedback on our changes before we merge into
-our main branch. \
+our main branch.
 
 Pull request review is valuable for us in identifying potential issues in each other's code - we are 
 able to comment on specific lines that cause problems, and everyone is able to see. It helps to address issues before
@@ -118,10 +118,22 @@ another member's and will get lost during version control.
 
 ## Testing
 # TODO: Taylan
+We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system
+in test files that we have in our actual code that makes it easier to access and use the tests we have for our program.
+Some of these tests test basic functionalities of the program like getters and setters of entity classes while the other
+tests check more specific capabilities of the program such as removing books from a listing to check if the program
+gives an exception when an amount more than available is given and changes the Listing's status to "Sold out" when 
+the number of books in the listing drops to zero.
 
 ## Code Style and Documentation
 # TODO: Taylan
-
+For the code style, our code passes all the default code style formatting requirements that are in IntelliJ.
+We have used proper naming conventions for all of our classes, methods and variables. We also used proper indentation
+to increase the readability of our code. We have included documentation for all of our classes and most of the methods 
+inside those classes throughout the program to be able to describe the function of each piece of code we have written 
+in a more clear way. We used Javadoc to achieve this. This allowed us to also understand and check each other's code 
+and build on them. These documentations include the purpose of the given code, its parameters and what it is meant to 
+return or do.
 
 ## Code Organization / Packaging Strategies
 The packaging strategy we use for our UofT's online second-hand book store is packaging by the layers of the clean Architecture.
