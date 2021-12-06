@@ -95,8 +95,8 @@ data, and uses it to control the dance of the Entities. Ideally, the controller 
 case classes in order to maintain clean architecture - our controller uses service interface to obatain rules and
 data from entities.
 
-Finally, consoleUI classes are in the fourth layer. They get the input data, then hand them in to Service, Controller
-classes which are in the third layer.
+Finally, consoleUI classes are in the fourth layer. They get the input data, then hand them in to Service and Controller
+classes.
 
 Overall, Our source code dependencies only points inwards. Nothing in the inner circle can know anything at all about something
 in an outer circle.
