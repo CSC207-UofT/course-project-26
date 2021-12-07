@@ -4,6 +4,8 @@ import main.entity.User;
 import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import presenter.RegisterPresenter;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -13,6 +15,8 @@ public class RegisterController {
     @Autowired
     private UserService studentService;
 
+    private final RegisterPresenter registerPresenter = new RegisterPresenter();
+
     public User register(String username, String password, String firstname, String lastname,
                          String email, String address) {
 
@@ -20,11 +24,11 @@ public class RegisterController {
 
         for (User user: users){
             if (user.getUsername().equals(username)) {
-                System.out.println("The username has been taken!");
+                registerPresenter.printInvalidUsername();
                 return null;
             }
             if (Objects.equals(user.getEmail(), email)){
-                System.out.println("This email address has already been registered.");
+                registerPresenter.printInvalidEmail();
                 return null;
             }
         }

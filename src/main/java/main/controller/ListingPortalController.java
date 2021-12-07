@@ -22,7 +22,6 @@ public class ListingPortalController {
         Book new_book = bookService.createBook(price, name, author);
         new_book.setUser(username);
         bookService.saveOrUpdate(new_book);
-        System.out.print(" The book has successfully listed! ");
 
     }
 
