@@ -90,7 +90,7 @@ For the usecase layer, we have various manager classes, each to manage a specifi
 
 Then, Service, Repository and Controller classes/interfaces are all in the third layer of clean architecture. Repository
 interfaces define how we retrieve and store data from the database, and are implemented by spring boot already.
-The ServiceImple classes implements Services interfaces and depend on Repository interfaces, so they interpret input
+The ServiceImple classes implement Services interfaces and depend on Repository interfaces, so they interpret input
 data, and uses it to control the dance of the Entities. Ideally, the controller accesses entity classes through use
 case in order to maintain clean architecture - our controller uses service interface to obatain rules and
 data from entities.
