@@ -1,9 +1,11 @@
-package main.consoleUI;
+package main.consoleui;
 
 import main.controller.LoginController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import presenter.LPresenter;
+import presenter.LoginPresenter;
 
 import java.util.Scanner;
 
@@ -17,21 +19,23 @@ public class Login {
     @Autowired
     private LoginController loginController;
 
+    private final LoginPresenter loginPresenter = new LoginPresenter();
+
     public User loginUser(Scanner scanner) {
-        System.out.print(" Enter username => ");
+        loginPresenter.askUsername();
         String userName = scanner.nextLine();
 
-        System.out.print(" Enter password => ");
+        loginPresenter.askPassword();
         String password = scanner.nextLine();
 
         User loggedInStudent = loginController.login(userName, password);
 
         if (loggedInStudent != null) {
-            System.out.println(String.format(" User %s successfully logged-in", loggedInStudent.getUsername()));
+            loginPresenter.loginSuccessMessage(loggedInStudent.getUsername());
             return loggedInStudent;
         }
 
-        System.out.println(" Invalid username or incorrect password, please try again");
+        loginPresenter.loginFailedMessage();
 
         return null;
     }

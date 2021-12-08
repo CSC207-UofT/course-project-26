@@ -10,5 +10,5 @@ Responsibility:
 Collaborators:
 * User
 * Login
-* main.consoleUI.Controller.Register
+* main.consoleui.Controller.Register
 

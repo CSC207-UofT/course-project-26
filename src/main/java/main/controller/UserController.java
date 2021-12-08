@@ -5,6 +5,7 @@ import main.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import presenter.UserPortalPresenter;
 
 @Component
 public class UserController {
@@ -12,14 +13,11 @@ public class UserController {
     @Autowired
     private UserService studentService;
 
+    private final UserPortalPresenter userPortalPresenter = new UserPortalPresenter();
+
     public void displayStudent(String username) {
         User user = studentService.getUserByUsername(username);
-
-        String info = String.format("Username: %s \n" + "First Name: %s \n" +
-                        "Last Name: %s \n" + "Email: %s \n" + "Address: %s \n",
-                user.getUsername(), user.getFirstName(),
-                user.getLastName(), user.getEmail(), user.getAddress());
-        System.out.println(info);
+        userPortalPresenter.printStudentInfo(user);
     }
 
 
@@ -30,7 +28,7 @@ public class UserController {
         boolean email_is_valid = email.matches("^[a-zA-Z0-9.]+@mail.utoronto.[a-zA-Z0-9]+$");
 
         if (!email_is_valid) {
-            System.out.println("Invalid uoft email");
+            userPortalPresenter.printInvalidEmail();
         }
 
         if (oldUser != null && StringUtils.isAlpha(newUser.getFirstName())

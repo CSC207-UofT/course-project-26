@@ -57,7 +57,7 @@ When we add new features to our code base, we extend upon the code we already ha
 software entities. 
 
 #### Liskov Substitution Principle
-In our project, Usergateway and Admingateway classes are child classes of Gateway class. The objects User and Admin may be substituted 
+In our project, User and Admin classes are child classes of Account class. The objects User and Admin may be substituted 
 without altering any of the desired properties of the program.
 
 #### Dependency Inversion Principle
@@ -144,11 +144,22 @@ another member's and will get lost during version control.
 
 ## Refactoring and Code Smells
 
-# TODO: Will & Tien
+- Shorten the methods in Listing portal by having helper methods.
+
+- Refactor some of the method's name and package's name.
+
+< helper_sell_book > - a helper method for selling a book, which the seller will have to give the name, the desired price, and the author of the book.
+
+< helper_listing_user > - a helper method for showing the listing portal of the books, and print out the seller's information, including the name, the email, and the address.
+
+< helper_for_book_page_guest > - a helper method for showing the listing portal of the books for guests users which only
+includes information about the book
+
+- Reformat the code so that the code looks clean and easy to follow along with.
 
 ## Testing
 We have implemented many test cases for most of our Entity and Usecase classes. Also, we used the same packaging system
-in test files that we have in our actual code that makes it easier to access and use the tests we have for our program.
+in test files that we have in our actual code that made it easier to access and use the tests we have for our program.
 Some of these tests test basic functionalities of the program like getters and setters of entity classes while the other
 tests check more specific capabilities of the program such as removing books from a listing to check if the program
 gives an exception when an amount more than available is given and changes the Listing's status to "Sold out" when 
@@ -167,10 +178,10 @@ return or do.
 The packaging strategy we use for our UofT's online second-hand book store is packaging by the layers of the clean Architecture.
 We separate java files of different layer into different packages. For instance, we have the ConsoleUI, Controller, User cases and Entities
 packages that contain corresponding layer of java file. Since our program consists of many classes that belong to different categories
-but the same layer in clean architecture, we also divided some layers by its categories. For example, even though controller
+but they also belong to the same layer in clean architecture, we also divided some layers by its categories. For example, even though controller
 and Gateway belong to the same layer, we separate them into its own packages, so that the files for gateways and controllers will not be
 that overcrowded and disturbing to find a certain file. Using the packaging by layer strategy not only contribute to our clean packages organization which 
-could allow us to locate the class we want efficiently but also help us avoid some violations of the clean architecture that we might
+could allow us to locate the class we want efficiently but also help us avoid some potential violations of the clean architecture that we might
 have along the way.
 
 
@@ -237,7 +248,8 @@ the dependency injection (autowire) and interface (repository).
   https://github.com/CSC207-UofT/course-project-26/commit/c41480590e628e859de69445f456dce29496c1dc is one of my significant
   contributions where I made changes to the design of entity classes. I replaced Buyer and Seller classes with Admin and 
   User since a user can buy and sell.
-* Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design patterns
+* Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design 
+  patterns, code style and documentation as well as creating tests for some entity and usecase classes.
 * Tien: worked together with Wesley and Will on Clean Architecture, Major Design Decisions, worked with Will on UI and controllers, wrote specification
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
 For phase 2, I worked on the specification, functionality, and the accessibility. 

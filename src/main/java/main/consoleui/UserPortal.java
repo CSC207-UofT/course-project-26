@@ -1,9 +1,10 @@
-package main.consoleUI;
+package main.consoleui;
 
 import main.controller.UserController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import presenter.UserPortalPresenter;
 
 import java.util.Scanner;
 
@@ -19,19 +20,12 @@ public class UserPortal {
     @Autowired
     private ListingPortal listingPortal;
 
-    private void printAskForCommandMessage() {
-        System.out.print(" Enter command (profile,update,listing,exit)=> ");
-    }
+    private final UserPortalPresenter userPortalPresenter = new UserPortalPresenter();
 
     public void showUserPortal(Scanner scanner, User user) {
-        System.out.println("\n\n=== STUDENT PORTAL ===" +
-                "\n1) Type 'profile' to show your user information" +
-                "\n2) Type 'update' to update your info" +
-                "\n3) Type 'listing' to view, sell, or buy books (guests can only view the listing)" +
-                "\n4) Type 'exit' to exit the system" +
-                "\n==================");
+        userPortalPresenter.showStudentPortal();
 
-        printAskForCommandMessage();
+        userPortalPresenter.printAskForCommandMessage();
         String command = scanner.nextLine();
 
         while (!command.equals("exit")) {
@@ -39,8 +33,7 @@ public class UserPortal {
                 userController.displayStudent(user.getUsername());
 
             } else if (command.equals("update") && !user.getUsername().equals("Guest")) {
-                System.out.print("Enter first name, last name and address separated by comma " +
-                        "(for example: tien,han, 123 Happy Street)\n Enter here => ");
+                userPortalPresenter.printUpdateExample();
                 String[] info = scanner.nextLine().split(",");
                 String firstName = info[0];
                 String lastName = info[1];
@@ -49,19 +42,19 @@ public class UserPortal {
                 User newStudentInfo = User.builder().username(user.getUsername()).password(user.getPassword()).firstName(firstName).lastName(lastName).email(user.getEmail()).address(address).build();
 
                 if (userController.updateStudent(newStudentInfo)) {
-                    System.out.println("Student info successfully updated!");
+                    userPortalPresenter.printUpdateSuccess();
                 } else {
-                    System.out.println("Student info update failed!");
+                    userPortalPresenter.printUpdateFailed();
                 }
             } else if (command.equals("listing") && user.getUsername().equals("Guest")) {
                 listingPortal.ListingGuest(scanner);
             } else if (command.equals("listing") && !user.getUsername().equals("Guest")) {
                 listingPortal.ListingUser(scanner, user);
             } else {
-                System.out.println("No such command!");
+                userPortalPresenter.incorrectCommandMessage();
             }
 
-            printAskForCommandMessage();
+            userPortalPresenter.printAskForCommandMessage();
             command = scanner.nextLine();
         }
 

@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import main.consoleUI.Register;
-import main.consoleUI.Login;
-import main.consoleUI.UserPortal;
+import main.consoleui.Register;
+import main.consoleui.Login;
+import main.consoleui.UserPortal;
+import presenter.LoginPresenter;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -36,6 +37,8 @@ public class Application implements CommandLineRunner {
     @Autowired
     private UserService userService;
 
+    private final LoginPresenter loginPresenter = new LoginPresenter();
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -46,9 +49,7 @@ public class Application implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
         User loggedInStudent = null;
 
-        System.out.println("=== Welcome to UofT BookStore: ===" +
-                "\nPlease enter 1 to register, 2 to login, or any key to continue as guest");
-        System.out.print(" Enter here => ");
+        loginPresenter.welcomeMessage();
         String selection = scanner.nextLine();
 
         if (Objects.equals(selection, "2")) {
