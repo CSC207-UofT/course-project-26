@@ -243,7 +243,7 @@ the dependency injection (autowire) and interface (repository).
 
 #### Individual Responsibility
 
-* Annie: worked together with Grace on Entity classes, Gateway classes, SOLID principle
+* Annie: worked together with Grace on Entity classes, Gateway classes, SOLID principle, Clean Architecture.
   https://github.com/CSC207-UofT/course-project-26/pull/15/files is one of my significant
   contributions where I made changes to the design of entity classes. I created Buyer and Seller classes.
 * Grace: Contributed to the writeup for the use of Github features, SOLID principle, Clean Architecture
