@@ -8,7 +8,7 @@ import main.service.BookService;
 import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import presenter.ListingPortalPresenter;
+import main.presenter.ListingPortalPresenter;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,10 +1,9 @@
-package presenter;
+package main.presenter;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * A presenter that prints messages for login information
+ * A main.presenter that prints messages for login information
  */
 @Component
 public class LoginPresenter implements LPresenter {

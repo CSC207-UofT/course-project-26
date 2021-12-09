@@ -4,7 +4,7 @@ import main.controller.RegisterController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import presenter.RegisterPresenter;
+import main.presenter.RegisterPresenter;
 
 import java.util.Scanner;
 

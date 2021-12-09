@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import main.consoleui.Register;
 import main.consoleui.Login;
 import main.consoleui.UserPortal;
-import presenter.LoginPresenter;
+import main.presenter.LoginPresenter;
 
 import java.util.Objects;
 import java.util.Scanner;
