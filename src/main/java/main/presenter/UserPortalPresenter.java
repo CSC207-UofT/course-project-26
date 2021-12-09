@@ -1,11 +1,11 @@
-package presenter;
+package main.presenter;
 
 import main.entity.User;
 import org.springframework.stereotype.Component;
 
 
 /**
- * A presenter that prints messages for UserPortal's
+ * A main.presenter that prints messages for UserPortal's
  */
 @Component
 public class UserPortalPresenter {

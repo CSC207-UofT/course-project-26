@@ -4,7 +4,7 @@ import main.entity.User;
 import main.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import presenter.RegisterPresenter;
+import main.presenter.RegisterPresenter;
 
 import java.util.List;
 import java.util.Objects;

@@ -4,9 +4,7 @@ import main.controller.LoginController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import presenter.LPresenter;
-import presenter.LoginPresenter;
-
+import main.presenter.LoginPresenter;
 import java.util.Scanner;
 
 

@@ -4,7 +4,7 @@ import main.controller.UserController;
 import main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import presenter.UserPortalPresenter;
+import main.presenter.UserPortalPresenter;
 
 import java.util.Scanner;
 

@@ -1,9 +1,9 @@
-package presenter;
+package main.presenter;
 
 import org.springframework.stereotype.Component;
 
 /**
- * A presenter that prints messages for Registration information
+ * A main.presenter that prints messages for Registration information
  */
 @Component
 public class RegisterPresenter implements LPresenter{

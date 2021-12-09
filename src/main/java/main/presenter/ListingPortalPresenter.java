@@ -1,4 +1,4 @@
-package presenter;
+package main.presenter;
 
 import main.entity.Book;
 import main.entity.User;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * A presenter that prints messages for ListingPortal's
+ * A main.presenter that prints messages for ListingPortal's
  */
 @Component
 public class ListingPortalPresenter{
