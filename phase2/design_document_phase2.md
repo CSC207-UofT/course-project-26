@@ -262,6 +262,5 @@ the dependency injection (autowire) and interface (repository).
   Phase 2: Continued to work with Tien on implementation of the User Interface and the controllers with Spring Boot and 
   H2 database. https://github.com/CSC207-UofT/course-project-26/commit/03440bdb75c96ef0ed923ec0083973cbac80ac00 would 
   be the pull request that I believe was the most meaningful one, as it marked the wrapping up of our program, and the 
-  final code smell etc. However, the pull request that best exhibited my contribution would be the one Tien and I made  
-  on his laptop which successfully added the registeration, listings and profile system to our program.
+  final code smell etc. However, the pull request that best exhibited my contribution would be the one Tien and I made on his laptop which successfully added the registeration, listings and profile system to our program.
 
