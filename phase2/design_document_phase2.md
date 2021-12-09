@@ -247,9 +247,7 @@ the dependency injection (autowire) and interface (repository).
   https://github.com/CSC207-UofT/course-project-26/pull/15/files is one of my significant
   contributions where I made changes to the design of entity classes. I created Buyer and Seller classes.
 * Grace: Contributed to the writeup for the use of Github features, SOLID principle, Clean Architecture
-  https://github.com/CSC207-UofT/course-project-26/commit/c41480590e628e859de69445f456dce29496c1dc is one of my significant
-  contributions where I made changes to the design of entity classes. I replaced Buyer and Seller classes with Admin and 
-  User since a user can buy and sell.
+  https://github.com/CSC207-UofT/course-project-26/pull/18 is one of my significant contributions where I made changes to the design of entity classes. I replaced     Buyer and Seller classes with Admin and User since a user can buy and sell.
 * Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design 
   patterns, code style and documentation as well as creating tests for some entity and usecase classes.
 * Tien: Worked together with Wesley and Will on Clean Architecture, Major Design Decisions. Worked with Will on UI and 
