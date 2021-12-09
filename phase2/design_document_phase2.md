@@ -254,7 +254,8 @@ the dependency injection (autowire) and interface (repository).
 * Tien: Worked together with Wesley and Will on Clean Architecture, Major Design Decisions. Worked with Will on UI and 
   controllers, wrote specification. Worked individually on repository, service, service implementation, and application.
   Modified on entity (Book and User), delete excessive private attributes. Insert Springboot framework and connect 
-  h2-database (yml and SQL).
+  h2-database (yml and SQL). https://github.com/CSC207-UofT/course-project-26/pull/36 would be one of the most 
+  significant pull request for me, since I receive multiple response and approve from my teammates.
 * Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
   For phase 2, I worked on the specification, functionality, and the accessibility. 
 * Will: Phase 1: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
