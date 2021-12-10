@@ -249,8 +249,13 @@ the dependency injection (autowire) and interface (repository).
 * Grace: Contributed to the writeup for the use of Github features, SOLID principle, Clean Architecture
   https://github.com/CSC207-UofT/course-project-26/pull/18 is one of my significant contributions where I made changes to the design of entity classes. 
   I replaced Buyer and Seller classes with Admin and User since a user can buy and sell.
-* Taylan: worked on the builder pattern for Book class, worked on book, listing classes and documenting our design 
+* Taylan: I worked on the builder pattern for Book class, built book and listing classes and documenting our design 
   patterns, code style and documentation as well as creating tests for some entity and usecase classes.
+  https://github.com/CSC207-UofT/course-project-26/commit/0da4482ee77ee3c341b9a4b7aee859a1617b2ef9 this is one of my
+  important contributions where I added several simple and detailed tests for our entity classes Book and Listing.
+  https://github.com/CSC207-UofT/course-project-26/commit/906bc8cc757cf42dd307875a7630841bc5cbe924 This is another
+  consequential contribution where I made a design change to the Listing class, since I decided to use Listing as the 
+  class that includes additional information about the Book that allows the user to trade rather than a simple list of Books.
 * Tien: Worked together with Wesley and Will on Clean Architecture, Major Design Decisions. Worked with Will on UI and 
   controllers, wrote specification. Worked individually on repository, service, service implementation, and application.
   Modified on entity (Book and User), delete excessive private attributes. Insert Springboot framework and connect 
