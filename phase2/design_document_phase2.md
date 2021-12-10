@@ -261,8 +261,10 @@ the dependency injection (autowire) and interface (repository).
   Modified on entity (Book and User), delete excessive private attributes. Insert Springboot framework and connect 
   h2-database (yml and SQL). https://github.com/CSC207-UofT/course-project-26/pull/36 would be one of the most 
   significant pull request for me, since I receive multiple response and approve from my teammates.
-* Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes.
-  For phase 2, I worked on the specification, functionality, and the accessibility. 
+* Wesley: worked together with Tien on Clean Architecture and Major Design Decisions, and worked on the Usercase classes. 
+For phase 2, I worked on the specification, functionality, and the accessibility. https://github.com/CSC207-UofT/course-project-26/pull/43#issue-1071834971 
+is one of my significant contributions I made. However, the most significant contribution I made is implementing and 
+constructing the Usercase we used.
 * Will: Phase 1: worked together with Tien on UI's and controllers, and worked on the Packaging strategy.
   Phase 2: Continued to work with Tien on implementation of the User Interface and the controllers with Spring Boot and 
   H2 database. https://github.com/CSC207-UofT/course-project-26/commit/03440bdb75c96ef0ed923ec0083973cbac80ac00 would 
